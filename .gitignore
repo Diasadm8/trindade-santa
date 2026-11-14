@@ -22,3 +22,6 @@ node_modules/
 Thumbs.db
 .DS_Store
 *.log
+
+# Cache de ferramentas
+.playwright-cli/
