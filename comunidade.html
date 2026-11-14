@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <div data-cabecalho="transparente"></div>
@@ -45,13 +45,13 @@
         <div class="revelar">
           <span class="sobretitulo">Quem somos</span>
           <h2>Comunidade de Aliança</h2>
-          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+          <div class="flex flex-wrap gap-2 mb-[18px]">
             <span class="etiqueta">Desde 2007</span><span class="etiqueta">Itaperuna – RJ</span><span class="etiqueta">Diocese de Campos</span>
           </div>
           <div class="ph-lines" data-ph="5"></div>
           <div class="ph-lines" data-ph="4"></div>
         </div>
-        <div class="revelar" data-atraso="1"><div class="ph-img" data-img="filho" style="--proporcao: 4/5"></div></div>
+        <div class="revelar" data-atraso="1"><div class="ph-img [--proporcao:4/5]" data-img="filho"></div></div>
       </div>
     </section>
 
@@ -108,7 +108,7 @@
 
     <!-- SÍMBOLOS -->
     <section class="secao secao--nevoa" id="simbolos">
-      <div class="container" style="max-width: 900px">
+      <div class="container max-w-[900px]">
         <div class="secao__topo revelar">
           <span class="sobretitulo">Identidade</span>
           <h2>Nossos símbolos</h2>
@@ -147,7 +147,7 @@
           <div class="ph-lines" data-ph="4"></div>
           <a href="social.html" class="btn btn--primario">Conheça os serviços sociais <span data-icone="seta"></span></a>
         </div>
-        <div class="revelar" data-atraso="1"><div class="ph-img" data-img="pai" style="--proporcao: 4/3"></div></div>
+        <div class="revelar" data-atraso="1"><div class="ph-img [--proporcao:4/3]" data-img="pai"></div></div>
       </div>
     </section>
 
@@ -171,7 +171,7 @@
     <!-- NA IGREJA -->
     <section class="secao secao--degrade" id="igreja">
       <div class="container citacao revelar">
-        <span class="sobretitulo sobretitulo--claro" style="justify-content:center">Na Igreja</span>
+        <span class="sobretitulo sobretitulo--claro justify-center">Na Igreja</span>
         <h2>Em comunhão com a Igreja</h2>
         <div class="ph-lines" data-ph="3"></div>
         <cite>Aprovada pela Diocese de Campos</cite>
@@ -199,8 +199,8 @@
       const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
       const retrato = document.querySelector('[data-fundador-retrato]');
       retrato.innerHTML = FUNDADOR.foto
-        ? `<div class="ph-img tem-foto" style="--proporcao: 4/5"><img src="assets/img/fundador/${esc(FUNDADOR.foto)}" alt="${esc(FUNDADOR.nome)}"></div>`
-        : `<div class="ph-img" data-img="pai" style="--proporcao: 4/5"></div>`;
+        ? `<div class="ph-img tem-foto [--proporcao:4/5]"><img src="assets/img/fundador/${esc(FUNDADOR.foto)}" alt="${esc(FUNDADOR.nome)}" loading="lazy"></div>`
+        : `<div class="ph-img [--proporcao:4/5]" data-img="pai"></div>`;
       document.querySelector('[data-fundador-texto]').innerHTML = FUNDADOR.texto.map(t => `<p>${esc(t)}</p>`).join('');
       document.querySelector('[data-fundador-frase]').textContent = FUNDADOR.frase;
       /* Momentos: fotos de arquivo, sem legenda */

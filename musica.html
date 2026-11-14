@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <div data-cabecalho="transparente"></div>
@@ -27,7 +27,7 @@
     </section>
 
     <!-- Lançamentos -->
-    <section class="secao" style="padding-top: 40px">
+    <section class="secao pt-10">
       <div class="container">
         <div class="secao__topo revelar">
           <span class="sobretitulo">Discografia</span>
@@ -41,12 +41,12 @@
     <section class="secao secao--nevoa">
       <div class="container">
         <div class="secao__topo secao__topo--centro revelar">
-          <img class="ministerio-logo" data-musts alt="Musicalidade TS" hidden>
+          <img class="ministerio-logo" data-musts alt="Musicalidade TS" hidden loading="lazy">
           <span class="sobretitulo">Ministério de música</span>
           <h2>Quem canta conosco</h2>
           <div class="ph-lines" data-ph="2"></div>
         </div>
-        <div class="grade grade--2" style="max-width: 860px; margin-inline: auto" data-artistas></div>
+        <div class="grade grade--2 max-w-[860px] mx-auto" data-artistas></div>
       </div>
     </section>
 
@@ -59,7 +59,7 @@
           <div class="ph-lines" data-ph="4"></div>
           <div class="musica-enredos" data-enredos></div>
         </div>
-        <div class="revelar" data-atraso="1"><div class="ph-img" data-img="espirito" style="--proporcao: 4/3"></div></div>
+        <div class="revelar" data-atraso="1"><div class="ph-img [--proporcao:4/3]" data-img="espirito"></div></div>
       </div>
     </section>
 
@@ -110,7 +110,7 @@
         <article class="card revelar" data-atraso="${k + 1}">
           ${a.foto
             ? `<div class="foto-4x3"><img src="assets/img/musica/${a.foto}" alt="${a.nome}" loading="lazy"></div>`
-            : `<div class="ph-img" data-img="${a.simbolo}" style="--proporcao: 4/3"></div>`}
+            : `<div class="ph-img [--proporcao:4/3]" data-img="${a.simbolo}"></div>`}
           <div class="card__corpo">
             <span class="card__meta">${a.papel}</span>
             <h3>${a.nome}</h3>

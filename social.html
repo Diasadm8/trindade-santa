@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <div data-cabecalho="transparente"></div>
@@ -22,7 +22,7 @@
         <span class="sobretitulo sobretitulo--claro">Associação Trindade Santa</span>
         <h1>Amor que vira ação</h1>
         <div class="ph-lines" data-ph="2"></div>
-        <a href="#pix" class="btn btn--claro" style="margin-top: 10px">Quero doar <span data-icone="seta"></span></a>
+        <a href="#pix" class="btn btn--claro mt-2.5">Quero doar <span data-icone="seta"></span></a>
       </div>
     </section>
 
@@ -46,15 +46,15 @@
           <dl class="ficha" data-ficha></dl>
         </div>
         <div class="revelar" data-atraso="1">
-          <div class="card" style="padding: 36px; display: grid; place-items: center; background: #fff">
-            <img src="assets/img/marca/associacao-cores.png" alt="Logo da Associação Trindade Santa" style="width: min(100%, 460px)">
+          <div class="card p-9 grid place-items-center bg-white">
+            <img src="assets/img/marca/associacao-cores.png" alt="Logo da Associação Trindade Santa" class="w-[min(100%,460px)]" loading="lazy">
           </div>
         </div>
       </div>
     </section>
 
     <!-- NÚMEROS -->
-    <section class="secao secao--profunda" style="padding-block: 70px">
+    <section class="secao secao--profunda py-[70px]">
       <div class="container">
         <div class="numeros revelar">
           <div class="numero"><strong>00</strong><span>Famílias atendidas</span></div>
@@ -84,7 +84,7 @@
           <div>
             <span class="sobretitulo">Doação via PIX</span>
             <h2>Faça sua doação</h2>
-            <p style="color: var(--tinta-suave)">Abra o app do seu banco, escolha <strong>PIX</strong> e use o QR Code ou copie a chave abaixo. Qualquer valor é bem-vindo.</p>
+            <p class="text-tinta-suave">Abra o app do seu banco, escolha <strong>PIX</strong> e use o QR Code ou copie a chave abaixo. Qualquer valor é bem-vindo.</p>
             <div class="pix__chave">
               <code data-pix-chave></code>
               <button type="button" class="btn btn--primario" data-copiar>Copiar chave</button>
@@ -99,10 +99,10 @@
 
     <!-- MENSAGEM -->
     <section class="secao secao--degrade">
-      <div class="container revelar" style="text-align:center">
+      <div class="container revelar text-center">
         <span class="citacao__aspas" aria-hidden="true">“</span>
         <p class="mensagem-doacao">Cada um dê conforme decidiu em seu coração, não com tristeza nem por obrigação, pois Deus ama quem dá com alegria.</p>
-        <cite style="display:block;margin-top:18px;font-style:normal;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;opacity:.85">2 Coríntios 9, 7</cite>
+        <cite class="block mt-[18px] not-italic text-[.85rem] tracking-[.2em] uppercase opacity-85">2 Coríntios 9, 7</cite>
       </div>
     </section>
 
@@ -167,7 +167,7 @@
 
       const qr = document.querySelector('[data-pix-qr]');
       qr.innerHTML = DOACAO.qrCode
-        ? `<img src="assets/img/${DOACAO.qrCode}" alt="QR Code ${DOACAO.qrRotulo || 'PIX'} para doação">`
+        ? `<img src="assets/img/${DOACAO.qrCode}" alt="QR Code ${DOACAO.qrRotulo || 'PIX'} para doação" loading="lazy">`
         : `<div>${icone('imagem')}QR Code do PIX<br>(aguardando)</div>`;
       document.querySelector('[data-pix-chave]').textContent = DOACAO.chavePix || 'chave PIX a definir';
       document.querySelector('[data-pix-favorecido]').textContent = DOACAO.favorecido ? `Favorecido: ${DOACAO.favorecido} · CNPJ ${COMUNIDADE.associacao.cnpj}` : '';

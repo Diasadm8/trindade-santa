@@ -155,7 +155,7 @@ function montarRodape() {
       <div class="footer__topo">
         <div>
           <a href="index.html" class="footer__logo" aria-label="Comunidade de Aliança Trindade Santa — início">
-            <img src="assets/img/marca/logo-completo-branco.svg" alt="Comunidade de Aliança Trindade Santa" width="280" height="98">
+            <img src="assets/img/marca/logo-completo-branco.svg" alt="Comunidade de Aliança Trindade Santa" width="280" height="98" loading="lazy">
           </a>
           <div class="ph-lines" data-ph="3"></div>
           <div class="redes">

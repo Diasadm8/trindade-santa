@@ -1,0 +1,13 @@
+{
+  "name": "trindade-santa",
+  "private": true,
+  "description": "Site da Comunidade de Aliança Trindade Santa",
+  "scripts": {
+    "css": "tailwindcss -i src/site.css -o assets/css/site.css --minify",
+    "css:watch": "tailwindcss -i src/site.css -o assets/css/site.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "tailwindcss": "^4.3.5"
+  }
+}

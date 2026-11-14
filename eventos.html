@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <div data-cabecalho="transparente"></div>
@@ -26,7 +26,7 @@
     </section>
 
     <!-- Grandes eventos (cada um com página e identidade próprias) -->
-    <section class="secao" style="padding-top: 40px">
+    <section class="secao pt-10">
       <div class="container">
         <div class="secao__topo revelar">
           <span class="sobretitulo">Grandes eventos</span>
@@ -58,7 +58,7 @@
            style="--e-escuro:${e.cores[0]};--e-principal:${e.cores[1]};--e-destaque:${e.cores[2]}">
           <span class="sobretitulo sobretitulo--claro">Evento</span>
           <h3>${e.nome}</h3>
-          <div class="ph-lines" data-ph="2" style="--cor-linha:rgba(255,255,255,.25);max-width:340px"></div>
+          <div class="ph-lines [--cor-linha:rgba(255,255,255,.25)] max-w-[340px]" data-ph="2"></div>
           <span class="link-seta">Conhecer o evento ${icone('seta')}</span>
         </a>`).join('');
       const lista = document.querySelector('[data-lista-eventos]');

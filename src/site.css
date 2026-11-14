@@ -1,0 +1,37 @@
+/* Entrada do Tailwind v4 (npm run css → assets/css/site.css).
+   Sem "preflight": o reset do Tailwind mudaria o visual; o style.css já faz a base.
+   Ordem das camadas: o style.css entra em "components" para que as utilitárias do
+   Tailwind sempre vençam, e src/ajustes.css (sem camada) corrige o que a auditoria apontou. */
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "../assets/css/style.css" layer(components);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@source "../*.html";
+@source "../assets/js/*.js";
+@source not "../itinerarios.html";
+@source not "../assets/js/itinerarios.js";
+
+/* Paleta da identidade → classes como bg-azul-profundo, text-tinta, border-linha */
+@theme {
+  --color-azul-profundo: #0b4ea2;
+  --color-azul-celeste: #1b95d8;
+  --color-celeste-texto: #0a6aa6; /* celeste legível como texto (≥ 4.5:1 sobre branco e névoa) */
+  --color-azul-mar: #2489ae;
+  --color-turquesa: #4fa6c0;
+  --color-bruma: #bcdde3;
+  --color-nevoa: #eef6f8;
+  --color-tinta: #0a2a4a;
+  --color-tinta-suave: #4a6580;
+  --color-linha: #d6e6ee;
+
+  --font-titulo: "Marcellus", "Optima", "Candara", serif;
+  --font-versal: "Marcellus SC", "Marcellus", serif;
+  --font-texto: "Mulish", "Segoe UI", system-ui, sans-serif;
+
+  --radius-card: 18px;
+  --shadow-card: 0 10px 30px -12px rgba(11, 78, 162, 0.25);
+}
+
+@import "./ajustes.css";

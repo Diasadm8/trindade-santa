@@ -1,0 +1,38 @@
+/* Correções da auditoria (2026-11-14). Sem camada: vencem o style.css (camada components). */
+
+/* P1 · Contraste: celeste #1b95d8 como TEXTO dava 3,3:1 sobre branco. Agora 5,8:1. */
+.sobretitulo,
+.card__meta,
+.mes-grande__ano,
+.leitura__lateral h4,
+.versiculo cite,
+.bolha-uf span,
+.dica-cidade__uf,
+.ficha-grupo__tipo,
+.pix__ok,
+.ficha dt,
+.divisor,
+.evento__dados svg,
+.ficha-grupo__linha svg,
+.relatorio svg,
+.pix__qr svg { color: var(--color-celeste-texto); }
+.mes-card:hover .mes-card__num { color: var(--color-celeste-texto); }
+.nav .nav__sub a[aria-current="page"] { color: var(--color-celeste-texto); }
+/* Sobre fundo escuro/degradê o celeste original continua legível */
+.sobretitulo--claro { color: #fff; }
+
+/* P2 · Listras laterais em cards: trocadas por filete interno discreto */
+.pilar::before { height: 2px; opacity: .7; }
+.destaque-itinerario::before { display: none; }
+.pix::before { display: none; }
+.destaque-itinerario, .pix { border-inline-start: 1px solid var(--linha); }
+
+/* P2 · Brilhos dourados fortes no fio da história */
+.hist__no.is-aceso { box-shadow: 0 0 0 5px rgba(230, 196, 115, 0.12); }
+.hist .hist__marco.is-atual .hist__papel { box-shadow: 0 30px 60px -22px rgba(0, 0, 0, 0.6); }
+
+/* P3 · Rastreamento exagerado em texto corrido e easing "elástico" */
+.migalhas { letter-spacing: 0.02em; }
+
+/* Foco visível mais forte em botões e links sobre fundos claros */
+a:focus-visible, button:focus-visible { outline-color: var(--color-azul-profundo); }

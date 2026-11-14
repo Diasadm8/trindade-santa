@@ -177,7 +177,7 @@
   if (destaque && doMes) {
     destaque.innerHTML = `
       <div class="mes-grande">
-        ${doMes.capa ? `<img class="mes-capa" src="assets/itinerarios/${doMes.capa}" alt="Capa do itinerário de ${MESES[doMes.mes - 1]}: ${doMes.tema}" width="900" height="1273">` : selo(doMes.simbolo)}
+        ${doMes.capa ? `<img class="mes-capa" src="assets/itinerarios/${doMes.capa}" alt="Capa do itinerário de ${MESES[doMes.mes - 1]}: ${doMes.tema}" width="900" height="1273" loading="lazy" decoding="async">` : selo(doMes.simbolo)}
         <span class="mes-grande__nome">${MESES[doMes.mes - 1]}</span>
         <span class="mes-grande__ano">${doMes.ano}</span>
       </div>
