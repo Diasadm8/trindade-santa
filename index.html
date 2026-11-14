@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comunidade de Aliança Trindade Santa</title>
+  <meta name="description" content="Comunidade de Aliança Trindade Santa — comunidade católica.">
+  <meta name="theme-color" content="#0b4ea2">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div data-cabecalho="transparente"></div>
+
+  <main id="conteudo">
+
+    <!-- ===== HERO: a órbita da Santíssima Trindade ===== -->
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero__fundo" aria-hidden="true">
+        <span data-selo="pai"></span><span data-selo="filho"></span><span data-selo="espirito"></span>
+      </div>
+      <canvas class="hero__particulas" aria-hidden="true"></canvas>
+
+      <div class="hero__conteudo">
+        <div class="orbita">
+          <svg class="orbita__halo" viewBox="0 0 200 200" aria-hidden="true">
+            <circle class="h1" cx="100" cy="100" r="96" stroke-width=".8"/>
+            <circle class="h2" cx="100" cy="100" r="88" stroke-width=".6"/>
+          </svg>
+        </div>
+        <div class="hero__pessoa" aria-live="polite"></div>
+        <div class="orbita__pontos"></div>
+
+        <div class="assinatura">
+          <div class="assinatura__sup">Comunidade de Aliança</div>
+          <h1 class="assinatura__nome">Trindade Santa</h1>
+        </div>
+
+        <div class="hero__acoes">
+          <a href="comunidade.html" class="btn btn--claro">Conheça a comunidade <span data-icone="seta"></span></a>
+          <a href="itinerarios.html" class="btn btn--contorno-claro">Itinerário do mês</a>
+        </div>
+      </div>
+      <span class="rolar" aria-hidden="true"></span>
+    </section>
+
+    <!-- ===== QUEM SOMOS ===== -->
+    <section class="secao">
+      <div class="container dividido">
+        <div class="revelar">
+          <div class="ph-img" data-img="pai" style="--proporcao: 5/4"></div>
+        </div>
+        <div class="revelar" data-atraso="1">
+          <span class="sobretitulo">Quem somos</span>
+          <h2>Uma comunidade de aliança</h2>
+          <div class="ph-lines" data-ph="6"></div>
+          <a href="comunidade.html" class="link-seta">Conheça nossa história <span data-icone="seta"></span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PILARES: as três Pessoas ===== -->
+    <section class="secao secao--nevoa">
+      <div class="container">
+        <div class="secao__topo secao__topo--centro revelar">
+          <span class="sobretitulo">Nossa espiritualidade</span>
+          <h2>Um só Deus em três Pessoas</h2>
+          <div class="ph-lines" data-ph="2"></div>
+        </div>
+        <div class="grade grade--3">
+          <article class="pilar pilar--pai revelar" data-atraso="1">
+            <span data-selo="pai"></span>
+            <h3>Deus Pai</h3>
+            <div class="ph-lines" data-ph="3"></div>
+          </article>
+          <article class="pilar pilar--filho revelar" data-atraso="2">
+            <span data-selo="filho"></span>
+            <h3>Deus Filho</h3>
+            <div class="ph-lines" data-ph="3"></div>
+          </article>
+          <article class="pilar pilar--espirito revelar" data-atraso="3">
+            <span data-selo="espirito"></span>
+            <h3>Deus Espírito Santo</h3>
+            <div class="ph-lines" data-ph="3"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ITINERÁRIO DO MÊS ===== -->
+    <section class="secao">
+      <div class="container">
+        <div class="destaque-itinerario revelar" data-itinerario-mes></div>
+      </div>
+    </section>
+
+    <!-- ===== CITAÇÃO ===== -->
+    <section class="secao secao--degrade">
+      <div class="container citacao revelar">
+        <span class="citacao__aspas" aria-hidden="true">“</span>
+        <div class="ph-lines" data-ph="3"></div>
+        <cite>Referência bíblica</cite>
+      </div>
+    </section>
+
+    <!-- ===== PRÓXIMOS EVENTOS ===== -->
+    <section class="secao">
+      <div class="container">
+        <div class="secao__topo secao__topo--linha revelar">
+          <div>
+            <span class="sobretitulo">Agenda</span>
+            <h2>Próximos eventos</h2>
+          </div>
+          <a href="eventos.html" class="btn btn--contorno">Ver agenda completa <span data-icone="seta"></span></a>
+        </div>
+        <div class="grade grade--3" data-proximos-eventos></div>
+      </div>
+    </section>
+
+    <!-- ===== GRUPOS ===== -->
+    <section class="secao secao--profunda">
+      <div class="container dividido">
+        <div class="revelar">
+          <span class="sobretitulo sobretitulo--claro">Presença</span>
+          <h2>Onde estamos</h2>
+          <div class="ph-lines" data-ph="4" style="--cor-linha: rgba(255,255,255,.3)"></div>
+          <a href="grupos.html" class="btn btn--claro">Encontre um grupo perto de você <span data-icone="seta"></span></a>
+        </div>
+        <div class="numeros revelar" data-atraso="1">
+          <div class="numero"><strong>00</strong><span>Grupos</span></div>
+          <div class="numero"><strong>00</strong><span>Cidades</span></div>
+          <div class="numero"><strong>00</strong><span>Membros</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAÇA PARTE ===== -->
+    <section class="secao">
+      <div class="container">
+        <div class="chamada revelar">
+          <div class="chamada__marca" aria-hidden="true"><span data-trio class="selo--branco"></span></div>
+          <div>
+            <span class="sobretitulo sobretitulo--claro">Vocação</span>
+            <h2>Faça parte desta aliança</h2>
+            <div class="ph-lines" data-ph="3"></div>
+          </div>
+          <a href="faca-parte.html" class="btn btn--claro">Quero conhecer <span data-icone="seta"></span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-rodape></div>
+
+  <script src="assets/js/dados.js"></script>
+  <script src="assets/js/marca.js"></script>
+  <script src="assets/js/inicio.js"></script>
+</body>
+</html>

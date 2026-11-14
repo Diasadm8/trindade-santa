@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Música · Trindade Santa</title>
+  <meta name="theme-color" content="#0b4ea2">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div data-cabecalho="transparente"></div>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="page-hero__marca" aria-hidden="true"><span data-selo="espirito"></span></div>
+      <div class="container">
+        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Música</span></nav>
+        <span class="sobretitulo sobretitulo--claro">Louvor e adoração</span>
+        <h1>Música</h1>
+        <div class="ph-lines" data-ph="2"></div>
+        <div class="musica-plataformas" data-plataformas></div>
+      </div>
+    </section>
+
+    <!-- Lançamentos -->
+    <section class="secao" style="padding-top: 40px">
+      <div class="container">
+        <div class="secao__topo revelar">
+          <span class="sobretitulo">Discografia</span>
+          <h2>Nossos lançamentos</h2>
+        </div>
+        <div data-lancamentos></div>
+      </div>
+    </section>
+
+    <!-- Artistas -->
+    <section class="secao secao--nevoa">
+      <div class="container">
+        <div class="secao__topo secao__topo--centro revelar">
+          <img class="ministerio-logo" data-musts alt="Musicalidade TS" hidden>
+          <span class="sobretitulo">Ministério de música</span>
+          <h2>Quem canta conosco</h2>
+          <div class="ph-lines" data-ph="2"></div>
+        </div>
+        <div class="grade grade--2" style="max-width: 860px; margin-inline: auto" data-artistas></div>
+      </div>
+    </section>
+
+    <!-- Aviva Folia -->
+    <section class="secao secao--profunda">
+      <div class="container dividido">
+        <div class="revelar">
+          <span class="sobretitulo sobretitulo--claro">Aviva Jovem</span>
+          <h2>Aviva Folia</h2>
+          <div class="ph-lines" data-ph="4"></div>
+          <div class="musica-enredos" data-enredos></div>
+        </div>
+        <div class="revelar" data-atraso="1"><div class="ph-img" data-img="espirito" style="--proporcao: 4/3"></div></div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <div class="chamada revelar">
+          <div class="chamada__marca" aria-hidden="true"><span data-trio class="selo--branco"></span></div>
+          <div><span class="sobretitulo sobretitulo--claro">Missões</span><h2>Leve a Trindade Santa ao seu evento</h2><div class="ph-lines" data-ph="2"></div></div>
+          <a href="#" class="btn btn--claro" data-missoes>Falar sobre missões <span data-icone="seta"></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-rodape></div>
+  <script src="assets/js/dados.js"></script>
+  <script src="assets/js/marca.js"></script>
+  <script>
+    (function () {
+      const fmt = d => { const [a, m, dia] = d.split('-'); return `${dia}/${m}/${a}`; };
+
+      document.querySelector('[data-plataformas]').innerHTML = `
+        <a class="btn btn--claro" href="${LINKS.ouvir}" target="_blank" rel="noopener">${icone('seta')} Ouvir em todas as plataformas</a>
+        <a class="btn btn--contorno-claro" href="${LINKS.youtube}" target="_blank" rel="noopener">${icone('youtube')} YouTube</a>
+        <a class="btn btn--contorno-claro" href="${LINKS.deezer}" target="_blank" rel="noopener">Deezer</a>`;
+
+      /* Lançamentos agrupados por ano */
+      const porAno = {};
+      MUSICA.lancamentos.forEach(l => (porAno[l.data.slice(0, 4)] ||= []).push(l));
+      document.querySelector('[data-lancamentos]').innerHTML = Object.keys(porAno).sort().reverse().map(ano => `
+        <div class="disco-ano revelar">
+          <span class="disco-ano__ano">${ano}</span>
+          <div class="disco-ano__lista">
+            ${porAno[ano].sort((a, b) => b.data.localeCompare(a.data)).map((l, i) => `
+              <article class="disco">
+                ${l.capa
+                  ? `<span class="disco__capa disco__capa--img"><img src="assets/img/musica/${l.capa}" alt="Capa de ${l.titulo}" loading="lazy"></span>`
+                  : `<span class="disco__capa">${selo(ORDEM_PESSOAS[(+ano + i) % 3])}</span>`}
+                <div>
+                  <h3>${l.titulo}</h3>
+                  <small>${fmt(l.data)}${l.artista ? ' · ' + l.artista : ''}${l.grupo ? ' · ' + l.grupo : ''}</small>
+                </div>
+              </article>`).join('')}
+          </div>
+        </div>`).join('');
+
+      document.querySelector('[data-artistas]').innerHTML = MUSICA.artistas.map((a, k) => `
+        <article class="card revelar" data-atraso="${k + 1}">
+          ${a.foto
+            ? `<div class="foto-4x3"><img src="assets/img/musica/${a.foto}" alt="${a.nome}" loading="lazy"></div>`
+            : `<div class="ph-img" data-img="${a.simbolo}" style="--proporcao: 4/3"></div>`}
+          <div class="card__corpo">
+            <span class="card__meta">${a.papel}</span>
+            <h3>${a.nome}</h3>
+            <div class="ph-lines" data-ph="2"></div>
+            <a class="link-seta" href="${a.whatsapp}" target="_blank" rel="noopener">Leve para o seu evento ${icone('seta')}</a>
+          </div>
+        </article>`).join('');
+
+      document.querySelector('[data-enredos]').innerHTML = MUSICA.lancamentos.filter(l => l.grupo === 'Aviva Jovem')
+        .map(l => `<span class="etiqueta etiqueta--clara">${l.titulo.replace('Aviva Folia – ', '')}</span>`).join('');
+
+      const musts = document.querySelector('[data-musts]');
+      if (musts && MUSICA.logoMinisterio) { musts.src = `assets/img/musica/${MUSICA.logoMinisterio}-cor.png`; musts.hidden = false; }
+
+      document.querySelector('[data-missoes]').href = LINKS.missoesWhatsapp;
+      preencherMarcadores();
+      ativarRevelar();
+    })();
+  </script>
+</body>
+</html>

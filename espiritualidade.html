@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Espiritualidade · Trindade Santa</title>
+  <meta name="theme-color" content="#0b4ea2">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div data-cabecalho="transparente"></div>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="page-hero__marca" aria-hidden="true"><span data-selo="filho"></span></div>
+      <div class="container">
+        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Espiritualidade</span></nav>
+        <span class="sobretitulo sobretitulo--claro">Nossas raízes</span>
+        <h1>Espiritualidade</h1>
+        <div class="ph-lines" data-ph="2"></div>
+      </div>
+    </section>
+
+    <nav class="subnav" aria-label="Seções da página">
+      <div class="container">
+        <a href="#sinal">Sinal da Trindade</a>
+        <a href="#maria">Mãe do Infinito Amor</a>
+        <a href="#baluartes">Baluartes</a>
+      </div>
+    </nav>
+
+    <!-- ===== O SINAL DA TRINDADE ===== -->
+    <section class="sinal" id="sinal" data-ativo="filho">
+      <div class="sinal__fundo" aria-hidden="true"></div>
+      <div class="container sinal__grade">
+
+        <!-- Cena fixa: a luz acompanha a pessoa em foco -->
+        <div class="sinal__palco" aria-hidden="true">
+          <div class="sinal__arte">
+            <span class="spot spot--pai"></span>
+            <span class="spot spot--filho"></span>
+            <span class="spot spot--espirito"></span>
+            <img src="assets/img/marca/cruz-ts-fundo-escuro.svg" alt="">
+          </div>
+        </div>
+
+        <!-- Passos: ao rolar, mudam a pessoa em foco -->
+        <div class="sinal__passos">
+          <article class="sinal__passo" data-pessoa="pai">
+            <span class="sobretitulo sobretitulo--claro">Primeira Pessoa</span>
+            <h2>Deus Pai</h2>
+            <div class="ph-lines" data-ph="5"></div>
+          </article>
+          <article class="sinal__passo" data-pessoa="filho">
+            <span class="sobretitulo sobretitulo--claro">Segunda Pessoa</span>
+            <h2>Deus Filho</h2>
+            <div class="ph-lines" data-ph="5"></div>
+          </article>
+          <article class="sinal__passo" data-pessoa="espirito">
+            <span class="sobretitulo sobretitulo--claro">Terceira Pessoa</span>
+            <h2>Deus Espírito Santo</h2>
+            <div class="ph-lines" data-ph="5"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MÃE DO INFINITO AMOR ===== -->
+    <section class="maria" id="maria">
+      <div class="maria__estrelas" aria-hidden="true"></div>
+      <div class="container dividido">
+        <div class="maria__arte revelar">
+          <div class="maria__coroa" aria-hidden="true"></div>
+          <div class="maria__moldura">
+            <img src="assets/img/maria/mae-infinito-amor.jpg" alt="Pintura de Nossa Senhora Mãe do Infinito Amor" width="1230" height="1600" loading="lazy">
+          </div>
+          <svg class="maria__infinito" viewBox="0 0 120 50" aria-hidden="true">
+            <path d="M60 25C48 5 20 5 20 25s28 20 40 0 40-20 40 0-28 20-40 0z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="revelar" data-atraso="1">
+          <span class="sobretitulo">Nossa Padroeira</span>
+          <h2>Nossa Senhora Mãe do Infinito Amor</h2>
+          <div class="ph-lines" data-ph="6"></div>
+          <div class="ph-lines" data-ph="4"></div>
+          <div class="maria__orac">
+            <span class="sobretitulo">Oração</span>
+            <div class="ph-lines" data-ph="4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BALUARTES ===== -->
+    <section class="secao secao--nevoa" id="baluartes">
+      <div class="container">
+        <div class="secao__topo secao__topo--centro revelar">
+          <span class="sobretitulo">Quem nos sustenta</span>
+          <h2>Nossos baluartes</h2>
+          <p class="baluartes__intro" data-baluartes-intro></p>
+        </div>
+        <div class="grade grade--4" data-baluartes></div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <div class="chamada revelar">
+          <div class="chamada__marca" aria-hidden="true"><span data-trio class="selo--branco"></span></div>
+          <div><span class="sobretitulo sobretitulo--claro">Caminhe conosco</span><h2>Reze o itinerário do mês</h2><div class="ph-lines" data-ph="2"></div></div>
+          <a href="itinerarios.html" class="btn btn--claro">Ver itinerários <span data-icone="seta"></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-rodape></div>
+  <script src="assets/js/dados.js"></script>
+  <script src="assets/js/marca.js"></script>
+  <script>
+    (function () {
+      /* Baluartes */
+      document.querySelector('[data-baluartes]').innerHTML = COMUNIDADE.baluartes.map((b, k) => `
+        <article class="baluarte revelar" id="${b.id === 'mae-infinito-amor' ? 'padroeira' : b.id}" data-atraso="${k % 3 + 1}">
+          ${b.foto
+            ? `<div class="ph-img baluarte__img tem-foto"><img src="${b.foto}" alt="${b.nome}" loading="lazy"></div>`
+            : `<div class="ph-img baluarte__img" data-img="${b.simbolo}"></div>`}
+          <span class="etiqueta">${b.tipo}</span>
+          <h3>${b.nome}</h3>
+          ${b.texto ? `<p class="baluarte__texto">${b.texto}</p>` : '<div class="ph-lines" data-ph="3"></div>'}
+        </article>`).join('');
+      document.querySelector('[data-baluartes-intro]').textContent = COMUNIDADE.baluartesIntro || '';
+
+      /* Coroa de 12 estrelas ao redor do ícone de Nossa Senhora */
+      const coroa = document.querySelector('.maria__coroa');
+      coroa.innerHTML = Array.from({ length: 12 }, (_, i) => {
+        const a = (i / 12) * Math.PI * 2 - Math.PI / 2;
+        return `<i style="left:${(50 + Math.cos(a) * 49).toFixed(2)}%;top:${(50 + Math.sin(a) * 49).toFixed(2)}%;--d:${(i * 0.25).toFixed(2)}s"></i>`;
+      }).join('');
+
+      /* Estrelas de fundo */
+      const fundo = document.querySelector('.maria__estrelas');
+      fundo.innerHTML = Array.from({ length: 34 }, (_, i) =>
+        `<i style="left:${(Math.sin(i * 12.9898) * 43758.5453 % 1 + 1) % 1 * 100}%;top:${(Math.sin(i * 78.233) * 12345.6789 % 1 + 1) % 1 * 100}%;--d:${(i % 9) * .4}s;--s:${(1 + (i % 4) * .5)}px"></i>`).join('');
+
+      /* Sinal da Trindade: a pessoa em foco muda ao rolar */
+      const sec = document.getElementById('sinal');
+      const passos = [...sec.querySelectorAll('.sinal__passo')];
+      const obs = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) {
+          sec.dataset.ativo = e.target.dataset.pessoa;
+          passos.forEach(p => p.classList.toggle('is-ativo', p === e.target));
+        }
+      }), { rootMargin: '-45% 0px -45% 0px' });
+      passos.forEach(p => obs.observe(p));
+
+      preencherMarcadores();
+      ativarRevelar();
+    })();
+  </script>
+</body>
+</html>

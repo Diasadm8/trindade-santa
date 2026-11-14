@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eventos · Trindade Santa</title>
+  <meta name="theme-color" content="#0b4ea2">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div data-cabecalho="transparente"></div>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="page-hero__marca" aria-hidden="true"><span data-selo="filho"></span></div>
+      <div class="container">
+        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Eventos</span></nav>
+        <span class="sobretitulo sobretitulo--claro">Agenda</span>
+        <h1>Eventos</h1>
+        <div class="ph-lines" data-ph="2"></div>
+      </div>
+    </section>
+
+    <!-- Grandes eventos (cada um com página e identidade próprias) -->
+    <section class="secao" style="padding-top: 40px">
+      <div class="container">
+        <div class="secao__topo revelar">
+          <span class="sobretitulo">Grandes eventos</span>
+          <h2>Nossos encontros anuais</h2>
+        </div>
+        <div class="grade grade--2" data-eventos-especiais></div>
+      </div>
+    </section>
+
+    <section class="secao secao--nevoa">
+      <div class="container">
+        <div class="secao__topo revelar">
+          <span class="sobretitulo">Calendário</span>
+          <h2>Próximas datas</h2>
+        </div>
+        <div class="filtros" role="group" aria-label="Filtrar por categoria" data-filtro-categorias></div>
+        <div class="grade grade--2" data-lista-eventos></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-rodape></div>
+  <script src="assets/js/dados.js"></script>
+  <script src="assets/js/marca.js"></script>
+  <script>
+    (function () {
+      document.querySelector('[data-eventos-especiais]').innerHTML = Object.values(EVENTOS_ESPECIAIS).map((e, k) => `
+        <a class="ev-cartao revelar" data-atraso="${k + 1}" href="${e.pagina}"
+           style="--e-escuro:${e.cores[0]};--e-principal:${e.cores[1]};--e-destaque:${e.cores[2]}">
+          <span class="sobretitulo sobretitulo--claro">Evento</span>
+          <h3>${e.nome}</h3>
+          <div class="ph-lines" data-ph="2" style="--cor-linha:rgba(255,255,255,.25);max-width:340px"></div>
+          <span class="link-seta">Conhecer o evento ${icone('seta')}</span>
+        </a>`).join('');
+      const lista = document.querySelector('[data-lista-eventos]');
+      const filtro = document.querySelector('[data-filtro-categorias]');
+      const hoje = new Date();
+      const futuros = EVENTOS.filter(e => new Date(e.data + 'T23:59') >= hoje).sort((a, b) => a.data.localeCompare(b.data));
+      const cats = ['Todos', ...new Set(futuros.map(e => e.categoria))];
+      filtro.innerHTML = cats.map((c, k) => `<button class="chip${k ? '' : ' is-ativo'}" type="button" data-cat="${c}">${c}</button>`).join('');
+      const render = cat => {
+        const itens = futuros.filter(e => cat === 'Todos' || e.categoria === cat);
+        lista.innerHTML = itens.map(cartaoEvento).join('');
+        preencherMarcadores(lista);
+        ativarRevelar(lista);
+      };
+      filtro.addEventListener('click', e => {
+        const b = e.target.closest('[data-cat]');
+        if (!b) return;
+        filtro.querySelectorAll('.chip').forEach(c => c.classList.toggle('is-ativo', c === b));
+        render(b.dataset.cat);
+      });
+      render('Todos');
+    })();
+  </script>
+</body>
+</html>

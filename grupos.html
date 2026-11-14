@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grupos · Trindade Santa</title>
+  <meta name="theme-color" content="#0b4ea2">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div data-cabecalho="transparente"></div>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="page-hero__marca" aria-hidden="true"><span data-selo="pai"></span></div>
+      <div class="container">
+        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Grupos</span></nav>
+        <span class="sobretitulo sobretitulo--claro">Presença</span>
+        <h1>Encontre um grupo</h1>
+        <div class="ph-lines" data-ph="2"></div>
+      </div>
+    </section>
+
+    <section class="secao" style="padding-top: 30px">
+      <div class="container">
+        <div class="mapa-palco revelar">
+          <div id="mapa" aria-label="Mapa dos grupos nos estados do Rio de Janeiro e Minas Gerais"></div>
+
+          <aside class="mapa-painel">
+            <span class="sobretitulo">Onde estamos</span>
+            <div class="mapa-resumo" data-resumo></div>
+            <ul class="mapa-cidades" data-cidades></ul>
+            <p class="mapa-dica"><span data-icone="busca"></span> Role ou use + / − para aproximar. Passe o mouse sobre uma cidade.</p>
+          </aside>
+
+          <div class="mapa-controles">
+            <button type="button" data-zoom="in" aria-label="Aproximar">+</button>
+            <button type="button" data-zoom="out" aria-label="Afastar">−</button>
+            <button type="button" data-zoom="reset" aria-label="Ver o Brasil inteiro" title="Ver o Brasil">⟲</button>
+          </div>
+
+          <div class="mapa-legenda">
+            <span><i class="lg lg--estado"></i> Estados com grupos</span>
+            <span><i class="lg lg--cidade"></i> Cidades com grupos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--nevoa">
+      <div class="container">
+        <div class="chamada revelar">
+          <div class="chamada__marca" aria-hidden="true"><span data-trio class="selo--branco"></span></div>
+          <div><span class="sobretitulo sobretitulo--claro">Não encontrou?</span><h2>Leve a comunidade até sua cidade</h2><div class="ph-lines" data-ph="2"></div></div>
+          <a href="contato.html" class="btn btn--claro">Fale conosco <span data-icone="seta"></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-rodape></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="assets/js/dados.js"></script>
+  <script src="assets/js/marca.js"></script>
+  <script src="assets/js/grupos.js"></script>
+</body>
+</html>

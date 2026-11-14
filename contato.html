@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato · Trindade Santa</title>
+  <meta name="theme-color" content="#0b4ea2">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div data-cabecalho="transparente"></div>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="page-hero__marca" aria-hidden="true"><span data-selo="filho"></span></div>
+      <div class="container">
+        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Contato</span></nav>
+        <span class="sobretitulo sobretitulo--claro">Fale conosco</span>
+        <h1>Contato</h1>
+        <div class="ph-lines" data-ph="2"></div>
+      </div>
+    </section>
+
+    <section class="secao" style="padding-top: 40px">
+      <div class="container dividido" style="align-items:start">
+        <div class="contato-info revelar">
+          <div class="contato-linha"><span class="icone"><span data-icone="pino"></span></span><div><h4>Endereço</h4><div class="ph-lines" data-ph="2" style="min-width:220px"></div></div></div>
+          <div class="contato-linha"><span class="icone"><span data-icone="telefone"></span></span><div><h4>Telefone / WhatsApp</h4><div class="ph-lines" data-ph="1" style="min-width:160px"></div></div></div>
+          <div class="contato-linha"><span class="icone"><span data-icone="email"></span></span><div><h4>E-mail</h4><div class="ph-lines" data-ph="1" style="min-width:200px"></div></div></div>
+          <div class="contato-linha"><span class="icone"><span data-icone="relogio"></span></span><div><h4>Horário de atendimento</h4><div class="ph-lines" data-ph="2" style="min-width:200px"></div></div></div>
+        </div>
+        <form class="form revelar" data-atraso="1" onsubmit="event.preventDefault()">
+          <span class="sobretitulo">Envie uma mensagem</span>
+          <div class="linha2">
+            <div class="campo"><label for="c-nome">Nome</label><input id="c-nome" type="text" autocomplete="name"></div>
+            <div class="campo"><label for="c-email">E-mail</label><input id="c-email" type="email" autocomplete="email"></div>
+          </div>
+          <div class="campo"><label for="c-assunto">Assunto</label><select id="c-assunto"><option>Informações</option><option>Pedido de oração</option><option>Eventos</option><option>Outro</option></select></div>
+          <div class="campo"><label for="c-msg">Mensagem</label><textarea id="c-msg"></textarea></div>
+          <p class="aviso">Formulário ainda sem envio configurado.</p>
+          <div><button class="btn btn--primario" type="submit">Enviar mensagem <span data-icone="seta"></span></button></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="secao secao--degrade">
+      <div class="container citacao revelar">
+        <span class="sobretitulo sobretitulo--claro" style="justify-content:center">Pedido de oração</span>
+        <h2>Rezamos por você</h2>
+        <div class="ph-lines" data-ph="2"></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-rodape></div>
+  <script src="assets/js/dados.js"></script>
+  <script src="assets/js/marca.js"></script>
+</body>
+</html>

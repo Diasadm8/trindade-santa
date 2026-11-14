@@ -1,0 +1,24 @@
+# Material de trabalho: NÃO publicar (o GitHub Pages torna público tudo o que está no repositório)
+imagens/
+conteudo/
+
+# Arquivos internos e anotações de trabalho
+PENDENCIAS.md
+PERGUNTAS.md
+PESQUISA.md
+GRUPOS-FICHAS.md
+LOGOS-FALTANTES.md
+
+# Qualquer coisa privada (Regra de Vida e afins) nunca entra no site
+privado/
+*.pdf.txt
+Regra*
+*REGRA*
+
+# Ferramentas e sistema
+node_modules/
+.claude/
+.vscode/
+Thumbs.db
+.DS_Store
+*.log

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faça parte · Trindade Santa</title>
+  <meta name="theme-color" content="#0b4ea2">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div data-cabecalho="transparente"></div>
+
+  <main id="conteudo">
+    <section class="page-hero">
+      <div class="page-hero__marca" aria-hidden="true"><span data-selo="espirito"></span></div>
+      <div class="container">
+        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Faça parte</span></nav>
+        <span class="sobretitulo sobretitulo--claro">Vocação</span>
+        <h1>Faça parte desta aliança</h1>
+        <div class="ph-lines" data-ph="2"></div>
+      </div>
+    </section>
+
+    <!-- Formas de participar -->
+    <section class="secao" style="padding-top: 40px">
+      <div class="container">
+        <div class="secao__topo secao__topo--centro revelar">
+          <span class="sobretitulo">Como participar</span>
+          <h2>Formas de pertença</h2>
+          <div class="ph-lines" data-ph="2"></div>
+        </div>
+        <div class="grade grade--3">
+          <article class="pilar pilar--pai revelar" data-atraso="1"><span data-selo="pai"></span><h3>Forma 1</h3><div class="ph-lines" data-ph="3"></div></article>
+          <article class="pilar pilar--filho revelar" data-atraso="2"><span data-selo="filho"></span><h3>Forma 2</h3><div class="ph-lines" data-ph="3"></div></article>
+          <article class="pilar pilar--espirito revelar" data-atraso="3"><span data-selo="espirito"></span><h3>Forma 3</h3><div class="ph-lines" data-ph="3"></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Caminho vocacional -->
+    <section class="secao secao--nevoa">
+      <div class="container">
+        <div class="secao__topo secao__topo--centro revelar">
+          <span class="sobretitulo">Caminho vocacional</span>
+          <h2>Passo a passo</h2>
+        </div>
+        <div class="passos">
+          <div class="passo revelar" data-atraso="1"><span class="passo__num"></span><h3>Etapa</h3><div class="ph-lines" data-ph="3"></div></div>
+          <div class="passo revelar" data-atraso="2"><span class="passo__num"></span><h3>Etapa</h3><div class="ph-lines" data-ph="3"></div></div>
+          <div class="passo revelar" data-atraso="3"><span class="passo__num"></span><h3>Etapa</h3><div class="ph-lines" data-ph="3"></div></div>
+          <div class="passo revelar" data-atraso="1"><span class="passo__num"></span><h3>Etapa</h3><div class="ph-lines" data-ph="3"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulário de interesse -->
+    <section class="secao">
+      <div class="container dividido" style="align-items:start">
+        <div class="revelar">
+          <span class="sobretitulo">Primeiro contato</span>
+          <h2>Quero conhecer</h2>
+          <div class="ph-lines" data-ph="4"></div>
+          <div class="ph-img" data-img="filho" style="--proporcao: 16/10"></div>
+        </div>
+        <form class="form revelar" data-atraso="1" onsubmit="event.preventDefault()">
+          <div class="campo"><label for="f-nome">Nome completo</label><input id="f-nome" type="text" autocomplete="name"></div>
+          <div class="linha2">
+            <div class="campo"><label for="f-email">E-mail</label><input id="f-email" type="email" autocomplete="email"></div>
+            <div class="campo"><label for="f-tel">WhatsApp</label><input id="f-tel" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="linha2">
+            <div class="campo"><label for="f-cidade">Cidade</label><input id="f-cidade" type="text" autocomplete="address-level2"></div>
+            <div class="campo"><label for="f-int">Tenho interesse em</label><select id="f-int"><option>Conhecer a comunidade</option><option>Participar de um grupo</option><option>Discernimento vocacional</option></select></div>
+          </div>
+          <div class="campo"><label for="f-msg">Conte um pouco sobre você</label><textarea id="f-msg"></textarea></div>
+          <p class="aviso">Formulário ainda sem envio configurado — vamos definir para onde as respostas devem ir.</p>
+          <div><button class="btn btn--primario" type="submit">Enviar <span data-icone="seta"></span></button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-rodape></div>
+  <script src="assets/js/dados.js"></script>
+  <script src="assets/js/marca.js"></script>
+</body>
+</html>
