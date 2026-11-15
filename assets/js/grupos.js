@@ -11,6 +11,8 @@
 
   const ESTADOS_ATIVOS = ['RJ', 'MG'];
   const ZOOM_MUNICIPIOS = 7;
+  const ZOOM_PINOS = 5.5;     // a partir daqui os pinos com a logo de cada grupo aparecem
+  const ZOOM_NOMES = 6.5;     // e, mais perto, o nome de cada cidade
   const normalizar = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
   const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
   const COR = { profundo: css('--azul-profundo'), celeste: css('--azul-celeste'), bruma: css('--bruma'), mar: css('--azul-mar') };
@@ -175,13 +177,18 @@
   });
 
   /* Pontos dos grupos (surgem ao aproximar) */
-  const iconePino = qtd => L.divIcon({
-    className: 'ponto-grupo',
-    html: `<span class="ponto-grupo__pulso"></span><span class="ponto-grupo__pino">${simbolo('filho')}</span>${qtd > 1 ? `<span class="ponto-grupo__qtd">${qtd}</span>` : ''}`,
-    iconSize: [40, 48], iconAnchor: [20, 46]
-  });
+  /* pino redondo com a logo do grupo (da sede, se houver) e o nome da cidade embaixo */
+  const iconePino = c => {
+    const qtd = c.grupos.length;
+    const g = c.grupos.find(x => x.logo && /sede/i.test(x.tipo)) || c.grupos.find(x => x.logo) || c.grupos[0];
+    return L.divIcon({
+      className: 'ponto-grupo',
+      html: `<span class="ponto-grupo__pulso"></span><span class="ponto-grupo__pino">${logoHtml(g, 40)}</span>${qtd > 1 ? `<span class="ponto-grupo__qtd">${qtd}</span>` : ''}<span class="ponto-grupo__nome">${escapar(c.feature.properties.nome)}</span>`,
+      iconSize: [130, 80], iconAnchor: [65, 56]
+    });
+  };
   const camadaPontos = L.layerGroup([...cidades.values()].map(c =>
-    L.marker(c.feature.properties.centro, { icon: iconePino(c.grupos.length), interactive: false, pane: 'markerPane' })));
+    L.marker(c.feature.properties.centro, { icon: iconePino(c), interactive: false, pane: 'markerPane' })));
 
   /* Bolhas com contagem por estado (visão afastada) */
   const contagemUF = ESTADOS_ATIVOS.map(uf => {
@@ -196,17 +203,23 @@
   /* Troca de camadas conforme o zoom, com transição */
   const palco = document.querySelector('.mapa-palco');
   function atualizarCamadas() {
-    const perto = mapa.getZoom() >= ZOOM_MUNICIPIOS;
+    const z = mapa.getZoom();
+    const perto = z >= ZOOM_MUNICIPIOS;
+    const comPinos = z >= ZOOM_PINOS;
     palco.classList.toggle('is-perto', perto);
+    palco.classList.toggle('is-nomes', z >= ZOOM_NOMES);
     if (perto) {
       if (!mapa.hasLayer(camadaMunicipios)) camadaMunicipios.addTo(mapa);
+    } else {
+      // municípios saem depois do fade
+      setTimeout(() => mapa.getZoom() < ZOOM_MUNICIPIOS && mapa.removeLayer(camadaMunicipios), 500);
+    }
+    if (comPinos) {
       if (!mapa.hasLayer(camadaPontos)) camadaPontos.addTo(mapa);
       mapa.removeLayer(camadaBolhas);
     } else {
       mapa.removeLayer(camadaPontos);
       if (!mapa.hasLayer(camadaBolhas)) camadaBolhas.addTo(mapa);
-      // municípios saem depois do fade
-      setTimeout(() => mapa.getZoom() < ZOOM_MUNICIPIOS && mapa.removeLayer(camadaMunicipios), 500);
     }
   }
   mapa.on('zoomend', atualizarCamadas);
@@ -252,9 +265,16 @@
   /* Abertura: mostra o Brasil e voa até RJ + MG */
   const reduzido = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const margemPainel = () => innerWidth > 860 ? 330 : 20; // espaço do painel flutuante
-  const voar = () => !interagiu && mapa.flyToBounds(regiao, {
-    paddingTopLeft: [margemPainel(), 40], paddingBottomRight: [80, 40], duration: reduzido ? 0 : 2.4
-  });
+  /* no celular a tela é estreita: abre em RJ (onde estão quase todos os grupos), para os pinos aparecerem */
+  const centrosRJ = L.latLngBounds([...cidades.values()].filter(c => c.feature.properties.uf === 'RJ').map(c => c.feature.properties.centro));
+  const voar = () => {
+    if (interagiu) return;
+    if (estreito() && centrosRJ.isValid()) {   // celular: enquadra as cidades com grupo no RJ, para os pinos ficarem legíveis
+      mapa.flyToBounds(centrosRJ, { paddingTopLeft: [50, 110], paddingBottomRight: [50, 80], maxZoom: 9, duration: reduzido ? 0 : 2.4 });
+    } else {
+      mapa.flyToBounds(regiao, { paddingTopLeft: [margemPainel(), 40], paddingBottomRight: [80, 40], duration: reduzido ? 0 : 2.4 });
+    }
+  };
   /* Link direto para uma cidade: grupos.html?cidade=Itaperuna */
   const pedida = new URLSearchParams(location.search).get('cidade');
   const cidadePedida = pedida && [...cidades.values()].find(c => normalizar(c.feature.properties.nome) === normalizar(pedida));
