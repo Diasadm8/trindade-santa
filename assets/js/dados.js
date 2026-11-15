@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    DADOS DO SITE — edite aqui para atualizar o conteúdo.
    Nada de programação: basta copiar um bloco e alterar.
    Itens marcados com  ⚠ confirmar  vieram de pesquisa pública
@@ -93,7 +93,7 @@ const HISTORIA = {
 
 /* ---------- Fundador ---------- */
 const FUNDADOR = {
-  nome: 'Reginaldo Braz de Carvalho',
+  nome: 'Reginaldo Braz',
   papel: 'Fundador',
   foto: 'reginaldo.jpg',   // assets/img/fundador/
   frase: 'Ver a missão que nasceu de um punhado de jovens rezando agora vestida por tanta gente é a alegria de uma vida. Cada camisa que sai daqui carrega a mesma chama do começo.',
