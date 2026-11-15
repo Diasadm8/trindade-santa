@@ -82,18 +82,42 @@
 
   if (toque) {
     const palcoMapa = document.querySelector('.mapa-palco');
+    const el = mapa.getContainer();
     const aviso = document.createElement('div');
     aviso.className = 'mapa-aviso-toque';
     aviso.setAttribute('aria-hidden', 'true');
     aviso.textContent = 'Use dois dedos para mover o mapa';
-    palcoMapa.appendChild(aviso);
+    el.appendChild(aviso);          // dentro do mapa, para não cobrir a lista de cidades
     let tempo;
-    const el = mapa.getContainer();
     el.addEventListener('touchstart', e => {
       clearTimeout(tempo);
       if (e.touches.length === 1) { palcoMapa.classList.add('mostra-aviso'); tempo = setTimeout(() => palcoMapa.classList.remove('mostra-aviso'), 1400); }
       else palcoMapa.classList.remove('mostra-aviso');
     }, { passive: true });
+  }
+
+  /* Celular: a ficha da cidade abre numa gaveta na base do mapa (o balão do Leaflet ficava cortado) */
+  const estreito = () => matchMedia('(max-width: 860px)').matches;
+  const folha = document.createElement('div');
+  folha.className = 'mapa-folha';
+  folha.hidden = true;
+  folha.setAttribute('role', 'dialog');
+  folha.setAttribute('aria-label', 'Grupos da cidade');
+  mapa.getContainer().appendChild(folha);
+  L.DomEvent.disableClickPropagation(folha);
+  L.DomEvent.disableScrollPropagation(folha);
+  const fecharFolha = () => { folha.hidden = true; };
+  folha.addEventListener('click', e => { if (e.target.closest('.mapa-folha__x')) fecharFolha(); });
+  mapa.on('click', fecharFolha);
+  let interagiu = false;           // se a pessoa já escolheu uma cidade, a animação de abertura não a desfaz
+  function abrirFicha(c) {
+    interagiu = true;
+    folha.innerHTML = `<button type="button" class="mapa-folha__x" aria-label="Fechar">×</button>${fichaCidade(c.feature.properties, c)}`;
+    folha.hidden = false;
+    folha.scrollTop = 0;
+    // centraliza a cidade na metade de cima do mapa, acima da gaveta
+    const alvo = mapa.unproject(mapa.project(c.feature.properties.centro, 9).add([0, mapa.getSize().y * .22]), 9);
+    mapa.flyTo(alvo, 9, { duration: .9 });
   }
 
   /* Estados */
@@ -141,6 +165,7 @@
       if (c) {
         layer.on('click', () => {
           layer.closeTooltip();
+          if (estreito()) { abrirFicha(c); return; }
           layer.openPopup(c.feature.properties.centro);
           if (mapa.getZoom() < 8.5) mapa.flyTo(c.feature.properties.centro, 9, { duration: 1.2 });
         });
@@ -210,6 +235,11 @@
       const li = document.createElement('li');
       li.innerHTML = `<button type="button">${c.grupos.find(g => g.logo) ? logoHtml(c.grupos.find(g => g.logo), 38) : selo('filho')}<span><strong>${c.feature.properties.nome}</strong><small>${c.feature.properties.uf} · ${c.grupos.length} ${c.grupos.length === 1 ? 'grupo' : 'grupos'}</small></span></button>`;
       li.querySelector('button').addEventListener('click', () => {
+        if (estreito()) {
+          mapa.getContainer().scrollIntoView({ block: 'start', behavior: 'smooth' });
+          abrirFicha(c);
+          return;
+        }
         mapa.flyTo(c.feature.properties.centro, 9, { duration: 1.6 });
         mapa.once('moveend', () => {
           const layer = camadaMunicipios.getLayers().find(l => l.feature.properties.cod === c.feature.properties.cod);
@@ -222,7 +252,7 @@
   /* Abertura: mostra o Brasil e voa até RJ + MG */
   const reduzido = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const margemPainel = () => innerWidth > 860 ? 330 : 20; // espaço do painel flutuante
-  const voar = () => mapa.flyToBounds(regiao, {
+  const voar = () => !interagiu && mapa.flyToBounds(regiao, {
     paddingTopLeft: [margemPainel(), 40], paddingBottomRight: [80, 40], duration: reduzido ? 0 : 2.4
   });
   /* Link direto para uma cidade: grupos.html?cidade=Itaperuna */
