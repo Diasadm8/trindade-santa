@@ -3,8 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Associação Trindade Santa: a comunidade organizada para servir. Saiba como doar e apoiar a evangelização e os serviços sociais.">
   <title>Ação Social e Doações · Trindade Santa</title>
   <meta name="theme-color" content="#0b4ea2">
+  <link rel="canonical" href="https://diasadm8.github.io/trindade-santa/social.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Comunidade de Aliança Trindade Santa">
+  <meta property="og:title" content="Ação Social e Doações · Trindade Santa">
+  <meta property="og:description" content="Associação Trindade Santa: a comunidade organizada para servir. Saiba como doar e apoiar a evangelização e os serviços sociais.">
+  <meta property="og:url" content="https://diasadm8.github.io/trindade-santa/social.html">
+  <meta property="og:image" content="https://diasadm8.github.io/trindade-santa/assets/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,8 +117,18 @@
         if (!DOACAO.chavePix) { document.querySelector('.pix__chave').style.display = 'none'; }
       }
 
+      /* Sem chave nem QR cadastrados: mostra só o formulário de doação (nada de "a definir" no ar) */
+      if (!DOACAO.chavePix && !DOACAO.qrCode) {
+        document.querySelector('.pix').classList.add('pix--sem-chave');
+        qr.remove();
+        document.querySelector('.pix__chave').remove();
+        document.querySelector('#pix p').textContent = 'Para doar, use o formulário de doação da Associação Trindade Santa. Qualquer valor é bem-vindo.';
+        const f = document.querySelector('[data-pix-form]');
+        f.className = 'btn btn--amarelo'; f.innerHTML = 'Abrir formulário de doação ' + icone('seta');
+      }
+
       const ok = document.querySelector('[data-pix-ok]');
-      document.querySelector('[data-copiar]').addEventListener('click', async () => {
+      document.querySelector('[data-copiar]')?.addEventListener('click', async () => {
         if (!DOACAO.chavePix) { ok.textContent = 'A chave PIX ainda não foi cadastrada. Use o formulário abaixo.'; return; }
         try { await navigator.clipboard.writeText(DOACAO.chavePix); ok.textContent = 'Chave copiada! Deus lhe pague.'; }
         catch { ok.textContent = 'Selecione e copie a chave manualmente.'; }

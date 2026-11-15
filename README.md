@@ -36,3 +36,18 @@ npx http-server -p 5500
 1. Crie um repositório no GitHub e envie estes arquivos.
 2. Em **Settings → Pages**, escolha *Deploy from a branch* → `main` / `(root)`.
 3. Quando migrar para o domínio `.org`, crie um arquivo `CNAME` com o domínio e configure o DNS.
+
+## Ao trocar para o domínio próprio (.org)
+
+O endereço `https://diasadm8.github.io/trindade-santa/` está escrito em alguns lugares. Troque pelo novo domínio em:
+
+- `<link rel="canonical">` e `og:url` / `og:image` no topo de cada página `.html`
+- `sitemap.xml` e `robots.txt`
+- `404.html`: a linha `<base href="/trindade-santa/">` vira `<base href="/">`
+
+## Itens legais e de privacidade
+
+- `privacidade.html`: política de privacidade e cookies (LGPD). O site não usa cookies nem rastreamento; só guarda no navegador as escolhas de acessibilidade.
+- `termos.html`: termos de uso (conteúdo, imagens, doações, links externos).
+- `acessibilidade.html`: recursos de acessibilidade e como pedir correções.
+- Se um dia o site ganhar formulário próprio, Google Analytics, Meta Pixel ou vídeos incorporados, atualize a política e avalie um aviso de cookies.

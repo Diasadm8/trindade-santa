@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://diasadm8.github.io/trindade-santa/sitemap.xml

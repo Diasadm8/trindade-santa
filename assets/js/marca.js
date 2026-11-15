@@ -206,7 +206,8 @@ function montarRodape() {
         </div>
       </div>
       <div class="footer__base">
-        <span>© ${ano} Comunidade de Aliança Trindade Santa</span>
+        <span>© ${ano} ${COMUNIDADE.associacao.nome} · CNPJ ${COMUNIDADE.associacao.cnpj} · ${COMUNIDADE.cidade}</span>
+        <nav class="footer__legal" aria-label="Informações legais"><a href="privacidade.html">Privacidade e cookies</a><a href="termos.html">Termos de uso</a><a href="acessibilidade.html">Acessibilidade</a></nav>
         <span>Ad maiorem Dei gloriam</span>
       </div>
     </div>

@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    DADOS DO SITE — edite aqui para atualizar o conteúdo.
    Nada de programação: basta copiar um bloco e alterar.
    Itens marcados com  ⚠ confirmar  vieram de pesquisa pública
@@ -146,6 +146,7 @@ const ARQUIVO = [
 /* ---------- Links oficiais (vieram do Linktree da comunidade) ---------- */
 const LINKS = {
   instagram: 'https://www.instagram.com/ctrindadesanta',
+  instagramDireto: 'https://ig.me/m/ctrindadesanta',
   youtube: 'https://www.youtube.com/@comunidadetrindadesanta8024',
   canalWhatsapp: 'https://www.whatsapp.com/channel/0029VaWVUWRHrDZnl2qd7o1G',
   ouvir: 'https://onerpm.link/110216026245',

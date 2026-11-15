@@ -185,3 +185,9 @@ html.ac-contraste .ac-int[aria-checked="true"] .ac-int__chave { background: #ffe
 html.ac-contraste img, html.ac-contraste video { filter: none; }
 
 @media (max-width: 1180px) { .header .menu-toggle { order: 10; } .ac-botoes { margin-right: 4px; } }
+
+html[data-tema="escuro"] .legal { background: #081428; }
+html[data-tema="escuro"] .legal__corpo { --ts-azul: #8dbcff; --ts-noite: #e9f1fc; --azul-profundo: #9cc9ff; }
+html[data-tema="escuro"] .contato-direto { background: #0f2142; }
+html.ac-contraste .legal, html.ac-contraste .contato-direto { background: #000; }
+html[data-tema="escuro"] :is(.voc-passo--pai, .voc-passo--espirito), html.ac-contraste :is(.voc-passo--pai, .voc-passo--espirito) { --ts-azul: #2a6fc9; --ts-noite: #071937; --azul-profundo: #0b4ea2; }
