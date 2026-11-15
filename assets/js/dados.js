@@ -369,7 +369,7 @@ const GRUPOS = [
   { cidade: 'Santa Maria Madalena', uf: 'RJ', nome: 'Grupo Jovem Águas Profundas', tipo: 'Grupo jovem', ig: 'aguasprofundas.smm',
     frase: 'Temos sede do amor de Deus', encontro: '', local: 'Paróquia de Santa Maria Madalena', logo: 'aguas-profundas.jpg' },
   { cidade: 'Macuco', uf: 'RJ', nome: 'Aviva Jovem Macuco', tipo: 'Grupo jovem (Aviva Jovem)', ig: 'avivajovemmacuco',
-    frase: '', encontro: '', local: '', logo: '' }   // Logo do Aviva Jovem pendente (macuco.png é o logo "Macuco, te quero Santa")
+    frase: '', encontro: '', local: '', logo: 'macuco.png' }   // ⚠ macuco.png é o logo "Macuco, te quero Santa", não o do Aviva Jovem
   ,
   { cidade: 'Espera Feliz', uf: 'MG', nome: 'G.O. Reconstrução', tipo: 'Grupo de oração', ig: 'goreconstrucao',
     frase: 'Vem, a casa é nossa!', encontro: 'Quartas, 19h30', local: 'Salão da Matriz São Sebastião', logo: 'reconstrucao.png' }
