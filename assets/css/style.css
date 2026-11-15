@@ -726,7 +726,8 @@ p { margin: 0 0 1em; }
 }
 #mapa { position: absolute; inset: 0; background: transparent; font-family: var(--fonte-texto); }
 #mapa:focus { outline: none; }
-.leaflet-container { background: transparent; cursor: default; }
+.leaflet-container { background: transparent; cursor: grab; }
+.leaflet-dragging .leaflet-container, .leaflet-dragging .leaflet-interactive { cursor: grabbing; }
 .leaflet-pane > svg { max-width: none !important; max-height: none !important; } /* desfaz o "svg {max-width:100%}" global */
 
 /* estados e municípios com transições suaves */

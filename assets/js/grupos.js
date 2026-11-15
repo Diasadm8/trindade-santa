@@ -1,7 +1,7 @@
 /* =========================================================
    GRUPOS — mapa ilustrado do Brasil (sem imagem de satélite)
    • Abre mostrando o Brasil e voa até RJ e MG
-   • Só é possível aproximar/afastar (não arrasta para outras áreas)
+   • Arrasta (mouse ou dedo), zoom por roda, pinça e botões
    • Ao aproximar, os municípios e os pontos dos grupos surgem
    • Passar o mouse numa cidade mostra os grupos dela
    Contornos: malhas oficiais do IBGE (assets/data).
@@ -64,14 +64,15 @@
   const mapa = L.map('mapa', {
     zoomControl: false,
     attributionControl: false,
-    dragging: false,          // não arrasta: só aproxima/afasta
-    keyboard: false,
+    dragging: true,           // arrasta com o mouse ou com o dedo
+    inertia: true,
+    keyboard: true,
     boxZoom: false,
     zoomSnap: 0.25,
     zoomDelta: 0.75,
     wheelPxPerZoomLevel: 90,
     maxBounds: limitesBrasil.pad(0.05),
-    maxBoundsViscosity: 1,
+    maxBoundsViscosity: .85,
     maxZoom: 11
   });
   mapa.fitBounds(limitesBrasil, { padding: [20, 20], animate: false });
