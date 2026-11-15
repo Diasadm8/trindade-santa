@@ -230,7 +230,6 @@ const EVENTOS_ESPECIAIS = {
       'A Noite Oracional Como Deus acontece todo ano: uma noite inteira de oração com os três arcanjos, Miguel, Gabriel e Rafael, e com missionários católicos conhecidos.',
       'O nome ecoa o de São Miguel, que quer dizer “Quem como Deus?”, a mesma pergunta que está no selo do evento.'
     ],
-    fundo: 'noite2025/13|noite2025/04+noite2025/10|noite2025/01|noite2025/07+noite2025/16|noite2025/05|noite2025/11',
     cenas: ['noite2025/04','noite2025/13','noite2025/01','noite2025/10','noite2025/07','noite2025/16','noite2025/11','noite2025/05','noite2025/17','noite2025/18','noite2025/12','noite2025/09','noite2025/02','noite2025/15'],
     foto: 'assets/eventos/noite-oracional-banner.jpg', fotoLegenda: 'Arte de divulgação da Noite Oracional',
     logo: 'noite-oracional.png', banner: 'noite-oracional-banner.jpg',
@@ -270,7 +269,6 @@ const EVENTOS_ESPECIAIS = {
         { nome: 'DJ Rapha', sub: 'Trindade Santa' }
       ]
     },
-    fundo: 'louvor/09|louvor/03+louvor/11|louvor/06|louvor/10+louvor/07|louvor/04|louvor/01',
     cenas: ['louvor/03','louvor/06','louvor/10','louvor/09','louvor/04','louvor/11','louvor/07','louvor/01','louvor/02','louvor/05'],
     fotos: 'seta-',   // fotos de arquivo (ARQUIVO) cujo arquivo começa com "seta-"
     /* Edições anteriores (cartazes). Ano deduzido do dia da semana de cada data ⚠ confirmar */

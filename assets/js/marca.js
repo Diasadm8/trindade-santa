@@ -202,21 +202,7 @@ function montarRodape() {
 }
 
 /* ---------- Preenche placeholders declarativos ---------- */
-/* Fundo de fotos em mosaico: data-fundo="oracao/15|partilha/01+noite2025/13|louvor/03"
-   "|" separa colunas, "+" empilha duas fotos na mesma coluna. O véu azul fica no CSS (.fundo-fotos). */
-function fundosDeFotos(raiz = document) {
-  raiz.querySelectorAll('[data-fundo]').forEach(el => {
-    const modo = el.matches('.page-hero, .ev-hero') ? 'eager' : 'lazy';
-    const colunas = el.dataset.fundo.split('|').map(c => c.split('+').map(f =>
-      `<img src="assets/img/fotos/${f}.jpg" alt="" loading="${modo}" decoding="async">`).join('')).map(h => `<div>${h}</div>`).join('');
-    el.insertAdjacentHTML('afterbegin', `<div class="fundo-fotos" aria-hidden="true">${colunas}</div>`);
-    el.classList.add('com-fotos');
-    el.removeAttribute('data-fundo');
-  });
-}
-
 function preencherMarcadores(raiz = document) {
-  fundosDeFotos(raiz);
   /* <span data-selo="pai" class="..."></span> → selo completo */
   raiz.querySelectorAll('[data-selo]').forEach(el => {
     const nome = el.dataset.selo;

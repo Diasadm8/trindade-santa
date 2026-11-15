@@ -104,7 +104,7 @@
   ].filter(Boolean);
 
   alvo.innerHTML = `
-    <section class="ev-hero${ev.banner && !ev.fundo ? ' ev-hero--banner' : ''}"${ev.fundo ? ` data-fundo="${ev.fundo}"` : ''}${ev.banner && !ev.fundo ? ` style="--banner:url('${new URL('assets/eventos/' + ev.banner, location.href).href}')"` : ''}>
+    <section class="ev-hero${ev.banner ? ' ev-hero--banner' : ''}"${ev.banner ? ` style="--banner:url('${new URL('assets/eventos/' + ev.banner, location.href).href}')"` : ''}>
       <div class="ev-hero__raios" aria-hidden="true"></div>
       <div class="ev-hero__aneis" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="container ev-hero__conteudo">

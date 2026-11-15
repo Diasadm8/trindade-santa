@@ -1605,36 +1605,7 @@ body.pagina-imersiva:has(.itin.is-ativo) .itin-meses { opacity: 1; pointer-event
   transition: transform .5s var(--ease), box-shadow .5s var(--ease), filter .5s;
 }
 .momentos img:hover { transform: translateY(-4px) scale(1.015); box-shadow: var(--sombra-forte); filter: none; }
-/* ===== Fundo de fotos em mosaico com véu azul (texto por cima) ===== */
-.com-fotos { position: relative; isolation: isolate; overflow: hidden; }
-.fundo-fotos { position: absolute; inset: 0; z-index: -1; display: flex; gap: 3px; background: #06193a; }
-.fundo-fotos > div { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
-.fundo-fotos img { flex: 1 1 0; min-height: 0; width: 100%; object-fit: cover; display: block; filter: grayscale(.35) contrast(1.08) brightness(.9); }
-.fundo-fotos::after {
-  content: ""; position: absolute; inset: 0;
-  background:
-    linear-gradient(100deg, rgba(5,22,54,.82) 0%, rgba(8,52,118,.42) 45%, rgba(11,78,162,.12) 100%),
-    linear-gradient(0deg, rgba(5,22,54,.45), transparent 35%);
-}
-.fundo-fotos img { filter: contrast(1.05) brightness(.95); }
-@media (max-width: 760px) { .fundo-fotos > div:nth-child(n+4) { display: none; } }
-.ev-hero.com-fotos .fundo-fotos::after { background: linear-gradient(180deg, color-mix(in srgb, var(--e-escuro) 55%, transparent), color-mix(in srgb, var(--e-principal) 30%, transparent) 50%, color-mix(in srgb, var(--e-escuro) 70%, transparent)); }
-.ev-hero.com-fotos .ev-hero.com-fotos .ev-hero__raios, .ev-hero.com-fotos .ev-hero__aneis { z-index: 0; }
-/* Galeria "bento": fotos em blocos de tamanhos variados, azuladas em repouso e em cor ao passar o mouse */
-.cenas { display: grid !important; columns: auto !important; grid-template-columns: repeat(6, 1fr); grid-auto-rows: clamp(120px, 16vw, 230px); grid-auto-flow: dense; gap: 10px; }
-.cenas img { margin: 0 !important; height: 100%; object-fit: cover; filter: grayscale(.55) sepia(.2) hue-rotate(185deg) saturate(1.6) brightness(.92); transition: filter .6s var(--ease), transform .6s var(--ease); }
-.cenas img:hover { filter: none; transform: scale(1.015); z-index: 1; position: relative; }
-.cenas img:nth-child(6n+1) { grid-column: span 3; grid-row: span 2; }
-.cenas img:nth-child(6n+2), .cenas img:nth-child(6n+3) { grid-column: span 3; }
-.cenas img:nth-child(6n+4) { grid-column: span 2; }
-.cenas img:nth-child(6n+5) { grid-column: span 2; grid-row: span 2; }
-.cenas img:nth-child(6n) { grid-column: span 2; }
-@media (max-width: 700px) { .cenas { grid-template-columns: repeat(2, 1fr); } .cenas img { grid-column: auto !important; grid-row: auto !important; } .cenas img:nth-child(3n+1) { grid-column: span 2 !important; } }
-.page-hero.com-fotos { background: #06193a; }
-.page-hero.com-fotos .page-hero__marca { z-index: 0; opacity: .12; }
-.faixa-mosaico { padding-block: clamp(90px, 12vw, 170px); }
-.faixa-mosaico .container { max-width: 760px; margin-inline: 0 auto; padding-left: clamp(20px, 7vw, 120px); display: block; }
-/* Mosaico de fotos ao lado do texto (substituído pelo fundo acima) */
+/* Mosaico de fotos ao lado do texto (opção B aprovada) */
 .mosaico { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(6, clamp(70px, 8vw, 120px)); gap: 12px; }
 .mosaico img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; display: block; box-shadow: 0 20px 40px -20px #000; }
 .mosaico img:nth-child(1) { grid-row: 1 / 5; }
