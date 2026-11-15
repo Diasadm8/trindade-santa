@@ -98,9 +98,9 @@ const FUNDADOR = {
   foto: 'reginaldo.jpg',   // assets/img/fundador/
   frase: 'Ver a missão que nasceu de um punhado de jovens rezando agora vestida por tanta gente é a alegria de uma vida. Cada camisa que sai daqui carrega a mesma chama do começo.',
   sim: 'Eu quero a Comunidade. Eu sou Comunidade.',
-  /* Texto escrito a partir do relato de 2007, do site antigo e do cartaz do SETA 2026 */
+  /* Texto fornecido pelo usuário (revisado apenas na ortografia) */
   texto: [
-    'Reginaldo Braz de Carvalho é o fundador da Comunidade de Aliança Trindade Santa. Segue servindo e pregando, como no Congresso SETA de 2026.'
+    'Aquele que recebeu das mãos de Deus o nosso carisma trinitário, que desde muito jovem deu o seu sim e até hoje entrega sua vida diariamente à salvação das almas por meio do carisma Trindade Santa. É o homem que nos guia e nos ensina, com muita humildade e submissão a Deus. Difícil é descrever em poucas palavras o que esse homem significa para nós e o que o seu sim gerou.'
   ]
 };
 
