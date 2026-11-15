@@ -74,7 +74,7 @@ const HISTORIA = {
         texto: 'O ano de 2006 foi marcado por provações. Foi nele que os padres Leandro Diniz e Leandro Rabelo mencionaram, ou verbalizaram, uma voz que falava dentro do grupo, um desejo que ardia em seus corações. Em diferentes circunstâncias, muitas vezes se ouviu falar nisso, e a experiência já era cogitada entre eles. Mas nada foi tão inquietante quanto aquele momento.',
         citacao: 'Vocês não são chamados a viver em Comunidade?' },
       { ano: 'Dezembro de 2006', titulo: 'Eucaristia no Centro de Formação João Paulo II', simbolo: 'filho', foto: 'assets/img/arquivo/missa-2008-eucaristia.jpg',
-        presentes: ['Pe. Roger Luis', 'Pe. Edmilson', 'Diácono Roger', 'Servos do Nascer Jovem'],
+        presentes: ['Pe. Roger Luis', 'Pe. Edmilson', 'Servos do Nascer Jovem'],
         texto: 'Em dezembro de 2006, era ordenado o querido Pe. Roger Luis. Depois de muitas conversas e partilhas, o desejo de celebrar a Eucaristia levou o grupo ao Centro de Formação João Paulo II. Ali estavam o Pe. Edmilson, o diácono Roger e todos os servos do Nascer Jovem, e o Senhor lhes falou em profecia:',
         citacao: 'O ano 2007 será o ANO DA EDIFICAÇÃO.' }
     ] },
