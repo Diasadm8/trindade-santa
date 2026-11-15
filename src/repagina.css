@@ -173,6 +173,17 @@ p { text-wrap: pretty; }
 .c-amarelo { color: var(--ts-amarelo); } .c-laranja { color: var(--ts-laranja); } .c-rosa { color: var(--ts-rosa); }
 .c-verde { color: var(--ts-verde); } .c-lilas { color: var(--ts-lilas); } .c-branco { color: #fff; }
 .logo-projeto { height: clamp(64px, 8vw, 110px); width: auto; opacity: .95; }
+.projetos__cabeca { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: clamp(16px, 4vw, 48px); margin-bottom: clamp(40px, 6vw, 80px); }
+.projetos__texto h2 { font-size: clamp(3rem, 10vw, 9.5rem); color: var(--ts-amarelo); margin: 0; }
+.projetos__texto p { font-family: var(--display); font-variation-settings: "wdth" 80; font-weight: 700; text-transform: uppercase; font-size: clamp(1.1rem, 2vw, 1.6rem); letter-spacing: .02em; margin: .5em 0 0; }
+.projetos__papa { width: clamp(150px, 20vw, 300px); height: auto; filter: drop-shadow(0 24px 40px rgba(4,14,34,.45)); }
+.logo-chip { display: inline-flex; align-items: center; justify-content: center; flex: none; box-sizing: border-box; height: clamp(88px, 8.5vw, 120px); min-width: clamp(120px, 13vw, 170px); padding: 14px 20px; background: #fff; border-radius: 14px; }
+.logo-chip img { max-height: 100%; max-width: 100%; width: auto; height: auto; object-fit: contain; }
+.logo-chip--texto { font-family: var(--display); font-variation-settings: "wdth" 75; font-weight: 800; text-transform: uppercase; color: var(--ts-noite); font-size: clamp(1.1rem, 1.8vw, 1.5rem); white-space: nowrap; }
+@media (max-width: 760px) {
+  .projetos__cabeca { grid-template-columns: 1fr; }
+  .projetos__papa { justify-self: end; width: clamp(130px, 40vw, 190px); margin-top: -10px; }
+}
 .projetos__acao { text-align: center; margin-top: clamp(40px, 6vw, 70px); }
 
 /* ---------- Início: as três Pessoas em painéis de foto ---------- */
