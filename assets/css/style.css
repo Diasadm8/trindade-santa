@@ -1537,9 +1537,9 @@ body.pagina-imersiva:has(.itin.is-ativo) .itin-meses { opacity: 1; pointer-event
 @keyframes hist-pulso { from { transform: scale(1); opacity: .9; } to { transform: scale(2.2); opacity: 0; } }
 
 /* frase em destaque (as palavras ditas, como no original) */
-.hist__destaque { position: relative; z-index: 2; margin: 6px auto clamp(52px, 7vw, 90px); padding: 30px clamp(22px, 5vw, 56px) 26px; max-width: 760px; text-align: center;
+.hist__destaque { position: relative; z-index: 2; margin: 6px auto clamp(52px, 7vw, 90px); padding: 44px clamp(22px, 5vw, 56px) 26px; max-width: 760px; text-align: center;
   background: rgba(5,19,38,.9); border-top: 1px solid rgba(230,196,115,.5); border-bottom: 1px solid rgba(230,196,115,.5); }
-.hist__destaque::before { content: "“"; position: absolute; left: 50%; top: -34px; translate: -50% 0; font-family: var(--fonte-titulo); font-size: 5rem; line-height: 1; color: var(--ouro); background: var(--noite); padding: 0 16px; }
+.hist__destaque::before { content: "“"; position: absolute; left: 50%; top: -30px; transform: translateX(-50%); font-family: var(--fonte-titulo); font-size: 4.2rem; line-height: 1; height: 44px; overflow: hidden; color: var(--ouro); background: var(--noite); padding: 0 16px; }
 .hist__destaque p { margin: 0 0 12px; font-family: var(--fonte-titulo); font-size: clamp(1.45rem, 3.4vw, 2.3rem); line-height: 1.3; color: #fff; }
 .hist__destaque footer { font-family: var(--fonte-versal); font-size: .78rem; letter-spacing: .28em; text-transform: uppercase; color: var(--ouro); }
 .hist .hist__destaque.revelar { clip-path: inset(0 50% 0 50%); opacity: 1; transform: none; transition: clip-path 1.3s var(--ease); }
@@ -1566,7 +1566,7 @@ body.pagina-imersiva:has(.itin.is-ativo) .itin-meses { opacity: 1; pointer-event
   .hist .hist__marco.revelar.is-visivel { transform: rotate(0deg); }
   .hist__ato { justify-self: start; margin-left: 0; }
   .hist__destaque { margin-left: 34px; margin-right: 0; text-align: left; }
-  .hist__destaque::before { left: 40px; }
+  .hist__destaque::before { left: 52px; }
   .hist__ano-fixo span { -webkit-text-stroke-width: 1.5px; }
 }
 @media (prefers-reduced-motion: reduce) {
