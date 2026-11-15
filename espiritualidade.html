@@ -107,25 +107,61 @@
       </div>
     </section>
     <!-- ===== MÃE DO INFINITO AMOR ===== -->
-    <section class="maria" id="maria">
-      <div class="maria__estrelas" aria-hidden="true"></div>
-      <div class="container dividido">
-        <div class="maria__arte revelar">
-          <div class="maria__coroa" aria-hidden="true"></div>
-          <div class="maria__moldura">
-            <img src="assets/img/maria/mae-infinito-amor.jpg" alt="Pintura de Nossa Senhora Mãe do Infinito Amor" width="1230" height="1600" loading="lazy">
+    <section class="sin sin--maria" id="maria" data-ativo="pai" aria-label="Nossa Senhora Mãe do Infinito Amor">
+      <div class="sin__trilho" data-sin-trilho>
+        <div class="sin__cena">
+          <div class="sin__bgs" aria-hidden="true">
+            <i class="sin__bg sin__bg--pai"></i><i class="sin__bg sin__bg--filho"></i><i class="sin__bg sin__bg--espirito"></i><i class="sin__bg sin__bg--sinal"></i>
+            <i class="sin__grao"></i>
           </div>
-          <svg class="maria__infinito" viewBox="0 0 120 50" aria-hidden="true">
-            <path d="M60 25C48 5 20 5 20 25s28 20 40 0 40-20 40 0-28 20-40 0z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="revelar" data-atraso="1">
-          <span class="sobretitulo">Nossa Padroeira</span>
-          <h2>Nossa Senhora Mãe do Infinito Amor</h2>
+          <p class="sin__titulo">Nossa Senhora Mãe do Infinito Amor</p>
+
+          <div class="sin__arte sin__arte--maria" aria-hidden="true">
+            <span class="mar-raios"></span>
+            <span class="mar-aura mar-aura--pai"></span><span class="mar-aura mar-aura--filho"></span><span class="mar-aura mar-aura--espirito"></span><span class="mar-aura mar-aura--sinal"></span>
+            <span class="mar-coroa" data-coroa></span>
+            <div class="mar-moldura">
+              <img src="assets/img/maria/mae-infinito-amor.jpg" alt="" width="1230" height="1600" loading="lazy">
+            </div>
+            <svg class="mar-infinito" viewBox="0 0 120 50"><path d="M60 25C48 5 20 5 20 25s28 20 40 0 40-20 40 0-28 20-40 0z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" pathLength="100"/></svg>
+          </div>
+
+          <div class="sin__textos">
+            <article class="sin__txt" data-pessoa="pai">
+              <span class="sin__rotulo">Nossa Padroeira</span>
+              <h2>Obra-prima do Pai</h2>
+              <p class="sin__frase">A mais bela criatura de Deus.</p>
+              <p>Entre tudo o que Deus criou, Maria é a obra mais admirável das mãos do Pai. Nela o Criador mostrou o que a sua graça é capaz de fazer.</p>
+            </article>
+            <article class="sin__txt" data-pessoa="filho">
+              <span class="sin__rotulo">Nossa Padroeira</span>
+              <h2>Mãe do Filho</h2>
+              <p class="sin__frase">A mãe que Jesus tanto ama.</p>
+              <p>Quem quer chegar a Jesus encontra em Maria um caminho seguro. Por ela aprendemos a amá-lo com ternura e a servi-lo com fidelidade.</p>
+            </article>
+            <article class="sin__txt" data-pessoa="espirito">
+              <span class="sin__rotulo">Nossa Padroeira</span>
+              <h2>Esposa do Espírito Santo</h2>
+              <p class="sin__frase">A fonte selada, onde só Deus entra.</p>
+              <p>Maria abriu o coração à fé e acolheu a Palavra de Deus com docilidade. Por isso, nela, o Verbo se fez carne.</p>
+            </article>
+            <article class="sin__txt" data-pessoa="sinal">
+              <span class="sin__rotulo">Um coração mariano</span>
+              <h2>Santuário da Trindade</h2>
+              <p class="sin__frase">Ser de Maria para ser de Jesus.</p>
+              <p>Em Maria vemos refletida a beleza da Santíssima Trindade. Por isso somos marianos: queremos ser de Maria e como Maria, para sermos mais de Jesus e como Jesus.</p>
+            </article>
+          </div>
+
+          <ol class="sin__marcas" aria-label="Etapas">
+            <li><button type="button" data-ir="0" aria-label="Obra-prima do Pai"></button></li>
+            <li><button type="button" data-ir="1" aria-label="Mãe do Filho"></button></li>
+            <li><button type="button" data-ir="2" aria-label="Esposa do Espírito Santo"></button></li>
+            <li><button type="button" data-ir="3" aria-label="Santuário da Trindade"></button></li>
+          </ol>
         </div>
       </div>
     </section>
-
     <!-- ===== BALUARTES ===== -->
     <section class="secao secao--nevoa" id="baluartes">
       <div class="container">
@@ -165,25 +201,19 @@
         </article>`).join('');
       document.querySelector('[data-baluartes-intro]').textContent = COMUNIDADE.baluartesIntro || '';
 
-      /* Coroa de 12 estrelas ao redor do ícone de Nossa Senhora */
-      const coroa = document.querySelector('.maria__coroa');
-      coroa.innerHTML = Array.from({ length: 12 }, (_, i) => {
+      /* Coroa de 12 estrelas ao redor da pintura */
+      document.querySelector('[data-coroa]').innerHTML = Array.from({ length: 12 }, (_, i) => {
         const a = (i / 12) * Math.PI * 2 - Math.PI / 2;
-        return `<i style="left:${(50 + Math.cos(a) * 49).toFixed(2)}%;top:${(50 + Math.sin(a) * 49).toFixed(2)}%;--d:${(i * 0.25).toFixed(2)}s"></i>`;
+        return `<i style="left:${(50 + Math.cos(a) * 62).toFixed(2)}%;top:${(44 + Math.sin(a) * 58).toFixed(2)}%;--d:${(i * 0.3).toFixed(2)}s"></i>`;
       }).join('');
-
-      /* Estrelas de fundo */
-      const fundo = document.querySelector('.maria__estrelas');
-      fundo.innerHTML = Array.from({ length: 34 }, (_, i) =>
-        `<i style="left:${(Math.sin(i * 12.9898) * 43758.5453 % 1 + 1) % 1 * 100}%;top:${(Math.sin(i * 78.233) * 12345.6789 % 1 + 1) % 1 * 100}%;--d:${(i % 9) * .4}s;--s:${(1 + (i % 4) * .5)}px"></i>`).join('');
-
       /* Sinal da Trindade: palco fixo; a cena e a cor mudam conforme a rolagem */
-      const sec = document.getElementById('sinal');
+      document.querySelectorAll('.sin').forEach(sec => {
       const trilho = sec.querySelector('[data-sin-trilho]');
       const passos = ['pai', 'filho', 'espirito', 'sinal'];
       const txts = [...sec.querySelectorAll('.sin__txt')];
       const botoes = [...sec.querySelectorAll('.sin__marcas button')];
       const brasas = sec.querySelector('[data-brasas]');
+      if (brasas)
       brasas.innerHTML = Array.from({ length: 30 }, (_, i) => {
         const r = n => ((Math.sin(i * n) * 9999) % 1 + 1) % 1;
         return `<i style="--x:${(8 + r(12.9) * 84).toFixed(1)}%;--s:${(3 + r(7.7) * 7).toFixed(1)}px;--d:${(4 + r(3.1) * 5).toFixed(1)}s;--w:${(-r(5.3) * 9).toFixed(1)}s;--dx:${((r(9.7) - .5) * 90).toFixed(0)}px"></i>`;
@@ -212,6 +242,7 @@
         scrollTo({ top: topo + total * ((i + .5) / passos.length), behavior: 'smooth' });
       }));
       atualizarSinal();
+      });
       preencherMarcadores();
       ativarRevelar();
     })();

@@ -750,3 +750,35 @@ h3, h4 { line-height: 1.3; }
 @media (prefers-reduced-motion: reduce) {
   .sin *, .sin *::before, .sin *::after { animation: none !important; }
 }
+
+/* =========================================================
+   MÃE DO INFINITO AMOR — mesmo palco do Sinal: a pintura fica fixa e a luz muda de cor
+   (azul = Pai, vermelho = Filho, laranja = Espírito Santo, as três juntas = Trindade)
+   ========================================================= */
+.sin--maria .sin__titulo { letter-spacing: .16em; max-width: 60ch; }
+.sin__arte--maria { aspect-ratio: 1230 / 1600; width: min(100%, calc(64svh * .7686), 440px); --alt: 64svh; }
+.sin__arte--maria > * { position: absolute; }
+.mar-raios { inset: -34% -48%; border-radius: 50%; opacity: .75;
+  background: repeating-conic-gradient(from 0deg, rgba(255,255,255,.2) 0 1.4deg, transparent 1.4deg 10deg);
+  -webkit-mask: radial-gradient(circle, transparent 24%, #000 30%, transparent 66%); mask: radial-gradient(circle, transparent 24%, #000 30%, transparent 66%);
+  animation: sin-gira 140s linear infinite; }
+.mar-aura { inset: -10% -22%; border-radius: 50%; filter: blur(34px); opacity: 0; transition: opacity 1.3s var(--ease); }
+.mar-aura--pai { background: radial-gradient(circle, rgba(255,214,110,.95), rgba(70,150,255,.6) 45%, transparent 70%); }
+.mar-aura--filho { background: radial-gradient(circle, rgba(255,170,150,.95), rgba(220,50,70,.6) 45%, transparent 70%); }
+.mar-aura--espirito { background: radial-gradient(circle, rgba(255,240,150,.95), rgba(255,140,30,.6) 45%, transparent 70%); }
+.mar-aura--sinal { background: conic-gradient(from 0deg, #3a93f0, #cf2d45, #ffb52e, #3a93f0); animation: sin-gira 16s linear infinite; }
+.sin--maria[data-ativo="pai"] .mar-aura--pai, .sin--maria[data-ativo="filho"] .mar-aura--filho,
+.sin--maria[data-ativo="espirito"] .mar-aura--espirito, .sin--maria[data-ativo="sinal"] .mar-aura--sinal { opacity: .9; }
+.mar-moldura { inset: 0; overflow: hidden; border-radius: 50% 50% 16px 16px / 26% 26% 16px 16px;
+  border: 3px solid var(--ac); box-shadow: 0 0 0 8px rgba(255,255,255,.08), 0 24px 70px rgba(0,0,0,.45), 0 0 50px -6px var(--ac); transition: border-color 1s var(--ease), box-shadow 1s var(--ease); }
+.mar-moldura img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(calc(1.02 + var(--q, 0) * .06)); }
+.mar-coroa { inset: 0; pointer-events: none; }
+.mar-coroa i { position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px; background: var(--ac); clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); filter: drop-shadow(0 0 6px var(--ac)); animation: mar-brilha 3.4s ease-in-out infinite; animation-delay: var(--d); }
+@keyframes mar-brilha { 0%, 100% { opacity: .35; transform: scale(.7) rotate(0); } 50% { opacity: 1; transform: scale(1.15) rotate(45deg); } }
+.mar-infinito { left: 50%; bottom: -11%; width: 46%; translate: -50% 0; color: var(--ac); filter: drop-shadow(0 0 8px var(--ac)); }
+.mar-infinito path { stroke-dasharray: 100; stroke-dashoffset: 100; animation: mar-traco 7s ease-in-out infinite; }
+@keyframes mar-traco { 0% { stroke-dashoffset: 100; } 55%, 85% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -100; } }
+@media (max-width: 900px) {
+  .sin--maria .sin__titulo { letter-spacing: .1em; font-size: .7rem; right: 20px; }
+  .sin__arte--maria { width: min(48vw, calc(33svh * .7686)); --alt: 33svh; }
+}
