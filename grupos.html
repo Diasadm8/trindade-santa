@@ -53,22 +53,41 @@
       </div>
     </section>
 
-    <section class="secao secao--nevoa">
+    <!-- Todos os grupos, por cidade -->
+    <section class="bloco bloco--azul">
       <div class="container">
-        <div class="chamada revelar">
-          <div class="chamada__marca" aria-hidden="true"><span data-trio class="selo--branco"></span></div>
-          <div><span class="sobretitulo sobretitulo--claro">Não encontrou?</span><h2>Leve a comunidade até sua cidade</h2><div class="ph-lines" data-ph="2"></div></div>
-          <a href="contato.html" class="btn btn--claro">Fale conosco <span data-icone="seta"></span></a>
-        </div>
+        <h2 data-palavras>Todos os grupos</h2>
+        <div class="lista-grupos" data-lista-grupos></div>
       </div>
     </section>
-  </main>
+
+    <section class="chamada-foto">
+      <img data-paralaxe="7" src="assets/img/fotos/assembleia/09.jpg" alt="Assembleia diante do palco ao ar livre" loading="lazy">
+      <div class="container">
+        <h2 data-palavras>Leve a comunidade até sua cidade</h2>
+        <p class="revelar">Fale com o ministério de missões pelo WhatsApp.</p>
+        <a class="btn btn--amarelo revelar" data-link="missoesWhatsapp" target="_blank" rel="noopener">Falar com Missões <span data-icone="seta"></span></a>
+      </div>
+    </section>  </main>
 
   <div data-rodape></div>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="assets/js/dados.js"></script>
   <script src="assets/js/marca.js"></script>
   <script src="assets/js/grupos.js"></script>
+  <script>
+    (function () {
+      const porCidade = new Map();
+      GRUPOS.forEach(g => { const k = `${g.cidade} (${g.uf})`; if (!porCidade.has(k)) porCidade.set(k, []); porCidade.get(k).push(g); });
+      document.querySelector('[data-lista-grupos]').innerHTML = [...porCidade].map(([cidade, gs]) => `
+        <div class="lista-grupos__cidade revelar">
+          <h3>${cidade}</h3>
+          <ul>${gs.map(g => `<li>${g.ig ? `<a href="https://www.instagram.com/${g.ig}/" target="_blank" rel="noopener">` : '<span>'}<strong>${g.nome}</strong><small>${[g.tipo, g.encontro].filter(Boolean).join(' · ')}</small>${g.ig ? '</a>' : '</span>'}</li>`).join('')}</ul>
+        </div>`).join('');
+      document.querySelectorAll('[data-link]').forEach(a => a.href = LINKS[a.dataset.link]);
+      preencherMarcadores(); ativarRevelar();
+    })();
+  </script>
   <script src="assets/js/movimento.js"></script>
 </body>
 </html>

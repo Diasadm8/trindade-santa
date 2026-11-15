@@ -4,57 +4,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Itinerários Espirituais · Trindade Santa</title>
-  <meta name="theme-color" content="#0b4ea2">
+  <meta name="description" content="Um itinerário espiritual por mês para caminhar com a Comunidade Trindade Santa. Baixe o PDF de cada mês.">
+  <meta name="theme-color" content="#071937">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body class="pagina-imersiva">
+<body class="pagina-itin">
   <div data-cabecalho="transparente"></div>
 
-  <!-- Camadas que se transformam conforme o mês -->
-  <div class="tema-fundo" aria-hidden="true"></div>
-  <div class="tema-padrao" aria-hidden="true"></div>
-  <div class="motivos" aria-hidden="true"></div>
-
   <main id="conteudo">
-    <!-- Abertura -->
-    <section class="itin-abertura">
-      <div class="container">
-        <span data-selo="espirito" class="itin-abertura__selo"></span>
-        <span class="sobretitulo sobretitulo--claro">Formação espiritual</span>
-        <h1>Itinerários Espirituais</h1>
-        <p class="itin-abertura__ano" data-ano-atual></p>
-        <div class="ph-lines" data-ph="2"></div>
-        <a href="#linha" class="itin-abertura__rolar"><span>Role para percorrer o ano</span><i></i></a>
+    <!-- Abertura: parede com as capas do ano -->
+    <section class="itn-topo">
+      <div class="itn-topo__parede" aria-hidden="true" data-parede></div>
+      <div class="container itn-topo__texto">
+        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Itinerários</span></nav>
+        <h1 data-palavras>Itinerários</h1>
+        <p class="itn-topo__sub revelar">Um caminho espiritual por mês para rezar com a comunidade. <span data-ano-atual></span></p>
       </div>
     </section>
 
-    <!-- Linha do tempo -->
-    <section class="itin-linha" id="linha" aria-label="Linha do tempo dos itinerários">
-      <div class="itin-linha__trilho" aria-hidden="true"><i></i></div>
-      <div data-itinerarios></div>
-    </section>
+    <!-- Um mês por tela -->
+    <section aria-label="Itinerários do ano" data-itinerarios></section>
 
     <!-- Fechamento -->
-    <section class="itin-fim">
+    <section class="itn-fim">
       <div class="container">
-        <span data-trio class="selo--branco"></span>
-        <h2>O próximo itinerário chega em breve</h2>
-        <div class="ph-lines" data-ph="2"></div>
-        <a href="#linha" class="btn btn--claro">Voltar ao início do ano</a>
+        <h2 data-palavras>O próximo chega em breve</h2>
+        <a href="#conteudo" class="btn btn--vazado revelar">Voltar ao início</a>
       </div>
     </section>
   </main>
 
-  <!-- Navegação lateral pelos meses -->
-  <nav class="itin-meses" aria-label="Ir para o mês" data-meses></nav>
+  <nav class="itn-meses" aria-label="Ir para o mês" data-meses></nav>
 
   <div data-rodape></div>
   <script src="assets/js/dados.js"></script>
   <script src="assets/js/marca.js"></script>
   <script src="assets/js/itinerarios.js"></script>
+  <script src="assets/js/movimento.js"></script>
 </body>
 </html>

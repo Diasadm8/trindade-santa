@@ -415,6 +415,59 @@ a:hover > .link-mais svg, .link-mais:hover svg { transform: translateX(4px); }
 .canais strong { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 72; text-transform: uppercase; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1; }
 .canais span { font-size: .95rem; color: #4a6580; text-align: right; }
 
+/* =========================================================
+   ITINERÁRIOS — um mês por tela, nas cores da capa
+   ========================================================= */
+.pagina-itin { --t-escuro: #071937; --t-principal: #2a6fc9; --t-claro: #ffd83a; background: var(--t-escuro); color: #fff; transition: background-color 1.1s var(--ease-saida); }
+.pagina-itin.tema-claro { color: #1a1a1a; }
+.itn-topo { position: relative; isolation: isolate; overflow: hidden; min-height: 100svh; display: flex; align-items: flex-end; background: #071937; padding: calc(var(--header-h) + 30px) 0 clamp(36px, 6vw, 72px); }
+.itn-topo__parede { position: absolute; inset: 0; z-index: -2; display: flex; flex-direction: column; justify-content: center; gap: 18px; transform: rotate(-6deg) scale(1.15); }
+.itn-topo__parede img { height: clamp(220px, 34svh, 380px); width: auto; border-radius: 4px; box-shadow: 0 30px 50px -25px rgba(0,0,0,.7); }
+.itn-topo__parede .corre__trilho { gap: 18px; padding-right: 18px; }
+.itn-topo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(7,25,55,.97) 8%, rgba(7,25,55,.55) 55%, rgba(7,25,55,.35)); }
+.itn-topo h1 { font-size: clamp(4rem, 15vw, 14rem); line-height: .82; color: #fff; margin: 0; }
+.itn-topo__sub { max-width: 40ch; font-size: clamp(1rem, 1.4vw, 1.2rem); color: rgba(255,255,255,.88); margin: 14px 0 0; }
+
+.itn { min-height: 100svh; display: grid; align-items: center; padding-block: clamp(60px, 10vh, 120px); }
+.itn__grade { display: grid; grid-template-columns: auto 1fr; gap: clamp(32px, 7vw, 110px); align-items: center; }
+.itn--inv .itn__capa { order: 2; }
+.itn__capa img, .itn__sem-capa { height: min(76svh, 720px); width: auto; max-width: 80vw; display: block; border-radius: 4px; box-shadow: 0 50px 90px -40px rgba(0,0,0,.75); transform: translateY(40px) rotate(-2deg) scale(.96); opacity: .35; transition: transform 1.2s var(--ease-saida), opacity 1.2s var(--ease-saida); }
+.itn--inv .itn__capa img { transform: translateY(40px) rotate(2deg) scale(.96); }
+.itn.is-ativo .itn__capa img, .itn.is-ativo .itn__sem-capa { transform: none; opacity: 1; }
+.itn__sem-capa { aspect-ratio: 900 / 1273; background: var(--t-principal); display: grid; place-items: center; }
+.itn__sem-capa .selo { --tam: 40%; }
+.itn__texto { opacity: .25; transform: translateY(24px); transition: opacity 1s var(--ease-saida), transform 1s var(--ease-saida); }
+.itn.is-ativo .itn__texto { opacity: 1; transform: none; }
+.itn__mes { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; text-transform: uppercase; font-size: clamp(3.6rem, 10vw, 9rem); line-height: .82; margin: 0 0 .15em; color: var(--t-claro); transition: color 1s; }
+.itn__mes span { font-size: .3em; vertical-align: .15em; margin-left: .2em; color: inherit; opacity: .8; }
+.itn h2 { font-size: clamp(1.8rem, 3.6vw, 3.2rem); color: inherit; line-height: .95; margin: 0 0 28px; max-width: 16ch; }
+.itn__btn { background: var(--t-claro); color: var(--t-escuro); border-color: var(--t-claro); }
+.itn__btn:hover { background: #fff; border-color: #fff; color: var(--t-escuro); }
+.itn__btn svg { width: 18px; height: 18px; }
+.itn__btn.is-desativado { opacity: .5; cursor: default; }
+.tema-claro .itn__mes { color: var(--t-principal); }
+.tema-claro .itn__btn { background: var(--t-principal); color: #fff; border-color: var(--t-principal); }
+@media (max-width: 760px) { .itn__grade { grid-template-columns: 1fr; } .itn--inv .itn__capa { order: 0; } .itn__capa img, .itn__sem-capa { height: auto; width: min(78vw, 360px); } }
+
+.itn-meses { position: fixed; right: 14px; top: 50%; transform: translateY(-50%); z-index: 40; display: flex; flex-direction: column; gap: 2px; opacity: 0; pointer-events: none; transition: opacity .5s; }
+.itn-meses.is-visivel { opacity: 1; pointer-events: auto; }
+.itn-meses a { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85; text-transform: uppercase; font-size: .72rem; letter-spacing: .06em; color: currentColor; opacity: .45; padding: 4px 6px; text-align: right; text-decoration: none; transition: opacity .3s, transform .3s; }
+.itn-meses a.is-ativo, .itn-meses a:hover { opacity: 1; transform: translateX(-4px); }
+@media (max-width: 760px) { .itn-meses { display: none; } }
+.itn-fim { padding-block: clamp(100px, 14vw, 180px); text-align: center; }
+.itn-fim h2 { color: inherit; font-size: clamp(3rem, 9vw, 8rem); }
+.tema-claro .btn--vazado { color: #1a1a1a; border-color: rgba(0,0,0,.6); }
+
+/* ---------- Grupos: lista por cidade ---------- */
+.lista-grupos { columns: 2 380px; column-gap: clamp(30px, 5vw, 70px); margin-top: 20px; }
+.lista-grupos__cidade { break-inside: avoid; margin-bottom: clamp(30px, 4vw, 50px); }
+.lista-grupos h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(2rem, 4vw, 3.4rem); line-height: .9; color: var(--ts-amarelo); margin: 0 0 10px; }
+.lista-grupos ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.35); }
+.lista-grupos li > * { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.2); color: #fff; text-decoration: none; transition: padding .4s var(--ease-saida); }
+.lista-grupos a:hover { padding-left: 8px; }
+.lista-grupos strong { font-weight: 700; font-size: 1.05rem; }
+.lista-grupos small { font-size: .85rem; color: rgba(255,255,255,.75); text-align: right; }
+
 /* ---------- Social ---------- */
 .pix--escuro { background: transparent; box-shadow: none; padding: 0; color: #fff; }
 .pix--escuro h2 { color: #fff; }
