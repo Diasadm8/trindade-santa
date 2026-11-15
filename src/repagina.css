@@ -851,3 +851,16 @@ h3, h4 { line-height: 1.3; }
   .voc-mosaico__grade--v .voc-mosaico__v { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 9 / 14; order: 5; }
   .voc-mosaico__grade--v .voc-mosaico__c { grid-column: 1 / -1; grid-row: auto; order: 6; }
 }
+/* GRUPOS: mosaico de bandeiras, filtro leve e granulado fino */
+.topo-foto--mosaico { min-height: clamp(560px, 60vw, 1000px); }
+.topo-foto--mosaico .topo-foto__img img { animation: none; object-position: 50% 50%; filter: saturate(.92) contrast(1.02); }
+.topo-foto--mosaico::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; mix-blend-mode: soft-light; opacity: .7;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1.2 -.1'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); background-size: 200px 200px; }
+.topo-foto--mosaico::after {
+  background:
+    linear-gradient(0deg, rgba(5,22,58,.86) 0%, rgba(5,22,58,.55) 26%, rgba(5,22,58,.12) 52%, rgba(5,22,58,0) 70%),
+    linear-gradient(180deg, rgba(5,22,58,.5) 0%, rgba(5,22,58,0) 22%),
+    rgba(28,86,176,.16);
+}
+.topo-foto--mosaico h1, .topo-foto--mosaico .topo-foto__sub { text-shadow: 0 2px 24px rgba(3,14,40,.55); }
+@media (max-width: 700px) { .topo-foto--mosaico { min-height: clamp(520px, 135vw, 720px); } }
