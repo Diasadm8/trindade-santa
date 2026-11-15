@@ -71,53 +71,65 @@
 
     <!-- ===== PROJETOS: a tela azul ===== -->
     <section class="projetos" aria-labelledby="t-projetos">
+      <div class="projetos__fundo" aria-hidden="true">
+        <img class="projetos__papa" src="assets/img/vocacional/joao-paulo-ii.webp" alt="" loading="lazy">
+        <svg class="projetos__grafite" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path class="g-a" d="M60 120c80-70 200-60 230 10s-70 120-150 80-20-150 90-140 170 80 150 160" stroke="#fff" stroke-width="5"/>
+          <path class="g-b" d="M880 90l14 44 46 2-37 27 14 44-37-27-38 26 15-43-36-29 46-1z" stroke="#ffd83a" stroke-width="5"/>
+          <path class="g-a" d="M120 640c60 30 100-30 160 0s90 30 140-10 70 10 120-10" stroke="#fff" stroke-width="6"/>
+          <path class="g-b" d="M980 560c-60-60-140-70-210-20m6-40-10 52 52 8" stroke="#ffd83a" stroke-width="5"/>
+          <circle class="g-a" cx="1060" cy="300" r="56" stroke="#fff" stroke-width="5" stroke-dasharray="3 14"/>
+          <path class="g-a" d="M40 420h46m-23-23v46M1120 700h46m-23-23v46M600 60h40m-20-20v40" stroke="#fff" stroke-width="6"/>
+          <path class="g-b" d="M330 60c30 40 70 40 100 0" stroke="#ffd83a" stroke-width="5"/>
+        </svg>
+        <div class="projetos__graos"></div>
+      </div>
       <div class="container projetos__cabeca">
         <div class="projetos__texto">
           <h2 id="t-projetos" data-palavras>Uma só <em>missão</em></h2>
           <p class="revelar">17 projetos e núcleos · RJ e MG</p>
         </div>
-        <img class="projetos__papa revelar" src="assets/img/vocacional/joao-paulo-ii.webp" alt="São João Paulo II de jaqueta e óculos escuros" loading="lazy">
       </div>
-      <div class="corre" style="--tempo:70s">
+      <div class="corre" style="--tempo:80s">
         <div class="corre__trilho">
-          <span class="nome-projeto c-amarelo">Comunidade Trindade Santa<small>Itaperuna</small></span>
-          <span class="nome-projeto c-laranja">Nascer Jovem<small>Itaperuna</small></span>
-          <span class="nome-projeto c-rosa">Projeto Bartimeu<small>Itaperuna</small></span>
-          <span class="nome-projeto c-branco">Rede Santa Mônica<small>Itaperuna</small></span>
-          <span class="nome-projeto c-verde">Confia<small>Itaperuna</small></span>
-          <span class="nome-projeto c-lilas">Bartimeu<small>Porciúncula</small></span>
-          <span class="nome-projeto c-amarelo">Tempo de Liberdade<small>Bom Jesus do Itabapoana</small></span>
-          <span class="nome-projeto c-laranja">Bartimeu<small>Miracema</small></span>
-          <span class="nome-projeto c-rosa">Bartimeu<small>Muriaé</small></span>
-          <span class="nome-projeto c-branco">Núcleo Muriaé<small>MG</small></span>
-          <span class="nome-projeto c-verde">Núcleo Macaé<small>RJ</small></span>
-          <span class="nome-projeto c-lilas">Núcleo Rio das Ostras<small>RJ</small></span>
-          <span class="nome-projeto c-amarelo">Núcleo Casimiro de Abreu<small>RJ</small></span>
-          <span class="nome-projeto c-laranja">Novas Vestes<small>Miradouro, MG</small></span>
-          <span class="nome-projeto c-rosa">Águas Profundas<small>Santa Maria Madalena</small></span>
-          <span class="nome-projeto c-branco">Aviva Jovem<small>Macuco</small></span>
-          <span class="nome-projeto c-verde">Reconstrução<small>Espera Feliz, MG</small></span>
+          <span class="nome-projeto">Comunidade Trindade Santa<small>Itaperuna</small></span>
+          <span class="nome-projeto">Nascer Jovem<small>Itaperuna</small></span>
+          <span class="nome-projeto">Projeto Bartimeu<small>Itaperuna</small></span>
+          <span class="nome-projeto">Rede Santa Mônica<small>Itaperuna</small></span>
+          <span class="nome-projeto">Confia<small>Itaperuna</small></span>
+          <span class="nome-projeto">Bartimeu<small>Porciúncula</small></span>
+          <span class="nome-projeto">Tempo de Liberdade<small>Bom Jesus do Itabapoana</small></span>
+          <span class="nome-projeto">Bartimeu<small>Miracema</small></span>
+          <span class="nome-projeto">Bartimeu<small>Muriaé</small></span>
+          <span class="nome-projeto">Núcleo Muriaé<small>MG</small></span>
+          <span class="nome-projeto">Núcleo Macaé<small>RJ</small></span>
+          <span class="nome-projeto">Núcleo Rio das Ostras<small>RJ</small></span>
+          <span class="nome-projeto">Núcleo Casimiro de Abreu<small>RJ</small></span>
+          <span class="nome-projeto">Novas Vestes<small>Miradouro, MG</small></span>
+          <span class="nome-projeto">Águas Profundas<small>Santa Maria Madalena</small></span>
+          <span class="nome-projeto">Aviva Jovem<small>Macuco</small></span>
+          <span class="nome-projeto">Reconstrução<small>Espera Feliz, MG</small></span>
         </div>
       </div>
-      <div class="corre corre--volta" style="--tempo:40s">
+      <div class="corre corre--volta" style="--tempo:46s">
         <div class="corre__trilho">
-          <span class="logo-chip"><img src="assets/img/grupos/sede.png" alt="Logo da Comunidade Trindade Santa"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/nascer-jovem.png" alt="Logo Nascer Jovem"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/bartimeu-itaperuna.jpg" alt="Logo Projeto Bartimeu Itaperuna"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/santa-monica.png" alt="Logo Rede Santa Mônica"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/confia.jpg" alt="Logo Confia"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/bartimeu-itaperuna.jpg" alt="Logo Bartimeu Porciúncula"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/tempo-de-liberdade.png" alt="Logo Tempo de Liberdade"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/bartimeu-miracema.jpg" alt="Logo Bartimeu Miracema"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/bartimeu-muriae.jpg" alt="Logo Bartimeu Muriaé"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/nucleo-muriae.png" alt="Logo Núcleo Muriaé"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/nucleo-macae.jpg" alt="Logo Núcleo Macaé"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/nucleo-rio-das-ostras.png" alt="Logo Núcleo Rio das Ostras"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/nucleo-casimiro-de-abreu.jpg" alt="Logo Núcleo Casimiro de Abreu"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/novas-vestes.jpg" alt="Logo G.O. Novas Vestes"></span>
-          <span class="logo-chip"><img src="assets/img/grupos/aguas-profundas.jpg" alt="Logo Grupo Jovem Águas Profundas"></span>
-          <span class="logo-chip logo-chip--texto" aria-label="Logo do Aviva Jovem ainda não cadastrado">Aviva Jovem</span>
-          <span class="logo-chip"><img src="assets/img/grupos/reconstrucao.png" alt="Logo G.O. Reconstrução"></span>
+          <img class="logo-b" src="assets/img/projetos-brancos/sede.png" alt="Logo da Comunidade Trindade Santa">
+          <img class="logo-b" src="assets/img/projetos-brancos/nascer-jovem.png" alt="Logo Nascer Jovem">
+          <img class="logo-b" src="assets/img/projetos-brancos/bartimeu.png" alt="Logo Projeto Bartimeu Itaperuna">
+          <img class="logo-b" src="assets/img/projetos-brancos/santa-monica.png" alt="Logo Rede Santa Mônica">
+          <img class="logo-b" src="assets/img/projetos-brancos/confia.png" alt="Logo Confia">
+          <img class="logo-b" src="assets/img/projetos-brancos/tempo-de-liberdade.png" alt="Logo Tempo de Liberdade">
+          <img class="logo-b" src="assets/img/projetos-brancos/bartimeu-miracema.png" alt="Logo Bartimeu Miracema">
+          <img class="logo-b" src="assets/img/projetos-brancos/nucleo-muriae.png" alt="Logo Núcleo Muriaé">
+          <img class="logo-b" src="assets/img/projetos-brancos/bartimeu.png" alt="Logo Bartimeu Muriaé">
+          <span class="logo-nucleo"><span data-trio class="selo--branco"></span><b>Núcleo</b><i>Macaé</i></span>
+          <img class="logo-b" src="assets/img/projetos-brancos/nucleo-rio-das-ostras.png" alt="Logo Núcleo Rio das Ostras">
+          <span class="logo-nucleo"><span data-trio class="selo--branco"></span><b>Núcleo</b><i>Casimiro de Abreu</i></span>
+          <img class="logo-b" src="assets/img/projetos-brancos/novas-vestes.png" alt="Logo G.O. Novas Vestes">
+          <img class="logo-b" src="assets/img/projetos-brancos/aguas-profundas.png" alt="Logo Grupo Jovem Águas Profundas">
+          <span class="logo-texto">Aviva<br>Jovem</span>
+          <img class="logo-b" src="assets/img/projetos-brancos/reconstrucao.png" alt="Logo G.O. Reconstrução">
+          <img class="logo-b" src="assets/img/projetos-brancos/bartimeu.png" alt="Logo Bartimeu Porciúncula">
         </div>
       </div>
       <div class="projetos__acao revelar">
