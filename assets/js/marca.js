@@ -123,9 +123,15 @@ function montarCabecalho() {
         <img class="logo__img logo__img--cor" src="assets/img/marca/logo-reduzido-cores.svg" alt="" aria-hidden="true" height="46">
       </a>
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span></button>
+      <div class="nav-fundo" aria-hidden="true"></div>
       <nav class="nav" id="nav" aria-label="Principal">
         ${links}
         <a href="faca-parte.html" class="btn btn--primario"${atual === 'faca-parte.html' ? ' aria-current="page"' : ''}>Faça parte</a>
+        <div class="nav__redes">
+          <a href="${LINKS.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icone('instagram')}</a>
+          <a href="${LINKS.youtube}" target="_blank" rel="noopener" aria-label="YouTube">${icone('youtube')}</a>
+          <a href="${LINKS.canalWhatsapp}" target="_blank" rel="noopener" aria-label="Canal do WhatsApp">${icone('whatsapp')}</a>
+        </div>
       </nav>
     </div>
   </header>`;
@@ -136,13 +142,16 @@ function montarCabecalho() {
   if (transparente) { aoRolar(); window.addEventListener('scroll', aoRolar, { passive: true }); }
 
   const botao = header.querySelector('.menu-toggle');
-  botao.addEventListener('click', () => {
-    const aberto = document.documentElement.classList.toggle('menu-aberto');
+  const definir = aberto => {
+    document.documentElement.classList.toggle('menu-aberto', aberto);
     botao.setAttribute('aria-expanded', aberto);
     botao.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
-  });
-  header.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () =>
-    document.documentElement.classList.remove('menu-aberto')));
+  };
+  botao.addEventListener('click', () => definir(!document.documentElement.classList.contains('menu-aberto')));
+  header.querySelector('.nav-fundo').addEventListener('click', () => definir(false));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') definir(false); });
+  window.matchMedia('(min-width: 1181px)').addEventListener('change', e => { if (e.matches) definir(false); });
+  header.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => definir(false)));
 }
 
 function montarRodape() {
