@@ -26,106 +26,68 @@
       </div>
     </section>
 
-    <!-- Lançamentos -->
-    <section class="secao pt-10">
-      <div class="container">
-        <div class="secao__topo revelar">
-          <span class="sobretitulo">Discografia</span>
-          <h2>Nossos lançamentos</h2>
+    <!-- Último lançamento -->
+    <section class="bloco bloco--papel">
+      <div class="container par">
+        <a class="single revelar" data-link="spotifySingle" target="_blank" rel="noopener" aria-label="Ouvir Ser Trindade Santa no Spotify">
+          <img src="assets/img/musica/ser-trindade-santa.jpg" alt="Capa do single Ser Trindade Santa" width="640" height="640" loading="lazy">
+        </a>
+        <div>
+          <p class="mes-faixa__mes revelar">Último lançamento</p>
+          <h2 data-palavras>Ser Trindade Santa</h2>
+          <div class="mes-faixa__acoes revelar">
+            <a class="btn btn--primario" data-link="spotifySingle" target="_blank" rel="noopener">Ouvir no Spotify <span data-icone="seta"></span></a>
+            <a class="btn btn--contorno" data-link="ouvir" target="_blank" rel="noopener">Outras plataformas</a>
+          </div>
+          <p class="revelar" style="margin-top:22px"><a class="link-mais" data-link="spotifyArtista" target="_blank" rel="noopener">Perfil da comunidade no Spotify <span data-icone="seta"></span></a></p>
         </div>
-        <div data-lancamentos></div>
       </div>
     </section>
 
-    <!-- Artistas -->
-    <section class="secao secao--nevoa">
+    <!-- Vídeos do YouTube -->
+    <section class="bloco bloco--noite videos">
       <div class="container">
-        <div class="secao__topo secao__topo--centro revelar">
-          <img class="ministerio-logo" data-musts alt="Musicalidade TS" hidden loading="lazy">
-          <span class="sobretitulo">Ministério de música</span>
-          <h2>Quem canta conosco</h2>
-          <div class="ph-lines" data-ph="2"></div>
-        </div>
-        <div class="grade grade--2 max-w-[860px] mx-auto" data-artistas></div>
+        <h2 data-palavras>Assista</h2>
       </div>
+      <div class="fita fita--videos" data-fita data-videos tabindex="0" aria-label="Vídeos de música no YouTube (arraste para o lado)"></div>
+      <div class="container"><p class="revelar" style="margin-top:10px"><a class="link-mais" data-link="youtube" target="_blank" rel="noopener" style="color:var(--ts-amarelo)">Canal no YouTube <span data-icone="seta"></span></a></p></div>
     </section>
 
-    <!-- Aviva Folia -->
-    <section class="secao secao--profunda">
-      <div class="container dividido">
-        <div class="revelar">
-          <span class="sobretitulo sobretitulo--claro">Aviva Jovem</span>
-          <h2>Aviva Folia</h2>
-          <div class="ph-lines" data-ph="4"></div>
-          <div class="musica-enredos" data-enredos></div>
-        </div>
-        <div class="abre-foto" style="aspect-ratio:4/3;border-radius:4px;overflow:hidden"><img src="assets/img/fotos/louvor/23.jpg" alt="Cantor no louvor" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div>
-      </div>
-    </section>
-
-    <section class="secao">
+    <!-- Missionários da música -->
+    <section class="bloco">
       <div class="container">
-        <div class="chamada revelar">
-          <div class="chamada__marca" aria-hidden="true"><span data-trio class="selo--branco"></span></div>
-          <div><span class="sobretitulo sobretitulo--claro">Missões</span><h2>Leve a Trindade Santa ao seu evento</h2><div class="ph-lines" data-ph="2"></div></div>
-          <a href="#" class="btn btn--claro" data-missoes>Falar sobre missões <span data-icone="seta"></span></a>
-        </div>
+        <h2 data-palavras>Leve para a sua missão</h2>
+        <div class="baluartes-linhas" data-artistas></div>
       </div>
-    </section>
-  </main>
+    </section>  </main>
 
   <div data-rodape></div>
   <script src="assets/js/dados.js"></script>
   <script src="assets/js/marca.js"></script>
   <script>
     (function () {
-      const fmt = d => { const [a, m, dia] = d.split('-'); return `${dia}/${m}/${a}`; };
-
-      document.querySelector('[data-plataformas]').innerHTML = `
-        <a class="btn btn--claro" href="${LINKS.ouvir}" target="_blank" rel="noopener">${icone('seta')} Ouvir em todas as plataformas</a>
-        <a class="btn btn--contorno-claro" href="${LINKS.youtube}" target="_blank" rel="noopener">${icone('youtube')} YouTube</a>
-        <a class="btn btn--contorno-claro" href="${LINKS.deezer}" target="_blank" rel="noopener">Deezer</a>`;
-
-      /* Lançamentos agrupados por ano */
-      const porAno = {};
-      MUSICA.lancamentos.forEach(l => (porAno[l.data.slice(0, 4)] ||= []).push(l));
-      document.querySelector('[data-lancamentos]').innerHTML = Object.keys(porAno).sort().reverse().map(ano => `
-        <div class="disco-ano revelar">
-          <span class="disco-ano__ano">${ano}</span>
-          <div class="disco-ano__lista">
-            ${porAno[ano].sort((a, b) => b.data.localeCompare(a.data)).map((l, i) => `
-              <article class="disco">
-                ${l.capa
-                  ? `<span class="disco__capa disco__capa--img"><img src="assets/img/musica/${l.capa}" alt="Capa de ${l.titulo}" loading="lazy"></span>`
-                  : `<span class="disco__capa">${selo(ORDEM_PESSOAS[(+ano + i) % 3])}</span>`}
-                <div>
-                  <h3>${l.titulo}</h3>
-                  <small>${fmt(l.data)}${l.artista ? ' · ' + l.artista : ''}${l.grupo ? ' · ' + l.grupo : ''}</small>
-                </div>
-              </article>`).join('')}
-          </div>
-        </div>`).join('');
-
+      const VIDEOS = [
+        ['OWi5URKH-1E', 'Plantados para Multiplicar (Acústico)'],
+        ['oxqnYUhVCzE', 'Atos 2 (Acústico)'],
+        ['CApbCsndOw0', 'Ser Trindade Santa · Ao vivo no SETA 2025'],
+        ['TXoB8f9ucXo', 'Quem Como Deus · Clipe oficial'],
+        ['zwCvDrEphGs', 'Salmo 1 · Clipe oficial']
+      ];
+      document.querySelector('[data-videos]').innerHTML = VIDEOS.map(([id, t]) => `
+        <a class="video" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">
+          <span class="video__img"><img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="" loading="lazy"><span class="video__play" aria-hidden="true"></span></span>
+          <strong>${t}</strong>
+        </a>`).join('');
       document.querySelector('[data-artistas]').innerHTML = MUSICA.artistas.map((a, k) => `
-        <article class="card revelar" data-atraso="${k + 1}">
-          ${a.foto
-            ? `<div class="foto-4x3"><img src="assets/img/musica/${a.foto}" alt="${a.nome}" loading="lazy"></div>`
-            : `<div class="ph-img [--proporcao:4/3]" data-img="${a.simbolo}"></div>`}
-          <div class="card__corpo">
-            <span class="card__meta">${a.papel}</span>
+        <article class="baluarte-linha${k % 2 ? ' baluarte-linha--inv' : ''}">
+          <div class="baluarte-linha__foto abre-foto">${a.foto ? `<img src="assets/img/musica/${a.foto}" alt="${a.nome}" loading="lazy">` : `<span class="baluarte-linha__selo">${selo(a.simbolo, 'selo--branco')}</span>`}</div>
+          <div class="baluarte-linha__texto revelar">
             <h3>${a.nome}</h3>
-            <div class="ph-lines" data-ph="2"></div>
-            <a class="link-seta" href="${a.whatsapp}" target="_blank" rel="noopener">Leve para o seu evento ${icone('seta')}</a>
+            <p class="baluarte-linha__frase">${a.papel} · Trindade Santa</p>
+            <a class="btn btn--primario" href="${a.whatsapp}" target="_blank" rel="noopener">Chamar no WhatsApp <span data-icone="seta"></span></a>
           </div>
         </article>`).join('');
-
-      document.querySelector('[data-enredos]').innerHTML = MUSICA.lancamentos.filter(l => l.grupo === 'Aviva Jovem')
-        .map(l => `<span class="etiqueta etiqueta--clara">${l.titulo.replace('Aviva Folia – ', '')}</span>`).join('');
-
-      const musts = document.querySelector('[data-musts]');
-      if (musts && MUSICA.logoMinisterio) { musts.src = `assets/img/musica/${MUSICA.logoMinisterio}-cor.png`; musts.hidden = false; }
-
-      document.querySelector('[data-missoes]').href = LINKS.missoesWhatsapp;
+      document.querySelectorAll('[data-link]').forEach(a => a.href = LINKS[a.dataset.link]);
       preencherMarcadores();
       ativarRevelar();
     })();

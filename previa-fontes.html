@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prévia · fontes</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Unbounded:wght@400..900&family=Big+Shoulders+Display:wght@400..900&family=Familjen+Grotesk:wght@400..700&family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0}
+  body{background:#e9e6e0;font-family:Mulish,sans-serif;color:#071937;padding:28px 24px}
+  .op{background:#f6f3ee;padding:56px 56px 48px;margin:0 auto 28px;max-width:1180px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+  .op--azul{background:#1d5bb3;color:#fff}
+  .rot{grid-column:1/-1;font:700 13px Mulish;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+  h1{margin:0 0 18px} p{font-size:17px;line-height:1.6;max-width:44ch}
+  .btn{display:inline-block;margin-top:22px;padding:14px 24px;border-radius:6px;background:#1d5bb3;color:#fff;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:14px}
+  .op--azul .btn{background:#ffd83a;color:#071937}
+  .mini{font-size:clamp(28px,3.4vw,44px);line-height:.95;margin-bottom:10px}
+  /* A */
+  .a h1,.a .mini{font-family:Anton,sans-serif;text-transform:uppercase;font-weight:400;font-size:clamp(64px,8vw,118px);line-height:.88;letter-spacing:.005em}
+  .a h1 em{font-family:Fraunces,serif;font-style:italic;font-weight:600;text-transform:none;color:#2a6fc9;font-variation-settings:"opsz" 144;letter-spacing:-.02em;display:block}
+  .a .mini{font-size:clamp(30px,3.6vw,48px)}
+  .a.op--azul .mini em{font-family:Fraunces,serif;font-style:italic;text-transform:none;color:#ffd83a;font-weight:600}
+  .a .btn{font-family:Anton,sans-serif;font-weight:400;font-size:16px;letter-spacing:.06em}
+  /* B */
+  .b h1,.b .mini{font-family:Unbounded,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(46px,5.6vw,84px);line-height:.95;letter-spacing:-.03em}
+  .b h1 em{font-style:normal;color:#2a6fc9}
+  .b .mini{font-size:clamp(24px,2.8vw,38px)} .b .mini em{font-style:normal;color:#ffd83a}
+  .b p,.b .btn{font-family:Mulish}
+  .b .btn{font-family:Unbounded;font-weight:700;font-size:13px}
+  /* C */
+  .c h1,.c .mini{font-family:"Big Shoulders Display",sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(72px,9vw,132px);line-height:.84;letter-spacing:.005em}
+  .c h1 em{font-style:normal;color:#2a6fc9;font-weight:300}
+  .c .mini{font-size:clamp(34px,4vw,54px)} .c .mini em{font-style:normal;color:#ffd83a;font-weight:300}
+  .c p{font-family:"Familjen Grotesk",sans-serif;font-size:18px}
+  .c .btn{font-family:"Big Shoulders Display";font-weight:800;font-size:18px}
+  @media(max-width:800px){.op{grid-template-columns:1fr;padding:36px 24px}}
+</style>
+</head>
+<body>
+  <section class="op a"><p class="rot">Opção A · Anton (condensada forte) + Fraunces itálica (serifa com personalidade)</p>
+    <div><h1>Plantados para <em>multiplicar</em></h1></div>
+    <div><p>Reconhecida pela Diocese de Campos em 2013, com decreto definitivo em 2018, a comunidade serve no Rio de Janeiro, em Minas Gerais e no Espírito Santo.</p><a class="btn">Nossa história</a></div>
+  </section>
+  <section class="op op--azul a"><div><p class="mini">Uma só <em>missão</em></p><p>Nascer Jovem · Bartimeu · Casa de Deus · Núcleo Muriaé</p></div><div><a class="btn">Encontre um grupo</a></div></section>
+
+  <section class="op b"><p class="rot">Opção B · Unbounded (larga e arredondada, bem jovem) + Mulish</p>
+    <div><h1>Plantados para <em>multiplicar</em></h1></div>
+    <div><p>Reconhecida pela Diocese de Campos em 2013, com decreto definitivo em 2018, a comunidade serve no Rio de Janeiro, em Minas Gerais e no Espírito Santo.</p><a class="btn">Nossa história</a></div>
+  </section>
+  <section class="op op--azul b"><div><p class="mini">Uma só <em>missão</em></p><p>Nascer Jovem · Bartimeu · Casa de Deus · Núcleo Muriaé</p></div><div><a class="btn">Encontre um grupo</a></div></section>
+
+  <section class="op c"><p class="rot">Opção C · Big Shoulders (condensada de cartaz, grossa + fina) + Familjen Grotesk</p>
+    <div><h1>Plantados para <em>multiplicar</em></h1></div>
+    <div><p>Reconhecida pela Diocese de Campos em 2013, com decreto definitivo em 2018, a comunidade serve no Rio de Janeiro, em Minas Gerais e no Espírito Santo.</p><a class="btn">Nossa história</a></div>
+  </section>
+  <section class="op op--azul c"><div><p class="mini">Uma só <em>missão</em></p><p>Nascer Jovem · Bartimeu · Casa de Deus · Núcleo Muriaé</p></div><div><a class="btn">Encontre um grupo</a></div></section>
+</body>
+</html>

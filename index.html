@@ -10,7 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/img/fotos/assembleia/14.jpg">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
@@ -18,28 +17,41 @@
 
   <main id="conteudo">
 
-    <!-- ===== ABERTURA ===== -->
-    <section class="topo-foto abertura" aria-label="Apresentação">
-      <div class="topo-foto__img"><img src="assets/img/fotos/assembleia/14.jpg" alt="Assembleia de jovens com as mãos levantadas em louvor" fetchpriority="high"></div>
-      <div class="container">
-        <h1 data-palavras><small>Comunidade de Aliança</small>Trindade Santa</h1>
-        <div class="topo-foto__linha" style="margin-top:28px">
-          <p class="topo-foto__sub revelar">Católicos, trinitários, carismáticos, adoradores e marianos. Desde 2007, em Itaperuna – RJ.</p>
-          <div class="abertura__acoes revelar" data-atraso="1">
-            <a href="comunidade.html" class="btn btn--amarelo">Conheça a comunidade <span data-icone="seta"></span></a>
-            <a href="itinerarios.html" class="btn btn--vazado">Itinerário do mês</a>
-          </div>
+    <!-- ===== HERO: a órbita da Santíssima Trindade ===== -->
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero__fundo" aria-hidden="true">
+        <span data-selo="pai"></span><span data-selo="filho"></span><span data-selo="espirito"></span>
+      </div>
+      <canvas class="hero__particulas" aria-hidden="true"></canvas>
+
+      <div class="hero__conteudo">
+        <div class="orbita">
+          <svg class="orbita__halo" viewBox="0 0 200 200" aria-hidden="true">
+            <circle class="h1" cx="100" cy="100" r="96" stroke-width=".8"/>
+            <circle class="h2" cx="100" cy="100" r="88" stroke-width=".6"/>
+          </svg>
+        </div>
+        <div class="hero__pessoa" aria-live="polite"></div>
+        <div class="orbita__pontos"></div>
+
+        <div class="assinatura">
+          <div class="assinatura__sup">Comunidade de Aliança</div>
+          <h1 class="assinatura__nome">Trindade Santa</h1>
+        </div>
+
+        <div class="hero__acoes">
+          <a href="comunidade.html" class="btn btn--claro">Conheça a comunidade <span data-icone="seta"></span></a>
+          <a href="itinerarios.html" class="btn btn--contorno-claro">Itinerário do mês</a>
         </div>
       </div>
-      <span class="rolar-dica" aria-hidden="true"></span>
+      <span class="rolar" aria-hidden="true"></span>
     </section>
 
     <!-- ===== LEMA ===== -->
     <section class="bloco bloco--papel">
       <div class="container par">
         <div>
-          <h2 class="lema" data-palavras>Ou santos <em>ou nada</em></h2>
-          <p class="identidade revelar"><span>Trinitários</span><span>Católicos</span><span>Carismáticos</span><span>Adoradores</span><span>Marianos</span></p>
+          <h2 class="lema" data-palavras>Plantados para <em>multiplicar</em></h2>
           <div class="texto-corrido revelar">
             <p>Reconhecida pela Diocese de Campos em 2013, com decreto definitivo em 2018, a comunidade serve no Rio de Janeiro, em Minas Gerais e no Espírito Santo, com missionários até nos Estados Unidos.</p>
           </div>
@@ -71,7 +83,7 @@
           <span class="nome-projeto c-rosa">Tempo de Liberdade<small>Bom Jesus do Itabapoana</small></span>
         </div>
       </div>
-      <div class="corre corre--volta" style="--tempo:55s">
+      <div class="corre corre--volta" style="--tempo:24s">
         <div class="corre__trilho">
           <img class="logo-projeto" src="assets/img/projetos/nascer-jovem.png" alt="Nascer Jovem">
           <img class="logo-projeto" src="assets/img/projetos/bartimeu.png" alt="Bartimeu">
