@@ -82,6 +82,11 @@
      <div class="grade grade--4">
        ${[1, 2, 3, 4].map(i => `<div class="pessoa revelar" data-atraso="${i % 3 + 1}"><div class="ph-img ev-img" data-img="${ORDEM_PESSOAS[i % 3]}"></div><h3>Nome</h3><div class="ph-lines" data-ph="1"></div></div>`).join('')}
      </div>`,
+    ev.cenas ? `
+     <div class="secao__topo secao__topo--centro revelar"><span class="sobretitulo ev-sobre">Momentos</span><h2>Vivido em oração</h2></div>
+     <div class="cenas">
+       ${ev.cenas.map((c, i) => `<img class="revelar" data-atraso="${i % 3 + 1}" src="assets/img/fotos/${c}.jpg" alt="Momento do evento" loading="lazy">`).join('')}
+     </div>` : '',
     ev.fotos && typeof ARQUIVO !== 'undefined' ? `
      <div class="secao__topo secao__topo--centro revelar"><span class="sobretitulo ev-sobre">Arquivo</span><h2>Fotos de outras edições</h2></div>
      <div class="arquivo">

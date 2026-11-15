@@ -139,15 +139,18 @@
     </section>
 
     <!-- ASSOCIAÇÃO -->
-    <section class="secao" id="associacao">
+    <section class="secao secao--profunda faixa-mosaico" id="associacao">
       <div class="container dividido">
         <div class="revelar">
-          <span class="sobretitulo">Ação social</span>
+          <span class="sobretitulo sobretitulo--claro">Ação social</span>
           <h2>Associação Trindade Santa</h2>
           <div class="ph-lines" data-ph="4"></div>
-          <a href="social.html" class="btn btn--primario">Conheça os serviços sociais <span data-icone="seta"></span></a>
+          <a href="social.html" class="btn btn--claro">Conheça os serviços sociais <span data-icone="seta"></span></a>
         </div>
-        <div class="revelar" data-atraso="1"><div class="ph-img [--proporcao:4/3]" data-img="pai"></div></div>
+        <div class="mosaico revelar" data-atraso="1">
+          <img src="assets/img/fotos/partilha/05.jpg" alt="" loading="lazy"><img src="assets/img/fotos/oracao/18.jpg" alt="" loading="lazy">
+          <img src="assets/img/fotos/partilha/03.jpg" alt="" loading="lazy"><img src="assets/img/fotos/assembleia/24.jpg" alt="" loading="lazy">
+        </div>
       </div>
     </section>
 
@@ -204,8 +207,11 @@
       document.querySelector('[data-fundador-texto]').innerHTML = FUNDADOR.texto.map(t => `<p>${esc(t)}</p>`).join('');
       document.querySelector('[data-fundador-frase]').textContent = FUNDADOR.frase;
       /* Momentos: fotos de arquivo, sem legenda */
-      document.querySelector('[data-momentos]').innerHTML = ARQUIVO.map((a, i) =>
-        `<img class="revelar" data-atraso="${i % 3 + 1}" src="assets/img/arquivo/${a.img}" alt="Foto de arquivo da Comunidade" loading="lazy">`).join('');
+      const recentes = ['partilha/01','oracao/15','assembleia/01','partilha/05','oracao/23','assembleia/10','oracao/12','partilha/03','oracao/24','assembleia/24']
+        .map(c => `assets/img/fotos/${c}.jpg`);
+      const antigas = ARQUIVO.map(a => `assets/img/arquivo/${a.img}`);
+      document.querySelector('[data-momentos]').innerHTML = recentes.concat(antigas).map((src, i) =>
+        `<img class="revelar" data-atraso="${i % 3 + 1}" src="${src}" alt="Momento da Comunidade" loading="lazy">`).join('');
       preencherMarcadores();
       ativarRevelar();
     })();
