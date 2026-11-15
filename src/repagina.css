@@ -899,3 +899,9 @@ h3, h4 { line-height: 1.3; }
 .pix--sem-chave .btn { margin-top: 10px; }
 
 .bloco--azul li small { color: rgba(255,255,255,.88); }
+
+/* Mapa no celular: aviso de dois dedos */
+.mapa-aviso-toque { position: absolute; inset: 0; z-index: 600; display: grid; place-items: center; padding: 24px; text-align: center; background: rgba(7,25,55,.55); color: #fff; font-weight: 800; font-size: 1.05rem; opacity: 0; pointer-events: none; transition: opacity .25s; }
+.mostra-aviso .mapa-aviso-toque { opacity: 1; }
+
+@media (max-width: 760px) { .voc-mosaico__grade--v .voc-mosaico__b { order: -1; } .voc-mosaico__grade--v { grid-auto-flow: row dense; } }

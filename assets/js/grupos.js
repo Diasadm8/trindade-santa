@@ -61,10 +61,12 @@
 
   /* ---------- Mapa ---------- */
   const limitesBrasil = L.geoJSON(estados).getBounds();
+  /* Celular/tablet: um dedo rola a página, dois dedos movem e aproximam o mapa */
+  const toque = matchMedia('(pointer: coarse)').matches;
   const mapa = L.map('mapa', {
     zoomControl: false,
     attributionControl: false,
-    dragging: true,           // arrasta com o mouse ou com o dedo
+    dragging: !toque,         // computador: arrasta com o mouse; celular: dois dedos
     inertia: true,
     keyboard: true,
     boxZoom: false,
@@ -77,6 +79,22 @@
   });
   mapa.fitBounds(limitesBrasil, { padding: [20, 20], animate: false });
   mapa.setMinZoom(mapa.getZoom());
+
+  if (toque) {
+    const palcoMapa = document.querySelector('.mapa-palco');
+    const aviso = document.createElement('div');
+    aviso.className = 'mapa-aviso-toque';
+    aviso.setAttribute('aria-hidden', 'true');
+    aviso.textContent = 'Use dois dedos para mover o mapa';
+    palcoMapa.appendChild(aviso);
+    let tempo;
+    const el = mapa.getContainer();
+    el.addEventListener('touchstart', e => {
+      clearTimeout(tempo);
+      if (e.touches.length === 1) { palcoMapa.classList.add('mostra-aviso'); tempo = setTimeout(() => palcoMapa.classList.remove('mostra-aviso'), 1400); }
+      else palcoMapa.classList.remove('mostra-aviso');
+    }, { passive: true });
+  }
 
   /* Estados */
   const estiloEstado = f => ESTADOS_ATIVOS.includes(f.properties.sigla)
