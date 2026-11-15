@@ -304,6 +304,44 @@ function cartaoEvento(e, k = 0) {
     </article>`;
 }
 
+/* ---------- Indicador de rolagem: barra lateral sempre visível + dica "role para baixo" ---------- */
+function ativarRolagem() {
+  if (document.querySelector('.rolagem')) return;
+  const barra = document.createElement('div');
+  barra.className = 'rolagem';
+  barra.setAttribute('aria-hidden', 'true');
+  barra.innerHTML = '<span class="rolagem__fio"></span>';
+  const dica = document.createElement('button');
+  dica.type = 'button';
+  dica.className = 'rolagem-dica';
+  dica.innerHTML = '<span>Role para baixo</span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+  dica.setAttribute('aria-label', 'Rolar a página para baixo');
+  document.body.append(barra, dica);
+  const fio = barra.firstChild;
+  let pendente = false;
+  const atualizar = () => {
+    pendente = false;
+    const doc = document.documentElement;
+    const total = doc.scrollHeight, vis = innerHeight, y = scrollY;
+    const rola = total > vis * 1.15;
+    barra.classList.toggle('rolagem--on', rola);
+    if (!rola) { dica.classList.remove('rolagem-dica--on'); return; }
+    const alt = barra.clientHeight;
+    const h = Math.max(44, alt * vis / total);
+    const topo = (alt - h) * (y / (total - vis || 1));
+    fio.style.height = h + 'px';
+    fio.style.transform = `translateY(${Math.max(0, Math.min(alt - h, topo))}px)`;
+    dica.classList.toggle('rolagem-dica--on', y < 60 && !dica.dataset.fechada);
+    if (y > 60) dica.dataset.fechada = '1';
+  };
+  const agenda = () => { if (!pendente) { pendente = true; requestAnimationFrame(atualizar); } };
+  addEventListener('scroll', agenda, { passive: true });
+  addEventListener('resize', agenda);
+  dica.addEventListener('click', () => scrollBy({ top: innerHeight * .85, behavior: 'smooth' }));
+  setTimeout(atualizar, 1200);       // depois das imagens/animações de entrada
+  addEventListener('load', () => setTimeout(atualizar, 300));
+}
+
 /* ---------- Inicialização ---------- */
 montarCabecalho();
 montarRodape();
@@ -312,4 +350,5 @@ document.addEventListener('DOMContentLoaded', () => {
   preencherMarcadores();
   ativarRevelar();
   ativarSubnav();
+  ativarRolagem();
 });

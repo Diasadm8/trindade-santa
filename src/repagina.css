@@ -900,6 +900,19 @@ h3, h4 { line-height: 1.3; }
 
 .bloco--azul li small { color: rgba(255,255,255,.88); }
 
+/* Barra de rolagem sempre visível (no celular o navegador esconde a dele) + dica de rolar */
+.rolagem { position: fixed; z-index: 900; right: 3px; top: 84px; bottom: 14px; width: 7px; border-radius: 7px; background: rgba(120,140,170,.28); box-shadow: 0 0 0 1px rgba(255,255,255,.35); opacity: 0; pointer-events: none; transition: opacity .3s; }
+.rolagem--on { opacity: 1; }
+.rolagem__fio { display: block; width: 100%; border-radius: 7px; background: #1b95d8; box-shadow: 0 0 0 1.5px #fff, 0 1px 6px rgba(0,0,0,.35); will-change: transform; }
+html[data-tema="escuro"] .rolagem__fio { background: #5cc0ff; box-shadow: 0 0 0 1.5px #0b1730, 0 1px 6px rgba(0,0,0,.5); }
+.rolagem-dica { position: fixed; z-index: 880; left: 50%; bottom: 18px; transform: translate(-50%, 24px); display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border: 0; border-radius: 999px; background: #f6b800; color: #0b2a4a; font: 800 .95rem/1 var(--fonte-texto, inherit); box-shadow: 0 10px 28px -8px rgba(0,0,0,.55); opacity: 0; pointer-events: none; transition: opacity .35s, transform .35s; cursor: pointer; }
+.rolagem-dica--on { opacity: 1; pointer-events: auto; transform: translate(-50%, 0); }
+.rolagem-dica svg { animation: rolagem-pula 1.4s ease-in-out infinite; }
+@keyframes rolagem-pula { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(4px); } }
+.ac-calmo .rolagem-dica svg { animation: none; }
+@media (min-width: 1000px) { .rolagem-dica { display: none; } }
+@media print { .rolagem, .rolagem-dica { display: none; } }
+
 /* Mapa no celular: aviso de dois dedos */
 .mapa-aviso-toque { position: absolute; inset: 0; z-index: 600; display: grid; place-items: center; padding: 24px; text-align: center; background: rgba(7,25,55,.55); color: #fff; font-weight: 800; font-size: 1.05rem; opacity: 0; pointer-events: none; transition: opacity .25s; }
 .mostra-aviso .mapa-aviso-toque { opacity: 1; }
