@@ -32,7 +32,7 @@ const COMUNIDADE = {
     { id: 'sao-jose', nome: 'São José', tipo: 'Baluarte', simbolo: 'pai', foto: 'assets/img/baluartes/sao-jose.jpg',
       citacao: 'Pai da providência', resumo: 'A comunidade nasceu numa paróquia dedicada a ele.',
       texto: 'A comunidade nasceu dentro de uma paróquia dedicada a São José e vê nisso um primeiro sinal de que ele quis adotá-la, guardá-la e educá-la. Homem de fortaleza, fé e responsabilidade, de vida interior profunda, José soube acolher com amor até as situações difíceis: sem compreender todos os desígnios de Deus, jamais julgou Maria nem lhe tirou a dignidade. Pai da providência e carpinteiro escolhido para sustentar a Sagrada Família, ele ensina a confiar nas promessas de Deus e a nunca abandonar os seus.' },
-    { id: 'santa-elizabeth', nome: 'Santa Elisabete da Trindade', tipo: 'Baluarte', simbolo: 'filho',
+    { id: 'santa-elizabeth', nome: 'Santa Elisabete da Trindade', tipo: 'Baluarte', simbolo: 'filho', foto: 'assets/img/baluartes/santa-elisabete.jpg',
       citacao: 'A Trindade habita em mim!', resumo: 'Ser um louvor de glória à Santíssima Trindade.',
       texto: 'Jovem de uma teologia trinitária vivida, e não apenas teórica, Santa Elisabete convida ao encontro com o Deus Trino, que habita o centro do ser de cada pessoa de forma real e concreta: “A Trindade habita em mim!”. Inspirada nela, a comunidade deseja ser um louvor de glória à Santíssima Trindade e mergulhar cada vez mais fundo em seu carisma. Para os consagrados, missionários do Amor Trinitário, a história da santa é um sinal que alimenta e impulsiona o testemunho de santidade em todo lugar.' },
     { id: 'sao-joao-paulo', nome: 'São João Paulo II', tipo: 'Baluarte', simbolo: 'pai', foto: 'assets/img/baluartes/joao-paulo-ii.jpg',
