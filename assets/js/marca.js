@@ -137,6 +137,7 @@ function montarCabecalho() {
   </header>`;
 
   const header = document.getElementById('header');
+  if (window.montarAcessibilidade) window.montarAcessibilidade(header);
 
   const aoRolar = () => header.classList.toggle('is-scrolled', window.scrollY > 40);
   if (transparente) { aoRolar(); window.addEventListener('scroll', aoRolar, { passive: true }); }
