@@ -1,5 +1,5 @@
 # Comunidade de Aliança Trindade Santa — site
-
+# link do site: https://diasadm8.github.io/trindade-santa/index.html
 Site estático (HTML + CSS + JavaScript puro), sem etapa de build. Pronto para o GitHub Pages e, depois, para o domínio `.org` da comunidade.
 
 ## Estrutura
