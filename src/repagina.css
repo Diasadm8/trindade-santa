@@ -15,10 +15,12 @@
   --ts-verde: #7cc143;
   --ts-lilas: #b9a3ea;
   --ts-papel: #f6f3ee;
-  --display: "Bricolage Grotesque", "Mulish", system-ui, sans-serif;
+  --display: "Anton", "Impact", "Mulish", sans-serif;
+  --serifa: "Fraunces", Georgia, serif;
   --ease-saida: cubic-bezier(.16, 1, .3, 1);
 }
 
+html { font-synthesis-weight: none; }
 ::selection { background: var(--ts-amarelo); color: var(--ts-noite); }
 html { scrollbar-color: var(--ts-azul) transparent; }
 
@@ -66,7 +68,7 @@ p { text-wrap: pretty; }
 .revelar.is-visivel { opacity: 1; transform: none; }
 
 /* Palavras que sobem de dentro de uma máscara */
-[data-palavras] .pw { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .06em; margin-bottom: -.06em; }
+[data-palavras] .pw { display: inline-block; overflow: hidden; vertical-align: top; padding: .16em .02em .08em; margin: -.16em -.02em -.08em; }
 [data-palavras] .pw > span { display: inline-block; transform: translateY(105%); transition: transform 1s var(--ease-saida); transition-delay: calc(var(--i, 0) * 60ms); }
 [data-palavras].is-dentro .pw > span { transform: none; }
 
@@ -508,3 +510,14 @@ a:hover > .link-mais svg, .link-mais:hover svg { transform: translateX(4px); }
 
 .pix--escuro::before { display: none; }
 
+
+/* ---------- Fonte: Anton (condensada) + Fraunces itálica nos destaques ---------- */
+h1, h2, .display { letter-spacing: .005em; line-height: .92; }
+h1 em, h2 em, .lema em, .footer__lema em, .voc-pergunta em, .chamada-foto h2 em {
+  font-family: var(--serifa); font-style: italic; font-weight: 600; text-transform: none;
+  font-variation-settings: "opsz" 144; letter-spacing: -.02em;
+}
+.lema em { color: var(--ts-azul); }
+.projetos__titulo h2 em { color: #fff; }
+.chamada-foto h2 em, .noite-sobre h2 em { color: var(--ts-amarelo); }
+.noite-sobre h2 em { color: var(--qcd-ouro); }
