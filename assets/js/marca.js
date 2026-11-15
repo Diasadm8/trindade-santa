@@ -157,7 +157,8 @@ function montarRodape() {
           <a href="index.html" class="footer__logo" aria-label="Comunidade de Aliança Trindade Santa — início">
             <img src="assets/img/marca/logo-completo-branco.svg" alt="Comunidade de Aliança Trindade Santa" width="280" height="98" loading="lazy">
           </a>
-          <div class="ph-lines" data-ph="3"></div>
+          <p class="footer__lema">Ou santos<br><em>ou nada</em></p>
+          <p class="footer__dados">${COMUNIDADE.cidade} · ${COMUNIDADE.diocese}</p>
           <div class="redes">
             <a href="${LINKS.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icone('instagram')}</a>
             <a href="${LINKS.youtube}" target="_blank" rel="noopener" aria-label="YouTube">${icone('youtube')}</a>
@@ -168,7 +169,6 @@ function montarRodape() {
           <h4>A Comunidade</h4>
           <ul>
             <li><a href="comunidade.html#quem-somos">Quem somos</a></li>
-            <li><a href="comunidade.html#carisma">Carisma</a></li>
             <li><a href="comunidade.html#historia">História</a></li>
             <li><a href="espiritualidade.html">Espiritualidade</a></li>
             <li><a href="musica.html">Música</a></li>
@@ -189,8 +189,10 @@ function montarRodape() {
           <h4>Contato</h4>
           <ul>
             <li><a href="contato.html">Fale conosco</a></li>
+            <li><a href="${LINKS.instagram}" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="${LINKS.youtube}" target="_blank" rel="noopener">YouTube</a></li>
+            <li><a href="${LINKS.canalWhatsapp}" target="_blank" rel="noopener">Canal do WhatsApp</a></li>
           </ul>
-          <div class="ph-lines" data-ph="3"></div>
         </div>
       </div>
       <div class="footer__base">

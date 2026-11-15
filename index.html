@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Comunidade de Aliança Trindade Santa</title>
-  <meta name="description" content="Comunidade de Aliança Trindade Santa — comunidade católica.">
-  <meta name="theme-color" content="#0b4ea2">
+  <meta name="description" content="Comunidade de Aliança Trindade Santa: católicos, trinitários, carismáticos, adoradores e marianos. Desde 2007, em Itaperuna – RJ.">
+  <meta name="theme-color" content="#071937">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/fotos/assembleia/14.jpg">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
@@ -17,139 +18,156 @@
 
   <main id="conteudo">
 
-    <!-- ===== HERO: a órbita da Santíssima Trindade ===== -->
-    <section class="hero" aria-label="Apresentação">
-      <div class="hero__fundo" aria-hidden="true">
-        <span data-selo="pai"></span><span data-selo="filho"></span><span data-selo="espirito"></span>
-      </div>
-      <canvas class="hero__particulas" aria-hidden="true"></canvas>
-
-      <div class="hero__conteudo">
-        <div class="orbita">
-          <svg class="orbita__halo" viewBox="0 0 200 200" aria-hidden="true">
-            <circle class="h1" cx="100" cy="100" r="96" stroke-width=".8"/>
-            <circle class="h2" cx="100" cy="100" r="88" stroke-width=".6"/>
-          </svg>
-        </div>
-        <div class="hero__pessoa" aria-live="polite"></div>
-        <div class="orbita__pontos"></div>
-
-        <div class="assinatura">
-          <div class="assinatura__sup">Comunidade de Aliança</div>
-          <h1 class="assinatura__nome">Trindade Santa</h1>
-        </div>
-
-        <div class="hero__acoes">
-          <a href="comunidade.html" class="btn btn--claro">Conheça a comunidade <span data-icone="seta"></span></a>
-          <a href="itinerarios.html" class="btn btn--contorno-claro">Itinerário do mês</a>
-        </div>
-      </div>
-      <span class="rolar" aria-hidden="true"></span>
-    </section>
-
-    <!-- ===== QUEM SOMOS ===== -->
-    <section class="secao secao--profunda faixa-mosaico">
-      <div class="container dividido">
-        <div class="mosaico revelar">
-          <img src="assets/img/fotos/oracao/15.jpg" alt="" loading="lazy"><img src="assets/img/fotos/partilha/01.jpg" alt="" loading="lazy">
-          <img src="assets/img/fotos/assembleia/05.jpg" alt="" loading="lazy"><img src="assets/img/fotos/noite2025/13.jpg" alt="" loading="lazy">
-        </div>
-        <div class="revelar" data-atraso="1">
-          <span class="sobretitulo sobretitulo--claro">Quem somos</span>
-          <h2>Uma comunidade de aliança</h2>
-          <div class="ph-lines" data-ph="6"></div>
-          <a href="comunidade.html" class="link-seta">Conheça nossa história <span data-icone="seta"></span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PILARES: as três Pessoas ===== -->
-    <section class="secao secao--nevoa">
+    <!-- ===== ABERTURA ===== -->
+    <section class="topo-foto abertura" aria-label="Apresentação">
+      <div class="topo-foto__img"><img src="assets/img/fotos/assembleia/14.jpg" alt="Assembleia de jovens com as mãos levantadas em louvor" fetchpriority="high"></div>
       <div class="container">
-        <div class="secao__topo secao__topo--centro revelar">
-          <span class="sobretitulo">Nossa espiritualidade</span>
-          <h2>Um só Deus em três Pessoas</h2>
-          <div class="ph-lines" data-ph="2"></div>
-        </div>
-        <div class="grade grade--3">
-          <article class="pilar pilar--pai revelar" data-atraso="1">
-            <span data-selo="pai"></span>
-            <h3>Deus Pai</h3>
-            <div class="ph-lines" data-ph="3"></div>
-          </article>
-          <article class="pilar pilar--filho revelar" data-atraso="2">
-            <span data-selo="filho"></span>
-            <h3>Deus Filho</h3>
-            <div class="ph-lines" data-ph="3"></div>
-          </article>
-          <article class="pilar pilar--espirito revelar" data-atraso="3">
-            <span data-selo="espirito"></span>
-            <h3>Deus Espírito Santo</h3>
-            <div class="ph-lines" data-ph="3"></div>
-          </article>
+        <h1 data-palavras><small>Comunidade de Aliança</small>Trindade Santa</h1>
+        <div class="topo-foto__linha" style="margin-top:28px">
+          <p class="topo-foto__sub revelar">Católicos, trinitários, carismáticos, adoradores e marianos. Desde 2007, em Itaperuna – RJ.</p>
+          <div class="abertura__acoes revelar" data-atraso="1">
+            <a href="comunidade.html" class="btn btn--amarelo">Conheça a comunidade <span data-icone="seta"></span></a>
+            <a href="itinerarios.html" class="btn btn--vazado">Itinerário do mês</a>
+          </div>
         </div>
       </div>
+      <span class="rolar-dica" aria-hidden="true"></span>
+    </section>
+
+    <!-- ===== LEMA ===== -->
+    <section class="bloco bloco--papel">
+      <div class="container par">
+        <div>
+          <h2 class="lema" data-palavras>Ou santos <em>ou nada</em></h2>
+          <p class="identidade revelar"><span>Trinitários</span><span>Católicos</span><span>Carismáticos</span><span>Adoradores</span><span>Marianos</span></p>
+          <div class="texto-corrido revelar">
+            <p>Reconhecida pela Diocese de Campos em 2013, com decreto definitivo em 2018, a comunidade serve no Rio de Janeiro, em Minas Gerais e no Espírito Santo, com missionários até nos Estados Unidos.</p>
+          </div>
+          <p class="revelar" style="margin-top:28px"><a class="link-mais" href="comunidade.html">Nossa história <span data-icone="seta"></span></a></p>
+        </div>
+        <div class="dupla">
+          <div class="abre-foto"><img src="assets/img/fotos/oracao/12.jpg" alt="Jovens cantando de olhos fechados" loading="lazy"></div>
+          <div class="abre-foto" style="transition-delay:.2s"><img src="assets/img/fotos/partilha/02.jpg" alt="Duas jovens se abraçando" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJETOS: a tela azul ===== -->
+    <section class="projetos" aria-labelledby="t-projetos">
+      <div class="container projetos__titulo">
+        <h2 id="t-projetos" data-palavras>Uma só missão</h2>
+        <p class="revelar">12 projetos · 10 núcleos · RJ, MG, ES e EUA</p>
+      </div>
+      <div class="corre" style="--tempo:70s">
+        <div class="corre__trilho">
+          <span class="nome-projeto c-amarelo">Nascer Jovem<small>Itaperuna</small></span>
+          <span class="nome-projeto c-laranja">Bartimeu<small>Miracema</small></span>
+          <span class="nome-projeto c-rosa">Casa de Deus<small>Campos</small></span>
+          <span class="nome-projeto c-branco">Núcleo Muriaé<small>MG</small></span>
+          <span class="nome-projeto c-verde">Filhos de Maria<small>Fervedouro</small></span>
+          <span class="nome-projeto c-lilas">Aviva Jovem<small>Macuco</small></span>
+          <span class="nome-projeto c-amarelo">Novas Vestes<small>Miradouro</small></span>
+          <span class="nome-projeto c-laranja">Terço em Família<small>Nova Friburgo</small></span>
+          <span class="nome-projeto c-rosa">Tempo de Liberdade<small>Bom Jesus do Itabapoana</small></span>
+        </div>
+      </div>
+      <div class="corre corre--volta" style="--tempo:55s">
+        <div class="corre__trilho">
+          <img class="logo-projeto" src="assets/img/projetos/nascer-jovem.png" alt="Nascer Jovem">
+          <img class="logo-projeto" src="assets/img/projetos/bartimeu.png" alt="Bartimeu">
+          <img class="logo-projeto" src="assets/img/projetos/muriae.png" alt="Núcleo Muriaé">
+          <img class="logo-projeto" src="assets/img/projetos/tempo-de-liberdade.png" alt="Tempo de Liberdade">
+          <img class="logo-projeto" src="assets/img/projetos/macuco.png" alt="Macuco, te quero Santa">
+          <img class="logo-projeto" src="assets/img/projetos/rio-das-ostras.png" alt="Núcleo Rio das Ostras">
+          <img class="logo-projeto" src="assets/img/projetos/musicalidade.png" alt="Musicalidade Trindade Santa">
+          <img class="logo-projeto" src="assets/img/projetos/associacao.png" alt="Associação Trindade Santa">
+          <img class="logo-projeto" src="assets/img/projetos/seta.png" alt="Congresso SETA">
+          <img class="logo-projeto" src="assets/img/projetos/quem-como-deus.png" alt="Noite Oracional Quem Como Deus">
+        </div>
+      </div>
+      <div class="corre" style="--tempo:80s">
+        <div class="corre__trilho">
+          <span class="nome-projeto c-verde">Reconstrução<small>Espera Feliz</small></span>
+          <span class="nome-projeto c-branco">Núcleo Macaé</span>
+          <span class="nome-projeto c-amarelo">Rio das Ostras</span>
+          <span class="nome-projeto c-lilas">Casimiro de Abreu</span>
+          <span class="nome-projeto c-rosa">Santa Mônica<small>Itaperuna</small></span>
+          <span class="nome-projeto c-laranja">Águas Profundas<small>Madalena</small></span>
+          <span class="nome-projeto c-amarelo">GPP e Escolhidas<small>Laranjal</small></span>
+          <span class="nome-projeto c-verde">Núcleo Bom Jesus</span>
+          <span class="nome-projeto c-branco">New Jersey<small>EUA</small></span>
+        </div>
+      </div>
+      <div class="projetos__acao revelar">
+        <a href="grupos.html" class="btn btn--amarelo">Encontre um grupo <span data-icone="seta"></span></a>
+      </div>
+    </section>
+
+    <!-- ===== AS TRÊS PESSOAS ===== -->
+    <section class="paineis" aria-label="Um só Deus em três Pessoas">
+      <a class="painel" href="espiritualidade.html">
+        <img src="assets/img/fotos/oracao/18.jpg" alt="Casal rezando de mãos abertas" loading="lazy">
+        <div><span data-selo="pai"></span><h3>Deus Pai</h3><p>As mãos que sustentam o mundo.</p></div>
+      </a>
+      <a class="painel" href="espiritualidade.html">
+        <img src="assets/img/fotos/oracao/23.jpg" alt="Mãos segurando um terço com crucifixo" loading="lazy">
+        <div><span data-selo="filho"></span><h3>Deus Filho</h3><p>A cruz.</p></div>
+      </a>
+      <a class="painel" href="espiritualidade.html">
+        <img src="assets/img/fotos/oracao/24.jpg" alt="Homem de braços erguidos em oração" loading="lazy">
+        <div><span data-selo="espirito"></span><h3>Espírito Santo</h3><p>A chama.</p></div>
+      </a>
     </section>
 
     <!-- ===== ITINERÁRIO DO MÊS ===== -->
-    <section class="secao">
+    <section class="bloco">
+      <div class="container" data-itinerario-mes></div>
+    </section>
+
+    <!-- ===== OS DOIS GRANDES EVENTOS ===== -->
+    <section class="dois-eventos" aria-label="Nossos grandes eventos">
+      <a class="evento-grande evento-grande--noite" href="noite-oracional.html">
+        <img src="assets/img/fotos/noite2025/13.jpg" alt="Pregador de punho erguido na Noite Oracional" loading="lazy">
+        <img class="evento-grande__logo" src="assets/eventos/noite-oracional.png" alt="" aria-hidden="true" loading="lazy">
+        <h3>Noite Oracional<br>Quem Como Deus</h3>
+        <p>Uma noite inteira de oração com os arcanjos Miguel, Gabriel e Rafael.</p>
+        <span class="link-mais">Conheça <span data-icone="seta"></span></span>
+      </a>
+      <a class="evento-grande evento-grande--seta" href="congresso-seta.html">
+        <img src="assets/img/fotos/louvor/10.jpg" alt="Louvor no palco do Congresso SETA" loading="lazy">
+        <img class="evento-grande__logo" src="assets/img/projetos/seta.png" alt="" aria-hidden="true" loading="lazy" style="height:clamp(80px,9vw,120px)">
+        <h3>Congresso SETA</h3>
+        <p>Seguir a Trilha do Amor: o maior congresso católico da região.</p>
+        <span class="link-mais">Conheça <span data-icone="seta"></span></span>
+      </a>
+    </section>
+
+    <!-- ===== PRÓXIMAS DATAS ===== -->
+    <section class="bloco bloco--papel">
       <div class="container">
-        <div class="destaque-itinerario revelar" data-itinerario-mes></div>
+        <h2 data-palavras>Próximas datas</h2>
+        <div class="datas" data-proximos-eventos></div>
+        <p class="revelar" style="margin-top:28px"><a class="link-mais" href="eventos.html">Agenda completa <span data-icone="seta"></span></a></p>
       </div>
     </section>
 
-    <!-- ===== CITAÇÃO ===== -->
-    <section class="secao secao--degrade">
-      <div class="container citacao revelar">
-        <span class="citacao__aspas" aria-hidden="true">“</span>
-        <div class="ph-lines" data-ph="3"></div>
-        <cite>Referência bíblica</cite>
-      </div>
-    </section>
-
-    <!-- ===== PRÓXIMOS EVENTOS ===== -->
-    <section class="secao">
-      <div class="container">
-        <div class="secao__topo secao__topo--linha revelar">
-          <div>
-            <span class="sobretitulo">Agenda</span>
-            <h2>Próximos eventos</h2>
-          </div>
-          <a href="eventos.html" class="btn btn--contorno">Ver agenda completa <span data-icone="seta"></span></a>
-        </div>
-        <div class="grade grade--3" data-proximos-eventos></div>
-      </div>
-    </section>
-
-    <!-- ===== GRUPOS ===== -->
-    <section class="secao secao--profunda">
-      <div class="container dividido">
-        <div class="revelar">
-          <span class="sobretitulo sobretitulo--claro">Presença</span>
-          <h2>Onde estamos</h2>
-          <div class="ph-lines [--cor-linha:rgba(255,255,255,.3)]" data-ph="4"></div>
-          <a href="grupos.html" class="btn btn--claro">Encontre um grupo perto de você <span data-icone="seta"></span></a>
-        </div>
-        <div class="numeros revelar" data-atraso="1">
-          <div class="numero"><strong>00</strong><span>Grupos</span></div>
-          <div class="numero"><strong>00</strong><span>Cidades</span></div>
-          <div class="numero"><strong>00</strong><span>Membros</span></div>
-        </div>
+    <!-- ===== ONDE ESTAMOS ===== -->
+    <section class="onde">
+      <div class="onde__foto"><img data-paralaxe="6" src="assets/img/fotos/assembleia/03.jpg" alt="Jovens estendendo as mãos em oração" loading="lazy"></div>
+      <div class="onde__texto">
+        <h2 data-palavras>Onde estamos</h2>
+        <p class="onde__cidades revelar" data-cidades></p>
+        <a href="grupos.html" class="btn revelar">Ver o mapa <span data-icone="seta"></span></a>
       </div>
     </section>
 
     <!-- ===== FAÇA PARTE ===== -->
-    <section class="secao">
+    <section class="chamada-foto">
+      <img data-paralaxe="7" src="assets/img/fotos/partilha/06.jpg" alt="Dois irmãos abraçados em oração" loading="lazy">
       <div class="container">
-        <div class="chamada revelar">
-          <div class="chamada__marca" aria-hidden="true"><span data-trio class="selo--branco"></span></div>
-          <div>
-            <span class="sobretitulo sobretitulo--claro">Vocação</span>
-            <h2>Faça parte desta aliança</h2>
-            <div class="ph-lines" data-ph="3"></div>
-          </div>
-          <a href="faca-parte.html" class="btn btn--claro">Quero conhecer <span data-icone="seta"></span></a>
-        </div>
+        <h2 data-palavras>Faça parte</h2>
+        <p class="revelar">Onde está o seu coração? A Trindade Santa é um lugar para a sua vocação.</p>
+        <a href="faca-parte.html" class="btn btn--amarelo revelar">Quero conhecer <span data-icone="seta"></span></a>
       </div>
     </section>
 
@@ -160,5 +178,6 @@
   <script src="assets/js/dados.js"></script>
   <script src="assets/js/marca.js"></script>
   <script src="assets/js/inicio.js"></script>
+  <script src="assets/js/movimento.js"></script>
 </body>
 </html>

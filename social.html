@@ -8,152 +8,68 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <div data-cabecalho="transparente"></div>
 
   <main id="conteudo">
-    <section class="page-hero">
-      <div class="page-hero__marca" aria-hidden="true"><span data-selo="pai"></span></div>
+    <section class="topo-foto topo-foto--meio">
+      <div class="topo-foto__img"><img src="assets/img/fotos/partilha/05.jpg" alt="Dois irmãos abraçados" fetchpriority="high"></div>
       <div class="container">
         <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Ação social e doações</span></nav>
-        <span class="sobretitulo sobretitulo--claro">Associação Trindade Santa</span>
-        <h1>Amor que vira ação</h1>
-        <div class="ph-lines" data-ph="2"></div>
-        <a href="#pix" class="btn btn--claro mt-2.5">Quero doar <span data-icone="seta"></span></a>
+        <div class="topo-foto__linha">
+          <h1 data-palavras>Amor que vira ação</h1>
+          <div><p class="topo-foto__sub revelar">A Associação Trindade Santa é a própria comunidade, organizada para servir.</p><div class="revelar"><a href="#pix" class="btn btn--amarelo">Quero doar <span data-icone="seta"></span></a></div></div>
+        </div>
       </div>
     </section>
-
-    <nav class="subnav" aria-label="Seções da página">
-      <div class="container">
-        <a href="#associacao">A Associação</a>
-        <a href="#servicos">Serviços sociais</a>
-        <a href="#pix">Doe</a>
-        <a href="#transparencia">Transparência</a>
-        <a href="#ajudar">Outras formas</a>
-      </div>
-    </nav>
 
     <!-- A ASSOCIAÇÃO -->
-    <section class="secao" id="associacao">
-      <div class="container dividido">
-        <div class="revelar">
-          <span class="sobretitulo">Quem presta o serviço</span>
-          <h2>Associação Trindade Santa</h2>
-          <div class="ph-lines" data-ph="5"></div>
-          <dl class="ficha" data-ficha></dl>
-        </div>
-        <div class="revelar" data-atraso="1">
-          <div class="card p-9 grid place-items-center bg-white">
-            <img src="assets/img/marca/associacao-cores.png" alt="Logo da Associação Trindade Santa" class="w-[min(100%,460px)]" loading="lazy">
+    <section class="bloco bloco--papel" id="associacao">
+      <div class="container par">
+        <div>
+          <h2 data-palavras>Associação Trindade Santa</h2>
+          <div class="texto-corrido revelar">
+            <p>A Associação é a própria comunidade, organizada para servir. Cada doação sustenta os serviços sociais e a evangelização dos jovens.</p>
           </div>
+          <dl class="ficha revelar" data-ficha></dl>
+        </div>
+        <div class="revelar" style="display:grid;place-items:center">
+          <img src="assets/img/marca/associacao-cores.png" alt="Logo da Associação Trindade Santa" style="width:min(100%,460px)" loading="lazy">
         </div>
       </div>
     </section>
 
-    <!-- NÚMEROS -->
-    <section class="secao secao--profunda py-[70px]">
+    <!-- DOAÇÃO -->
+    <section class="bloco bloco--azul" id="pix">
       <div class="container">
-        <div class="numeros revelar">
-          <div class="numero"><strong>00</strong><span>Famílias atendidas</span></div>
-          <div class="numero"><strong>00</strong><span>Atendimentos por mês</span></div>
-          <div class="numero"><strong>00</strong><span>Voluntários</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVIÇOS SOCIAIS -->
-    <section class="secao" id="servicos">
-      <div class="container">
-        <div class="secao__topo secao__topo--centro revelar">
-          <span class="sobretitulo">O que fazemos</span>
-          <h2>Serviços sociais</h2>
-          <div class="ph-lines" data-ph="2"></div>
-        </div>
-        <div class="grade grade--3" data-projetos></div>
-      </div>
-    </section>
-
-    <!-- PIX -->
-    <section class="secao secao--nevoa" id="pix">
-      <div class="container">
-        <div class="pix revelar">
+        <div class="pix pix--escuro revelar">
           <div class="pix__qr" data-pix-qr></div>
           <div>
-            <span class="sobretitulo">Doação via PIX</span>
-            <h2>Faça sua doação</h2>
-            <p class="text-tinta-suave">Abra o app do seu banco, escolha <strong>PIX</strong> e use o QR Code ou copie a chave abaixo. Qualquer valor é bem-vindo.</p>
+            <h2 data-palavras>Faça sua doação</h2>
+            <p>Abra o app do seu banco, escolha <strong>PIX</strong> e use o QR Code ou copie a chave abaixo. Qualquer valor é bem-vindo.</p>
             <div class="pix__chave">
               <code data-pix-chave></code>
-              <button type="button" class="btn btn--primario" data-copiar>Copiar chave</button>
+              <button type="button" class="btn btn--amarelo" data-copiar>Copiar chave</button>
             </div>
             <div class="pix__favorecido" data-pix-favorecido></div>
             <div class="pix__ok" aria-live="polite" data-pix-ok></div>
-            <a class="link-seta" data-pix-form href="#" target="_blank" rel="noopener">Prefere o formulário de doação? <span data-icone="seta"></span></a>
+            <a class="link-mais" data-pix-form href="#" target="_blank" rel="noopener">Prefere o formulário de doação? <span data-icone="seta"></span></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- MENSAGEM -->
-    <section class="secao secao--degrade">
-      <div class="container revelar text-center">
-        <span class="citacao__aspas" aria-hidden="true">“</span>
-        <p class="mensagem-doacao">Cada um dê conforme decidiu em seu coração, não com tristeza nem por obrigação, pois Deus ama quem dá com alegria.</p>
-        <cite class="block mt-[18px] not-italic text-[.85rem] tracking-[.2em] uppercase opacity-85">2 Coríntios 9, 7</cite>
-      </div>
-    </section>
-
-    <!-- COMO A DOAÇÃO AJUDA -->
-    <section class="secao">
+    <!-- VERSÍCULO -->
+    <section class="chamada-foto">
+      <img data-paralaxe="7" src="assets/img/fotos/assembleia/17.jpg" alt="Mulheres sentadas na assembleia, atentas à pregação" loading="lazy">
       <div class="container">
-        <div class="secao__topo secao__topo--centro revelar">
-          <span class="sobretitulo">Sua doação em ação</span>
-          <h2>O que o seu gesto faz</h2>
-        </div>
-        <div class="formas">
-          <div class="forma revelar" data-atraso="1"><strong class="forma__valor">R$ 00</strong><div class="ph-lines" data-ph="2"></div></div>
-          <div class="forma revelar" data-atraso="2"><strong class="forma__valor">R$ 00</strong><div class="ph-lines" data-ph="2"></div></div>
-          <div class="forma revelar" data-atraso="3"><strong class="forma__valor">R$ 00</strong><div class="ph-lines" data-ph="2"></div></div>
-        </div>
+        <p class="versiculo-grande" data-palavras>Deus ama quem dá com alegria.</p>
+        <p class="revelar">“Cada um dê conforme decidiu em seu coração, não com tristeza nem por obrigação.” 2 Coríntios 9, 7</p>
       </div>
-    </section>
-
-    <!-- TRANSPARÊNCIA -->
-    <section class="secao secao--nevoa" id="transparencia">
-      <div class="container dividido">
-        <div class="revelar">
-          <span class="sobretitulo">Transparência</span>
-          <h2>Prestação de contas</h2>
-          <div class="ph-lines" data-ph="4"></div>
-        </div>
-        <div class="revelar" data-atraso="1">
-          <div class="relatorios">
-            <a class="relatorio" href="#"><span data-icone="baixar"></span><div><strong>Relatório anual</strong><small>PDF · em breve</small></div></a>
-            <a class="relatorio" href="#"><span data-icone="baixar"></span><div><strong>Balanço</strong><small>PDF · em breve</small></div></a>
-            <a class="relatorio" href="#"><span data-icone="baixar"></span><div><strong>Estatuto da Associação</strong><small>PDF · em breve</small></div></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- OUTRAS FORMAS -->
-    <section class="secao" id="ajudar">
-      <div class="container">
-        <div class="secao__topo secao__topo--centro revelar">
-          <span class="sobretitulo">Outras formas</span>
-          <h2>Também é possível ajudar</h2>
-        </div>
-        <div class="formas">
-          <div class="forma revelar" data-atraso="1"><span class="icone-redondo"><span data-icone="coracao"></span></span><h3>Benfeitor mensal</h3><div class="ph-lines" data-ph="2"></div></div>
-          <div class="forma revelar" data-atraso="2"><span class="icone-redondo"><span data-icone="pessoas"></span></span><h3>Voluntariado</h3><div class="ph-lines" data-ph="2"></div></div>
-          <div class="forma revelar" data-atraso="3"><span class="icone-redondo"><span data-icone="livro"></span></span><h3>Doação de itens</h3><div class="ph-lines" data-ph="2"></div></div>
-        </div>
-      </div>
-    </section>
-  </main>
+    </section>  </main>
 
   <div data-rodape></div>
   <script src="assets/js/dados.js"></script>
@@ -174,7 +90,7 @@
       document.querySelector('[data-pix-form]').href = LINKS.formularioPix;
       /* QR do PicPay: ajusta títulos e oferece o link direto */
       if (DOACAO.qrRotulo && DOACAO.qrRotulo !== 'PIX') {
-        document.querySelector('#pix .sobretitulo').textContent = `Doação via ${DOACAO.qrRotulo}`;
+        
         const txt = document.querySelector('#pix p');
         txt.innerHTML = `Aponte a câmera do app <strong>${DOACAO.qrRotulo}</strong> para o QR Code${DOACAO.qrLink ? ' ou use o botão abaixo' : ''}. Qualquer valor é bem-vindo.`;
         if (DOACAO.qrLink) {
@@ -193,18 +109,10 @@
         catch { ok.textContent = 'Selecione e copie a chave manualmente.'; }
       });
 
-      document.querySelector('[data-projetos]').innerHTML = PROJETOS.map((p, k) => `
-        <article class="card projeto revelar" data-atraso="${k % 3 + 1}">
-          <div class="ph-img" data-img="${p.simbolo}"></div>
-          <div class="card__corpo">
-            <h3>${p.nome}</h3>
-            <div class="ph-lines" data-ph="3"></div>
-            <a href="#pix" class="link-seta">Apoiar este serviço ${icone('seta')}</a>
-          </div>
-        </article>`).join('');
       preencherMarcadores();
       ativarRevelar();
     })();
   </script>
+  <script src="assets/js/movimento.js"></script>
 </body>
 </html>

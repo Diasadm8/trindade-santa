@@ -58,32 +58,32 @@ const HISTORIA = {
   abertura: 'Entre 2002 e 2007, um grupo de oração ouviu uma pergunta que ardia em seu coração: não somos chamados a viver em Comunidade?',
   atos: [
     { numero: 'I', titulo: 'Os primeiros passos', simbolo: 'pai', marcos: [
-      { ano: '2002', titulo: 'O chamado', espaco: true, presentes: ['Tereza Ligiero'],
+      { ano: '2002', titulo: 'O chamado', foto: 'assets/img/fotos/assembleia/19.jpg', presentes: ['Tereza Ligiero'],
         texto: 'Em 2002, período de transição e de amadurecimento do seu chamado, o fundador, Reginaldo Braz, atendeu ao convite de Tereza Ligiero e iniciou o Grupo de Perseverança da Catequese Paroquial.' },
-      { ano: 'Com o passar do tempo', titulo: '1º Seminário de Vida no Espírito', simbolo: 'espirito',
+      { ano: 'Com o passar do tempo', titulo: '1º Seminário de Vida no Espírito', simbolo: 'espirito', foto: 'assets/img/fotos/oracao/09.jpg',
         texto: 'Com o passar do tempo, abriu-se para o grupo o 1º Seminário de Vida no Espírito. Foi o pontapé inicial do G.O. Nascer Jovem.' },
       { ano: 'Em apenas dois anos', titulo: 'A Coordenação Trinitária e o sinal da Trindade Santa', simbolo: 'filho',
-        foto: 'assets/img/arquivo/seta-2006-estandarte.jpg',
+        foto: 'assets/img/fotos/partilha/04.jpg',
         texto: 'Em apenas dois anos, o Senhor inspirou a Coordenação Trinitária e o sinal da Trindade Santa. O grupo passou a engatinhar rumo à imensidão da Espiritualidade Trinitária.' }
     ] },
     { numero: 'II', titulo: 'A pergunta', simbolo: 'filho', marcos: [
-      { ano: 'Já em 2007', titulo: 'Os pontos marcantes', simbolo: 'pai',
+      { ano: 'Já em 2007', titulo: 'Os pontos marcantes', simbolo: 'pai', foto: 'assets/img/fotos/assembleia/05.jpg',
         texto: 'Eram muitos: não apenas os que serviam em 2007, mas todos os que passaram pela Formação e pela Espiritualidade. A experiência como Grupo de Oração deixou pontos marcantes: a fraternidade, o comprometimento, o desejo de viverem juntos. Era o que, de antemão, já chamavam de carisma: a Comunidade! Foi preciso se lançar, com coragem, nas mãos de Deus. Visto de hoje, tudo parece tranquilo, mas aqueles momentos foram tão ou mais conflituosos que os de agora. Tudo vai passar!' },
       { ano: '2006', titulo: 'Uma voz que falava por dentro', simbolo: 'espirito',
-        foto: 'assets/img/arquivo/seta-2006-louvor.jpg',
+        foto: 'assets/img/fotos/oracao/10.jpg',
         texto: 'O ano de 2006 foi marcado por provações. Foi nele que os padres Leandro Diniz e Leandro Rabelo mencionaram, ou verbalizaram, uma voz que falava dentro do grupo, um desejo que ardia em seus corações. Em diferentes circunstâncias, muitas vezes se ouviu falar nisso, e a experiência já era cogitada entre eles. Mas nada foi tão inquietante quanto aquele momento.',
         citacao: 'Vocês não são chamados a viver em Comunidade?' },
-      { ano: 'Dezembro de 2006', titulo: 'Eucaristia no Centro de Formação João Paulo II', simbolo: 'filho', espaco: true,
+      { ano: 'Dezembro de 2006', titulo: 'Eucaristia no Centro de Formação João Paulo II', simbolo: 'filho', foto: 'assets/img/arquivo/missa-2008-eucaristia.jpg',
         presentes: ['Pe. Roger Luis', 'Pe. Edmilson', 'Diácono Roger', 'Servos do Nascer Jovem'],
         texto: 'Em dezembro de 2006, era ordenado o querido Pe. Roger Luis. Depois de muitas conversas e partilhas, o desejo de celebrar a Eucaristia levou o grupo ao Centro de Formação João Paulo II. Ali estavam o Pe. Edmilson, o diácono Roger e todos os servos do Nascer Jovem, e o Senhor lhes falou em profecia:',
         citacao: 'O ano 2007 será o ANO DA EDIFICAÇÃO.' }
     ] },
     { numero: 'III', titulo: 'O sim', simbolo: 'espirito', marcos: [
       { ano: '2007', titulo: 'Um ano de discernimento', simbolo: 'pai',
-        foto: 'assets/img/arquivo/seta-2007-vocacao.jpg',
+        foto: 'assets/img/fotos/oracao/21.jpg',
         texto: 'Dali nasceu a proposta: dedicar o ano ao discernimento e à escuta de Deus, por meio de retiros mensais pregados pelo Pe. Roger Luis, abertos apenas a quem quisesse e se sentisse chamado a essa experiência. Um ano, tão distante e tão próximo! Muitos foram os problemas, os desafios e até os empecilhos para que esse discernimento acontecesse.' },
       { ano: 'Novembro de 2007', titulo: 'Nasce a Comunidade', simbolo: 'espirito',
-        foto: 'assets/img/arquivo/seta-2007-assembleia.jpg',
+        foto: 'assets/img/fotos/assembleia/16.jpg',
         texto: 'Em novembro de 2007, o grupo retornou a fevereiro e quis trilhar, junto, o caminho da Comunidade. Veio então o sim de Reginaldo Braz, incondicional: “Eu quero a Comunidade. Eu sou Comunidade.” E, com todos os irmãos de hoje e de amanhã, do presente e do futuro, a proclamação:',
         citacao: 'Somos Comunidade de Aliança Trindade Santa!' }
     ] }

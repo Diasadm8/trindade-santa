@@ -4,80 +4,76 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Faça parte · Trindade Santa</title>
-  <meta name="theme-color" content="#0b4ea2">
+  <meta name="description" content="Vocacional TS: um lugar para a sua vocação. O processo vocacional da Trindade Santa em três passos.">
+  <meta name="theme-color" content="#2a6fc9">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <div data-cabecalho="transparente"></div>
 
   <main id="conteudo">
-    <section class="page-hero">
-      <div class="page-hero__marca" aria-hidden="true"><span data-selo="espirito"></span></div>
-      <div class="container">
-        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Faça parte</span></nav>
-        <span class="sobretitulo sobretitulo--claro">Vocação</span>
-        <h1>Faça parte desta aliança</h1>
-        <div class="ph-lines" data-ph="2"></div>
+    <!-- ABERTURA: no espírito do banner Vocacional TS -->
+    <section class="voc-topo">
+      <div class="container voc-topo__grade">
+        <div class="voc-topo__texto">
+          <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Faça parte</span></nav>
+          <h1 class="voc-topo__titulo" data-palavras aria-label="Vocacional TS">Voca<br>cio<br>nal <span class="voc-ts">TS</span></h1>
+          <p class="voc-topo__sub revelar">Um lugar para a sua vocação</p>
+        </div>
+        <figure class="voc-topo__papa">
+          <img src="assets/img/vocacional/joao-paulo-ii.webp" alt="São João Paulo II jovem, de óculos escuros" width="1217" height="1400">
+          <blockquote class="voc-citacao revelar">
+            <p>Somente no amor o homem encontra sua verdadeira vocação.</p>
+            <cite>São João Paulo II</cite>
+          </blockquote>
+        </figure>
       </div>
     </section>
 
-    <!-- Formas de participar -->
-    <section class="secao pt-10">
+    <!-- OS TRÊS PASSOS -->
+    <section class="voc-passos" aria-labelledby="t-passos">
       <div class="container">
-        <div class="secao__topo secao__topo--centro revelar">
-          <span class="sobretitulo">Como participar</span>
-          <h2>Formas de pertença</h2>
-          <div class="ph-lines" data-ph="2"></div>
+        <h2 id="t-passos" class="voc-passos__titulo" data-palavras>O processo vocacional <span>em três passos</span></h2>
+      </div>
+      <div class="voc-passo voc-passo--pai">
+        <div class="container voc-passo__linha">
+          <p class="voc-passo__verbo revelar">Conhecer</p>
+          <div class="revelar"><p class="voc-passo__ano">Ano do Pai</p><p>Tempo de descoberta da sua vocação, missão e do Carisma.</p></div>
         </div>
-        <div class="grade grade--3">
-          <article class="pilar pilar--pai revelar" data-atraso="1"><span data-selo="pai"></span><h3>Forma 1</h3><div class="ph-lines" data-ph="3"></div></article>
-          <article class="pilar pilar--filho revelar" data-atraso="2"><span data-selo="filho"></span><h3>Forma 2</h3><div class="ph-lines" data-ph="3"></div></article>
-          <article class="pilar pilar--espirito revelar" data-atraso="3"><span data-selo="espirito"></span><h3>Forma 3</h3><div class="ph-lines" data-ph="3"></div></article>
+      </div>
+      <div class="voc-passo voc-passo--filho">
+        <div class="container voc-passo__linha">
+          <p class="voc-passo__verbo revelar">Discernir</p>
+          <div class="revelar"><p class="voc-passo__ano">Ano do Filho</p><p>Aprofundamento da fé, do chamado. Discernimento e entrega mais profunda.</p></div>
+        </div>
+      </div>
+      <div class="voc-passo voc-passo--espirito">
+        <div class="container voc-passo__linha">
+          <p class="voc-passo__verbo revelar">Doar-se</p>
+          <div class="revelar"><p class="voc-passo__ano">Ano do Espírito Santo</p><p>Entrega total, amadurecimento e preparação para receber o Sinal da comunidade.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- Caminho vocacional -->
-    <section class="secao secao--nevoa">
-      <div class="container">
-        <div class="secao__topo secao__topo--centro revelar">
-          <span class="sobretitulo">Caminho vocacional</span>
-          <h2>Passo a passo</h2>
+    <!-- FORMULÁRIO -->
+    <section class="bloco bloco--papel" id="quero">
+      <div class="container par" style="align-items:start">
+        <div>
+          <h2 class="voc-pergunta" data-palavras><small>Onde está</small> o seu coração?</h2>
+          <p class="texto-corrido revelar">Deixe aqui seu nome, cidade e o @ do seu Instagram. A comunidade entra em contato com você.</p>
         </div>
-        <div class="passos">
-          <div class="passo revelar" data-atraso="1"><span class="passo__num"></span><h3>Etapa</h3><div class="ph-lines" data-ph="3"></div></div>
-          <div class="passo revelar" data-atraso="2"><span class="passo__num"></span><h3>Etapa</h3><div class="ph-lines" data-ph="3"></div></div>
-          <div class="passo revelar" data-atraso="3"><span class="passo__num"></span><h3>Etapa</h3><div class="ph-lines" data-ph="3"></div></div>
-          <div class="passo revelar" data-atraso="1"><span class="passo__num"></span><h3>Etapa</h3><div class="ph-lines" data-ph="3"></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Formulário de interesse -->
-    <section class="secao">
-      <div class="container dividido items-start">
-        <div class="revelar">
-          <span class="sobretitulo">Primeiro contato</span>
-          <h2>Quero conhecer</h2>
-          <div class="ph-lines" data-ph="4"></div>
-          <div class="ph-img [--proporcao:16/10]" data-img="filho"></div>
-        </div>
-        <form class="form revelar" data-atraso="1" onsubmit="event.preventDefault()">
-          <div class="campo"><label for="f-nome">Nome completo</label><input id="f-nome" type="text" autocomplete="name"></div>
-          <div class="linha2">
-            <div class="campo"><label for="f-email">E-mail</label><input id="f-email" type="email" autocomplete="email"></div>
-            <div class="campo"><label for="f-tel">WhatsApp</label><input id="f-tel" type="tel" autocomplete="tel"></div>
-          </div>
+        <form class="form revelar" onsubmit="event.preventDefault()">
+          <div class="campo"><label for="f-nome">Nome</label><input id="f-nome" type="text" autocomplete="name"></div>
           <div class="linha2">
             <div class="campo"><label for="f-cidade">Cidade</label><input id="f-cidade" type="text" autocomplete="address-level2"></div>
-            <div class="campo"><label for="f-int">Tenho interesse em</label><select id="f-int"><option>Conhecer a comunidade</option><option>Participar de um grupo</option><option>Discernimento vocacional</option></select></div>
+            <div class="campo"><label for="f-insta">@ do Instagram</label><input id="f-insta" type="text" autocomplete="off" placeholder="@"></div>
           </div>
-          <div class="campo"><label for="f-msg">Conte um pouco sobre você</label><textarea id="f-msg"></textarea></div>
-          <p class="aviso">Formulário ainda sem envio configurado — vamos definir para onde as respostas devem ir.</p>
+          <div class="campo"><label for="f-tel">WhatsApp</label><input id="f-tel" type="tel" autocomplete="tel"></div>
+          <p class="aviso">Formulário ainda sem envio configurado: falta definir para onde as respostas vão.</p>
           <div><button class="btn btn--primario" type="submit">Enviar <span data-icone="seta"></span></button></div>
         </form>
       </div>
@@ -87,5 +83,6 @@
   <div data-rodape></div>
   <script src="assets/js/dados.js"></script>
   <script src="assets/js/marca.js"></script>
+  <script src="assets/js/movimento.js"></script>
 </body>
 </html>

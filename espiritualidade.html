@@ -8,20 +8,21 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <div data-cabecalho="transparente"></div>
 
   <main id="conteudo">
-    <section class="page-hero">
-      <div class="page-hero__marca" aria-hidden="true"><span data-selo="filho"></span></div>
+    <section class="topo-foto topo-foto--meio">
+      <div class="topo-foto__img"><img src="assets/img/fotos/oracao/20.jpg" alt="Mão erguida diante da luz do palco" fetchpriority="high"></div>
       <div class="container">
         <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Espiritualidade</span></nav>
-        <span class="sobretitulo sobretitulo--claro">Nossas raízes</span>
-        <h1>Espiritualidade</h1>
-        <div class="ph-lines" data-ph="2"></div>
+        <div class="topo-foto__linha">
+          <h1 data-palavras>Espiritualidade</h1>
+          <div></div>
+        </div>
       </div>
     </section>
 
@@ -53,17 +54,17 @@
           <article class="sinal__passo" data-pessoa="pai">
             <span class="sobretitulo sobretitulo--claro">Primeira Pessoa</span>
             <h2>Deus Pai</h2>
-            <div class="ph-lines" data-ph="5"></div>
+            <p class="sinal__frase">As mãos que sustentam o mundo.</p>
           </article>
           <article class="sinal__passo" data-pessoa="filho">
             <span class="sobretitulo sobretitulo--claro">Segunda Pessoa</span>
             <h2>Deus Filho</h2>
-            <div class="ph-lines" data-ph="5"></div>
+            <p class="sinal__frase">A cruz.</p>
           </article>
           <article class="sinal__passo" data-pessoa="espirito">
             <span class="sobretitulo sobretitulo--claro">Terceira Pessoa</span>
             <h2>Deus Espírito Santo</h2>
-            <div class="ph-lines" data-ph="5"></div>
+            <p class="sinal__frase">A chama.</p>
           </article>
         </div>
       </div>
@@ -103,17 +104,16 @@
           <h2>Nossos baluartes</h2>
           <p class="baluartes__intro" data-baluartes-intro></p>
         </div>
-        <div class="grade grade--4" data-baluartes></div>
+        <div class="baluartes-linhas" data-baluartes></div>
       </div>
     </section>
 
-    <section class="secao">
+    <section class="chamada-foto">
+      <img data-paralaxe="7" src="assets/img/fotos/oracao/22.jpg" alt="Homem de braços abertos em oração" loading="lazy">
       <div class="container">
-        <div class="chamada revelar">
-          <div class="chamada__marca" aria-hidden="true"><span data-trio class="selo--branco"></span></div>
-          <div><span class="sobretitulo sobretitulo--claro">Caminhe conosco</span><h2>Reze o itinerário do mês</h2><div class="ph-lines" data-ph="2"></div></div>
-          <a href="itinerarios.html" class="btn btn--claro">Ver itinerários <span data-icone="seta"></span></a>
-        </div>
+        <h2 data-palavras>Reze com a gente</h2>
+        <p class="revelar">Todo mês, um itinerário espiritual para caminhar com a comunidade.</p>
+        <a href="itinerarios.html" class="btn btn--amarelo revelar">Ver os itinerários <span data-icone="seta"></span></a>
       </div>
     </section>
   </main>
@@ -125,13 +125,13 @@
     (function () {
       /* Baluartes */
       document.querySelector('[data-baluartes]').innerHTML = COMUNIDADE.baluartes.map((b, k) => `
-        <article class="baluarte revelar" id="${b.id === 'mae-infinito-amor' ? 'padroeira' : b.id}" data-atraso="${k % 3 + 1}">
-          ${b.foto
-            ? `<div class="ph-img baluarte__img tem-foto"><img src="${b.foto}" alt="${b.nome}" loading="lazy"></div>`
-            : `<div class="ph-img baluarte__img" data-img="${b.simbolo}"></div>`}
-          <span class="etiqueta">${b.tipo}</span>
-          <h3>${b.nome}</h3>
-          ${b.texto ? `<p class="baluarte__texto">${b.texto}</p>` : '<div class="ph-lines" data-ph="3"></div>'}
+        <article class="baluarte-linha${k % 2 ? ' baluarte-linha--inv' : ''}" id="${b.id}">
+          <div class="baluarte-linha__foto abre-foto">${b.foto ? `<img src="${b.foto}" alt="${b.nome}" loading="lazy">` : `<span class="baluarte-linha__selo">${selo(b.simbolo, 'selo--branco')}</span>`}</div>
+          <div class="baluarte-linha__texto revelar">
+            <h3>${b.nome}</h3>
+            ${b.citacao ? `<p class="baluarte-linha__frase">“${b.citacao}”</p>` : ''}
+            ${b.texto ? `<p>${b.texto}</p>` : ''}
+          </div>
         </article>`).join('');
       document.querySelector('[data-baluartes-intro]').textContent = COMUNIDADE.baluartesIntro || '';
 
@@ -162,5 +162,6 @@
       ativarRevelar();
     })();
   </script>
+  <script src="assets/js/movimento.js"></script>
 </body>
 </html>

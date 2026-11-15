@@ -8,33 +8,37 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <div data-cabecalho="transparente"></div>
 
   <main id="conteudo">
-    <section class="page-hero">
-      <div class="page-hero__marca" aria-hidden="true"><span data-selo="filho"></span></div>
+    <section class="topo-foto topo-foto--meio">
+      <div class="topo-foto__img"><img src="assets/img/fotos/assembleia/18.jpg" alt="Mulheres sentadas ouvindo a pregação" fetchpriority="high"></div>
       <div class="container">
         <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Contato</span></nav>
-        <span class="sobretitulo sobretitulo--claro">Fale conosco</span>
-        <h1>Contato</h1>
-        <div class="ph-lines" data-ph="2"></div>
+        <div class="topo-foto__linha">
+          <h1 data-palavras>Contato</h1>
+          <div></div>
+        </div>
       </div>
     </section>
 
-    <section class="secao pt-10">
-      <div class="container dividido items-start">
-        <div class="contato-info revelar">
-          <div class="contato-linha"><span class="icone"><span data-icone="pino"></span></span><div><h4>Endereço</h4><div class="ph-lines min-w-[220px]" data-ph="2"></div></div></div>
-          <div class="contato-linha"><span class="icone"><span data-icone="telefone"></span></span><div><h4>Telefone / WhatsApp</h4><div class="ph-lines min-w-[160px]" data-ph="1"></div></div></div>
-          <div class="contato-linha"><span class="icone"><span data-icone="email"></span></span><div><h4>E-mail</h4><div class="ph-lines min-w-[200px]" data-ph="1"></div></div></div>
-          <div class="contato-linha"><span class="icone"><span data-icone="relogio"></span></span><div><h4>Horário de atendimento</h4><div class="ph-lines min-w-[200px]" data-ph="2"></div></div></div>
+    <section class="bloco bloco--papel">
+      <div class="container par" style="align-items:start">
+        <div>
+          <h2 data-palavras>Fale com a gente</h2>
+          <ul class="canais revelar">
+            <li><a data-link="instagram" target="_blank" rel="noopener"><strong>Instagram</strong><span>@ctrindadesanta</span></a></li>
+            <li><a data-link="youtube" target="_blank" rel="noopener"><strong>YouTube</strong><span>Comunidade Trindade Santa</span></a></li>
+            <li><a data-link="canalWhatsapp" target="_blank" rel="noopener"><strong>Canal do WhatsApp</strong><span>Avisos da comunidade</span></a></li>
+            <li><a data-link="missoesWhatsapp" target="_blank" rel="noopener"><strong>Missões</strong><span>Leve a comunidade ao seu evento</span></a></li>
+            <li><a data-link="lojaWhatsapp" target="_blank" rel="noopener"><strong>Loja</strong><span>Loja Trindade Santa</span></a></li>
+          </ul>
         </div>
-        <form class="form revelar" data-atraso="1" onsubmit="event.preventDefault()">
-          <span class="sobretitulo">Envie uma mensagem</span>
+        <form class="form revelar" onsubmit="event.preventDefault()">
           <div class="linha2">
             <div class="campo"><label for="c-nome">Nome</label><input id="c-nome" type="text" autocomplete="name"></div>
             <div class="campo"><label for="c-email">E-mail</label><input id="c-email" type="email" autocomplete="email"></div>
@@ -45,19 +49,12 @@
           <div><button class="btn btn--primario" type="submit">Enviar mensagem <span data-icone="seta"></span></button></div>
         </form>
       </div>
-    </section>
-
-    <section class="secao secao--degrade">
-      <div class="container citacao revelar">
-        <span class="sobretitulo sobretitulo--claro justify-center">Pedido de oração</span>
-        <h2>Rezamos por você</h2>
-        <div class="ph-lines" data-ph="2"></div>
-      </div>
-    </section>
-  </main>
+    </section>  </main>
 
   <div data-rodape></div>
   <script src="assets/js/dados.js"></script>
   <script src="assets/js/marca.js"></script>
+  <script>document.querySelectorAll('[data-link]').forEach(a => a.href = LINKS[a.dataset.link]);</script>
+  <script src="assets/js/movimento.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
@@ -16,13 +16,14 @@
   <div data-cabecalho="transparente"></div>
 
   <main id="conteudo">
-    <section class="page-hero">
-      <div class="page-hero__marca" aria-hidden="true"><span data-selo="pai"></span></div>
+    <section class="topo-foto topo-foto--meio">
+      <div class="topo-foto__img"><img src="assets/img/fotos/assembleia/02.jpg" alt="Duas jovens louvando de mãos erguidas" fetchpriority="high"></div>
       <div class="container">
         <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Grupos</span></nav>
-        <span class="sobretitulo sobretitulo--claro">Presença</span>
-        <h1>Encontre um grupo</h1>
-        <div class="ph-lines" data-ph="2"></div>
+        <div class="topo-foto__linha">
+          <h1 data-palavras>Encontre um grupo</h1>
+          <div><p class="topo-foto__sub revelar">Grupos, núcleos e projetos no Rio de Janeiro e em Minas Gerais.</p></div>
+        </div>
       </div>
     </section>
 
@@ -68,5 +69,6 @@
   <script src="assets/js/dados.js"></script>
   <script src="assets/js/marca.js"></script>
   <script src="assets/js/grupos.js"></script>
+  <script src="assets/js/movimento.js"></script>
 </body>
 </html>

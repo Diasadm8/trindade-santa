@@ -3,20 +3,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Congresso Seta · Trindade Santa</title>
-  <meta name="theme-color" content="#061f2e">
+  <title>Congresso SETA · Trindade Santa</title>
+  <meta name="description" content="Congresso SETA, Seguir a Trilha do Amor: o maior congresso católico da região, em Itaperuna – RJ.">
+  <meta name="theme-color" content="#e8463d">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body class="pagina-evento">
+<body class="pagina-evento pagina-seta">
   <div data-cabecalho="transparente"></div>
-  <main id="conteudo" data-evento="congresso-seta"></main>
+
+  <main id="conteudo">
+    <!-- ABERTURA -->
+    <section class="seta-topo">
+      <div class="seta-topo__foto"><img src="assets/img/fotos/louvor/06.jpg" alt="Pregador ao microfone diante do telão do SETA" fetchpriority="high"></div>
+      <div class="container seta-topo__conteudo">
+        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><a href="eventos.html">Eventos</a><span aria-hidden="true">/</span><span>Congresso SETA</span></nav>
+        <p class="seta-topo__sup">Congresso</p>
+        <h1 class="seta-topo__nome">SETA</h1>
+        <p class="seta-topo__trilha">Seguir a Trilha do Amor</p>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="bloco seta-sobre">
+      <div class="container par">
+        <div>
+          <h2 data-palavras>O maior congresso católico da região</h2>
+          <div class="texto-corrido revelar" data-seta-sobre></div>
+        </div>
+        <div class="dupla">
+          <div class="abre-foto"><img src="assets/img/fotos/assembleia/07.jpg" alt="Assembleia do SETA diante do palco" loading="lazy"></div>
+          <div class="abre-foto" style="transition-delay:.2s"><img src="assets/img/fotos/louvor/03.jpg" alt="Cantora no palco do SETA" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETA 2026 -->
+    <section class="bloco seta-edicao">
+      <div class="container seta-edicao__grade">
+        <img class="seta-edicao__cartaz revelar" src="assets/eventos/cartaz-seta-2026.jpg" alt="Cartaz do Congresso SETA 2026" loading="lazy">
+        <div>
+          <h2 data-palavras>SETA 2026</h2>
+          <p class="seta-edicao__quando revelar" data-seta-quando></p>
+          <ul class="seta-nomes" data-seta-nomes aria-label="Presenças no SETA 2026"></ul>
+          <p class="seta-edicao__nota revelar" data-seta-real></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOTOS -->
+    <section class="bloco seta-fotos">
+      <div class="container">
+        <h2 data-palavras>Siga a trilha</h2>
+      </div>
+      <div class="fita" data-fita tabindex="0" aria-label="Fotos do Congresso SETA (arraste para o lado)">
+        <img src="assets/img/fotos/louvor/09.jpg" alt="Palco do SETA com a assembleia" loading="lazy">
+        <img src="assets/img/fotos/oracao/05.jpg" alt="Cantora de braço erguido" loading="lazy">
+        <img src="assets/img/fotos/assembleia/13.jpg" alt="Assembleia de braços levantados" loading="lazy">
+        <img src="assets/img/fotos/louvor/16.jpg" alt="Padre lendo a Bíblia no palco" loading="lazy">
+        <img src="assets/img/fotos/partilha/01.jpg" alt="Jovens abraçadas diante do palco" loading="lazy">
+        <img src="assets/img/fotos/louvor/14.jpg" alt="Cantora no louvor" loading="lazy">
+        <img src="assets/img/fotos/assembleia/06.jpg" alt="Jovens estendendo as mãos" loading="lazy">
+        <img src="assets/img/fotos/oracao/07.jpg" alt="Pregador de mão erguida ao lado da imagem de Nossa Senhora" loading="lazy">
+        <img src="assets/img/fotos/louvor/01.jpg" alt="Pregador com moletom Seguirei" loading="lazy">
+        <img src="assets/img/fotos/assembleia/10.jpg" alt="Multidão em louvor" loading="lazy">
+      </div>
+    </section>
+
+    <!-- FECHAMENTO -->
+    <section class="seta-final">
+      <div class="container">
+        <h2 data-palavras>Vem com a gente</h2>
+        <p class="revelar">Acompanhe datas e ingressos da próxima edição no Instagram da comunidade.</p>
+        <a class="btn btn--seta-claro revelar" data-link="instagram" target="_blank" rel="noopener">Acompanhe no Instagram <span data-icone="seta"></span></a>
+      </div>
+    </section>
+  </main>
+
   <div data-rodape></div>
   <script src="assets/js/dados.js"></script>
   <script src="assets/js/marca.js"></script>
-  <script src="assets/js/evento-especial.js"></script>
+  <script>
+    (function () {
+      const ev = EVENTOS_ESPECIAIS['congresso-seta'];
+      const u = ev.ultima;
+      document.querySelector('[data-seta-sobre]').innerHTML = ev.sobre.map(p => `<p>${p}</p>`).join('');
+      document.querySelector('[data-seta-quando]').innerHTML = `${u.quando}<br>${u.local}`;
+      document.querySelector('[data-seta-nomes]').innerHTML = u.presencas.map((p, i) =>
+        `<li class="revelar" style="transition-delay:${i * 60}ms"><strong>${p.nome}</strong><span>${p.sub}</span></li>`).join('');
+      document.querySelector('[data-seta-real]').textContent = u.realizacao;
+      document.querySelectorAll('[data-link]').forEach(a => a.href = LINKS[a.dataset.link]);
+      preencherMarcadores(); ativarRevelar();
+    })();
+  </script>
+  <script src="assets/js/movimento.js"></script>
 </body>
 </html>

@@ -8,79 +8,72 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Marcellus&family=Marcellus+SC&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
   <div data-cabecalho="transparente"></div>
 
   <main id="conteudo">
-    <section class="page-hero">
-      <div class="page-hero__marca" aria-hidden="true"><span data-selo="filho"></span></div>
+    <section class="topo-foto topo-foto--meio">
+      <div class="topo-foto__img"><img src="assets/img/fotos/assembleia/08.jpg" alt="Assembleia em louvor diante do palco" fetchpriority="high"></div>
       <div class="container">
         <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><span>Eventos</span></nav>
-        <span class="sobretitulo sobretitulo--claro">Agenda</span>
-        <h1>Eventos</h1>
-        <div class="ph-lines" data-ph="2"></div>
+        <div class="topo-foto__linha">
+          <h1 data-palavras>Eventos</h1>
+          <div></div>
+        </div>
       </div>
     </section>
 
-    <!-- Grandes eventos (cada um com página e identidade próprias) -->
-    <section class="secao pt-10">
+    <!-- Os dois grandes eventos -->
+    <section class="ev-lista bloco bloco--noite">
       <div class="container">
-        <div class="secao__topo revelar">
-          <span class="sobretitulo">Grandes eventos</span>
-          <h2>Nossos encontros anuais</h2>
-        </div>
-        <div class="grade grade--2" data-eventos-especiais></div>
+        <a class="ev-linha revelar" href="noite-oracional.html">
+          <div class="ev-linha__foto"><img src="assets/img/fotos/noite2025/18.jpg" alt="Cantor em oração na Noite Oracional" loading="lazy"></div>
+          <div>
+            <h2>Noite Oracional Quem Como Deus</h2>
+            <p>Uma noite inteira de oração com os arcanjos Miguel, Gabriel e Rafael. Acontece todo ano.</p>
+            <span class="link-mais">Conheça <span data-icone="seta"></span></span>
+          </div>
+        </a>
+        <a class="ev-linha revelar" href="congresso-seta.html">
+          <div class="ev-linha__foto"><img src="assets/img/fotos/louvor/04.jpg" alt="Cantora no louvor do Congresso SETA" loading="lazy"></div>
+          <div>
+            <h2>Congresso SETA</h2>
+            <p>Seguir a Trilha do Amor: o maior congresso católico da região, no Centro de Formação São João Paulo II, em Itaperuna.</p>
+            <span class="link-mais">Conheça <span data-icone="seta"></span></span>
+          </div>
+        </a>
       </div>
     </section>
 
-    <section class="secao secao--nevoa">
+    <section class="bloco bloco--papel">
       <div class="container">
-        <div class="secao__topo revelar">
-          <span class="sobretitulo">Calendário</span>
-          <h2>Próximas datas</h2>
-        </div>
-        <div class="filtros" role="group" aria-label="Filtrar por categoria" data-filtro-categorias></div>
-        <div class="grade grade--2" data-lista-eventos></div>
+        <h2 data-palavras>Próximas datas</h2>
+        <div class="datas" data-lista-eventos></div>
       </div>
-    </section>
-  </main>
+    </section>  </main>
 
   <div data-rodape></div>
   <script src="assets/js/dados.js"></script>
   <script src="assets/js/marca.js"></script>
   <script>
     (function () {
-      document.querySelector('[data-eventos-especiais]').innerHTML = Object.values(EVENTOS_ESPECIAIS).map((e, k) => `
-        <a class="ev-cartao revelar" data-atraso="${k + 1}" href="${e.pagina}"
-           style="--e-escuro:${e.cores[0]};--e-principal:${e.cores[1]};--e-destaque:${e.cores[2]}">
-          <span class="sobretitulo sobretitulo--claro">Evento</span>
-          <h3>${e.nome}</h3>
-          <div class="ph-lines [--cor-linha:rgba(255,255,255,.25)] max-w-[340px]" data-ph="2"></div>
-          <span class="link-seta">Conhecer o evento ${icone('seta')}</span>
-        </a>`).join('');
-      const lista = document.querySelector('[data-lista-eventos]');
-      const filtro = document.querySelector('[data-filtro-categorias]');
       const hoje = new Date();
       const futuros = EVENTOS.filter(e => new Date(e.data + 'T23:59') >= hoje).sort((a, b) => a.data.localeCompare(b.data));
-      const cats = ['Todos', ...new Set(futuros.map(e => e.categoria))];
-      filtro.innerHTML = cats.map((c, k) => `<button class="chip${k ? '' : ' is-ativo'}" type="button" data-cat="${c}">${c}</button>`).join('');
-      const render = cat => {
-        const itens = futuros.filter(e => cat === 'Todos' || e.categoria === cat);
-        lista.innerHTML = itens.map(cartaoEvento).join('');
-        preencherMarcadores(lista);
-        ativarRevelar(lista);
-      };
-      filtro.addEventListener('click', e => {
-        const b = e.target.closest('[data-cat]');
-        if (!b) return;
-        filtro.querySelectorAll('.chip').forEach(c => c.classList.toggle('is-ativo', c === b));
-        render(b.dataset.cat);
-      });
-      render('Todos');
+      document.querySelector('[data-lista-eventos]').innerHTML = futuros.length ? futuros.map(e => {
+        const [, m, d] = e.data.split('-');
+        return `
+          <div class="data-linha revelar">
+            <div class="data-linha__dia">${d}<small>${MESES[+m - 1]}</small></div>
+            <div><h3>${e.titulo}</h3><p>${[e.hora, e.local].filter(Boolean).join(' · ')}${e.organizacao ? `<br>${e.organizacao}` : ''}</p></div>
+            ${e.link ? `<a class="link-mais" href="${e.link}" target="_blank" rel="noopener">${e.linkRotulo || 'Saiba mais'} ${icone('seta')}</a>` : '<span></span>'}
+          </div>`;
+      }).join('') : '<p class="data-linha">Novas datas em breve.</p>';
+      preencherMarcadores(); ativarRevelar();
     })();
   </script>
+  <script src="assets/js/movimento.js"></script>
 </body>
 </html>
