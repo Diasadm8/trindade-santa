@@ -66,6 +66,32 @@
       </div>
     </section>
 
+    <!-- LINHA DO TEMPO -->
+    <section class="lt" id="linha-do-tempo" aria-labelledby="lt-titulo">
+      <div class="lt__pontos" aria-hidden="true"></div>
+      <div class="container lt__topo">
+        <div class="lt__texto">
+          <p class="lt__sup">Congresso SETA</p>
+          <h2 id="lt-titulo" data-palavras>A trilha até aqui</h2>
+          <p class="lt__lede revelar">A arte de divulgação de cada edição, em ordem, do primeiro SETA até hoje. Arraste para o lado.</p>
+        </div>
+        <div class="lt__ano" aria-live="polite">
+          <span class="lt__ano-num" data-lt-ano>2003</span>
+          <span class="lt__ano-ed" data-lt-ed>1º SETA</span>
+        </div>
+      </div>
+      <div class="container lt__ctrl">
+        <span class="lt__dica" aria-hidden="true">Arraste <i></i></span>
+        <div class="lt__botoes">
+          <button type="button" class="lt__btn" data-lt-ant aria-label="Edições anteriores"><svg viewBox="0 0 24 24" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" class="lt__btn" data-lt-prox aria-label="Próximas edições"><svg viewBox="0 0 24 24" focusable="false"><path d="M9 5l7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="lt__pista" data-lt-pista tabindex="0" aria-label="Linha do tempo das artes do Congresso SETA">
+        <ol class="lt__lista" data-lt-lista></ol>
+      </div>
+    </section>
+
     <!-- FOTOS -->
     <section class="bloco seta-fotos">
       <div class="container">
@@ -111,6 +137,7 @@
       preencherMarcadores(); ativarRevelar();
     })();
   </script>
+  <script src="assets/js/linha-seta.js"></script>
   <script src="assets/js/movimento.js"></script>
 </body>
 </html>
