@@ -85,6 +85,39 @@
           </div>`;
       }).join('') : '<p class="data-linha">Novas datas em breve.</p>';
       preencherMarcadores(); ativarRevelar();
+
+      /* Dados estruturados (schema.org/Event) para o Google mostrar a agenda nos resultados */
+      if (futuros.length) {
+        const ld = document.createElement('script');
+        ld.type = 'application/ld+json';
+        ld.textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': futuros.map(e => {
+            const hora = (e.hora || '').match(/(\d{1,2})h(\d{2})?/);
+            const inicio = hora ? `${e.data}T${hora[1].padStart(2, '0')}:${hora[2] || '00'}:00-03:00` : e.data;
+            const partes = (e.local || 'Itaperuna – RJ').split(/\s+[–-]\s+/);
+            const uf = /^[A-Z]{2}$/.test(partes[partes.length - 1]) ? partes.pop() : 'RJ';
+            const cidade = partes[partes.length - 1] || 'Itaperuna';
+            return {
+              '@type': 'Event',
+              name: e.titulo,
+              startDate: inicio,
+              eventStatus: 'https://schema.org/EventScheduled',
+              eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+              location: {
+                '@type': 'Place',
+                name: e.local || 'Itaperuna – RJ',
+                address: { '@type': 'PostalAddress', addressLocality: cidade, addressRegion: uf, addressCountry: 'BR' }
+              },
+              description: e.organizacao || `${e.categoria || 'Evento'} divulgado pela Comunidade de Aliança Trindade Santa.`,
+              image: 'https://diasadm8.github.io/trindade-santa/assets/img/og.jpg',
+              organizer: { '@type': 'Organization', name: 'Comunidade de Aliança Trindade Santa', url: 'https://diasadm8.github.io/trindade-santa/' },
+              ...(e.link ? { url: e.link } : {})
+            };
+          })
+        });
+        document.head.appendChild(ld);
+      }
     })();
   </script>
   <script src="assets/js/movimento.js"></script>

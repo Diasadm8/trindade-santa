@@ -14,6 +14,7 @@ grupos.html         Mapa ilustrado do Brasil com RJ e MG (malhas do IBGE)
 doacao.html         PIX, mensagem e projetos
 faca-parte.html     Formas de pertença, caminho vocacional, formulário
 contato.html        Contato e pedido de oração
+DESIGN.md           Guia visual: cores, fontes, componentes, regras
 assets/css/style.css   Todo o sistema visual (cores, fontes, componentes)
 assets/js/marca.js     Símbolos (vetorizados do logo), ícones, cabeçalho e rodapé
 assets/js/dados.js     CONTEÚDO EDITÁVEL: itinerários, eventos, grupos, PIX, projetos
@@ -42,6 +43,7 @@ npx http-server -p 5500
 O endereço `https://diasadm8.github.io/trindade-santa/` está escrito em alguns lugares. Troque pelo novo domínio em:
 
 - `<link rel="canonical">` e `og:url` / `og:image` no topo de cada página `.html`
+- Dados estruturados (JSON-LD) em `index.html` e no script de `eventos.html`
 - `sitemap.xml` e `robots.txt`
 - `404.html`: a linha `<base href="/trindade-santa/">` vira `<base href="/">`
 
