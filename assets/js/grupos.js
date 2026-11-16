@@ -275,7 +275,7 @@
       mapa.flyToBounds(regiao, { paddingTopLeft: [margemPainel(), 40], paddingBottomRight: [80, 40], duration: reduzido ? 0 : 2.4 });
     }
   };
-  /* Link direto para uma cidade: grupos.html?cidade=Itaperuna */
+  /* Link direto para uma cidade: grupos?cidade=Itaperuna */
   const pedida = new URLSearchParams(location.search).get('cidade');
   const cidadePedida = pedida && [...cidades.values()].find(c => normalizar(c.feature.properties.nome) === normalizar(pedida));
   if (cidadePedida) {

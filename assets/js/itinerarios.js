@@ -115,7 +115,7 @@
   addEventListener('resize', quadro);
   quadro();
 
-  /* Link direto para um mês: itinerarios.html#m-2026-05 */
+  /* Link direto para um mês: itinerarios#m-2026-05 */
   if (location.hash && document.querySelector(location.hash)) {
     setTimeout(() => document.querySelector(location.hash).scrollIntoView({ behavior: reduzido ? 'auto' : 'smooth', block: 'center' }), 300);
   }

@@ -78,7 +78,7 @@
     <div class="hist__trio revelar">${trio('selo--branco')}</div>
     <p class="hist__final-frase revelar" data-atraso="1">${esc(HISTORIA.final)}</p>
     <p class="hist__hoje revelar" data-atraso="2">Hoje, a caminhada continua em Itaperuna e em ${cidades - 1} outras cidades do Rio de Janeiro e de Minas Gerais.</p>
-    <a class="btn btn--claro revelar" data-atraso="3" href="grupos.html">Ver onde estamos ${icone('seta')}</a>`;
+    <a class="btn btn--claro revelar" data-atraso="3" href="grupos">Ver onde estamos ${icone('seta')}</a>`;
 
   ativarRevelar(raiz);
 

@@ -177,7 +177,7 @@
     || [...ITINERARIOS].sort((a, b) => (b.ano - a.ano) || (b.mes - a.mes))[0];
   const destaque = document.querySelector('[data-itinerario-mes]');
   if (destaque && doMes) {
-    const ancora = `itinerarios.html#m-${doMes.ano}-${String(doMes.mes).padStart(2, '0')}`;
+    const ancora = `itinerarios#m-${doMes.ano}-${String(doMes.mes).padStart(2, '0')}`;
     const pdf = doMes.pdf && (/^https?:/.test(doMes.pdf) ? doMes.pdf : 'assets/itinerarios/' + doMes.pdf);
     destaque.innerHTML = `
       <div class="mes-faixa">
@@ -187,7 +187,7 @@
           <h2 data-palavras>${doMes.tema}</h2>
           <div class="mes-faixa__acoes revelar">
             ${pdf ? `<a class="btn btn--primario" href="${pdf}" target="_blank" rel="noopener">${icone('baixar')} Baixar o PDF</a>` : ''}
-            <a class="btn btn--contorno" href="itinerarios.html">Todos os itinerários</a>
+            <a class="btn btn--contorno" href="itinerarios">Todos os itinerários</a>
           </div>
         </div>
       </div>`;

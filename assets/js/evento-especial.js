@@ -108,7 +108,7 @@
       <div class="ev-hero__raios" aria-hidden="true"></div>
       <div class="ev-hero__aneis" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="container ev-hero__conteudo">
-        <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a><span aria-hidden="true">/</span><a href="eventos.html">Eventos</a><span aria-hidden="true">/</span><span>${ev.nome}</span></nav>
+        <nav class="migalhas" aria-label="Você está em"><a href="./">Início</a><span aria-hidden="true">/</span><a href="eventos">Eventos</a><span aria-hidden="true">/</span><span>${ev.nome}</span></nav>
         ${logo}
         ${ev.subtitulo ? `<p class="ev-subtitulo">${ev.subtitulo}</p>` : ''}
         ${ev.destaques ? `<div class="ev-destaques">${ev.destaques.map(d => `<div class="ev-destaque"><strong>${d.n}</strong><span>${d.t}</span></div>`).join('')}</div>` : ''}

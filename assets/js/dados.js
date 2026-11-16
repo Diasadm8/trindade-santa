@@ -219,7 +219,7 @@ const EVENTOS = [
 const EVENTOS_ESPECIAIS = {
   'noite-oracional': {
     nome: 'Noite Oracional Como Deus',
-    pagina: 'noite-oracional.html',
+    pagina: 'noite-oracional',
     cores: ['#0d1033', '#3b3f9e', '#f3c969'],
     subtitulo: 'Uma noite de oração com os três arcanjos',
     destaques: [
@@ -240,7 +240,7 @@ const EVENTOS_ESPECIAIS = {
   },
   'congresso-seta': {
     nome: 'Congresso SETA',
-    pagina: 'congresso-seta.html',
+    pagina: 'congresso-seta',
     cores: ['#061f2e', '#0f8b8d', '#ffb238'],
     subtitulo: 'Seguir a Trilha do Amor',
     edicao: '20ª',                       // ⚠ confirmar (edição de 2027)

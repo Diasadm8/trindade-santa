@@ -77,25 +77,27 @@ function trio(classe = '') {
 
 /* ---------- Navegação ---------- */
 const PAGINAS = [
-  { href: 'index.html', rotulo: 'Início' },
-  { href: 'comunidade.html', rotulo: 'A Comunidade', sub: [
-    ['comunidade.html', 'Quem somos'],
-    ['espiritualidade.html', 'Espiritualidade'],
-    ['musica.html', 'Música'],
-    ['grupos.html', 'Onde estamos']
+  { href: './', rotulo: 'Início' },
+  { href: 'comunidade', rotulo: 'A Comunidade', sub: [
+    ['comunidade', 'Quem somos'],
+    ['espiritualidade', 'Espiritualidade'],
+    ['musica', 'Música'],
+    ['grupos', 'Onde estamos']
   ] },
-  { href: 'itinerarios.html', rotulo: 'Itinerários' },
-  { href: 'eventos.html', rotulo: 'Eventos', sub: [
-    ['eventos.html', 'Agenda'],
-    ['noite-oracional.html', 'Noite Oracional Como Deus'],
-    ['congresso-seta.html', 'Congresso SETA']
+  { href: 'itinerarios', rotulo: 'Itinerários' },
+  { href: 'eventos', rotulo: 'Eventos', sub: [
+    ['eventos', 'Agenda'],
+    ['noite-oracional', 'Noite Oracional Como Deus'],
+    ['congresso-seta', 'Congresso SETA']
   ] },
-  { href: 'social.html', rotulo: 'Social e Doe' },
-  { href: 'contato.html', rotulo: 'Contato' }
+  { href: 'social', rotulo: 'Social e Doe' },
+  { href: 'contato', rotulo: 'Contato' }
 ];
 
 function paginaAtual() {
-  return location.pathname.split('/').pop() || 'index.html';
+  /* Links sem ".html": /comunidade e /comunidade.html são a mesma página; a raiz é "./" */
+  const nome = location.pathname.split('/').pop().replace(/\.html$/, '');
+  return !nome || nome === 'index' ? './' : nome;
 }
 
 function montarCabecalho() {
@@ -118,7 +120,7 @@ function montarCabecalho() {
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <header class="header ${transparente ? 'header--transparente' : 'header--solido'}" id="header">
     <div class="container">
-      <a href="index.html" class="logo" aria-label="Comunidade de Aliança Trindade Santa — início">
+      <a href="./" class="logo" aria-label="Comunidade de Aliança Trindade Santa — início">
         <img class="logo__img logo__img--branco" src="assets/img/marca/logo-reduzido-branco.svg" alt="Comunidade de Aliança Trindade Santa" height="46">
         <img class="logo__img logo__img--cor" src="assets/img/marca/logo-reduzido-cores.svg" alt="" aria-hidden="true" height="46">
       </a>
@@ -126,7 +128,7 @@ function montarCabecalho() {
       <div class="nav-fundo" aria-hidden="true"></div>
       <nav class="nav" id="nav" aria-label="Principal">
         ${links}
-        <a href="faca-parte.html" class="btn btn--primario"${atual === 'faca-parte.html' ? ' aria-current="page"' : ''}>Faça parte</a>
+        <a href="faca-parte" class="btn btn--primario"${atual === 'faca-parte' ? ' aria-current="page"' : ''}>Faça parte</a>
         <div class="nav__redes">
           <a href="${LINKS.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${icone('instagram')}</a>
           <a href="${LINKS.youtube}" target="_blank" rel="noopener" aria-label="YouTube">${icone('youtube')}</a>
@@ -164,7 +166,7 @@ function montarRodape() {
     <div class="container">
       <div class="footer__topo">
         <div>
-          <a href="index.html" class="footer__logo" aria-label="Comunidade de Aliança Trindade Santa — início">
+          <a href="./" class="footer__logo" aria-label="Comunidade de Aliança Trindade Santa — início">
             <img src="assets/img/marca/logo-completo-branco.svg" alt="Comunidade de Aliança Trindade Santa" width="280" height="98" loading="lazy">
           </a>
           <p class="footer__lema">Ou santos<br><em>ou nada</em></p>
@@ -178,27 +180,27 @@ function montarRodape() {
         <div>
           <h4>A Comunidade</h4>
           <ul>
-            <li><a href="comunidade.html#quem-somos">Quem somos</a></li>
-            <li><a href="comunidade.html#historia">História</a></li>
-            <li><a href="espiritualidade.html">Espiritualidade</a></li>
-            <li><a href="musica.html">Música</a></li>
+            <li><a href="comunidade#quem-somos">Quem somos</a></li>
+            <li><a href="comunidade#historia">História</a></li>
+            <li><a href="espiritualidade">Espiritualidade</a></li>
+            <li><a href="musica">Música</a></li>
           </ul>
         </div>
         <div>
           <h4>Caminhe conosco</h4>
           <ul>
-            <li><a href="itinerarios.html">Itinerários espirituais</a></li>
-            <li><a href="eventos.html">Eventos</a></li>
-            <li><a href="grupos.html">Encontre um grupo</a></li>
-            <li><a href="faca-parte.html">Faça parte</a></li>
-            <li><a href="social.html">Ação social e doações</a></li>
+            <li><a href="itinerarios">Itinerários espirituais</a></li>
+            <li><a href="eventos">Eventos</a></li>
+            <li><a href="grupos">Encontre um grupo</a></li>
+            <li><a href="faca-parte">Faça parte</a></li>
+            <li><a href="social">Ação social e doações</a></li>
             <li><a href="${LINKS.loja}" target="_blank" rel="noopener">Loja Trindade Santa</a></li>
           </ul>
         </div>
         <div>
           <h4>Contato</h4>
           <ul>
-            <li><a href="contato.html">Fale conosco</a></li>
+            <li><a href="contato">Fale conosco</a></li>
             <li><a href="${LINKS.instagram}" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="${LINKS.youtube}" target="_blank" rel="noopener">YouTube</a></li>
             <li><a href="${LINKS.canalWhatsapp}" target="_blank" rel="noopener">Canal do WhatsApp</a></li>
@@ -207,7 +209,7 @@ function montarRodape() {
       </div>
       <div class="footer__base">
         <span>© ${ano} ${COMUNIDADE.associacao.nome} · CNPJ ${COMUNIDADE.associacao.cnpj} · ${COMUNIDADE.cidade}</span>
-        <nav class="footer__legal" aria-label="Informações legais"><a href="privacidade.html">Privacidade e cookies</a><a href="termos.html">Termos de uso</a><a href="acessibilidade.html">Acessibilidade</a></nav>
+        <nav class="footer__legal" aria-label="Informações legais"><a href="privacidade">Privacidade e cookies</a><a href="termos">Termos de uso</a><a href="acessibilidade">Acessibilidade</a></nav>
         <span>Ad maiorem Dei gloriam</span>
       </div>
     </div>
