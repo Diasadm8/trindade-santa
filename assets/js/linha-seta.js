@@ -86,7 +86,8 @@ const LINHA_SETA = [
       anoEl.textContent = e.ano;
       edEl.textContent = e.ed || 'Congresso SETA';
       if (!calmo() && anoEl.animate) {
-        anoEl.animate([{ transform: `translateY(${subindo ? 28 : -28}%)`, opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 480, easing: 'cubic-bezier(.2,.8,.2,1)' });
+        const mov = matchMedia('(max-width: 760px)').matches ? 0 : (subindo ? 28 : -28);
+        anoEl.animate([{ transform: `translateY(${mov}%)`, opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 480, easing: 'cubic-bezier(.2,.8,.2,1)' });
         edEl.animate([{ opacity: 0, transform: 'translateX(-10px)' }, { opacity: 1, transform: 'none' }], { duration: 480, easing: 'ease-out' });
       }
     }
