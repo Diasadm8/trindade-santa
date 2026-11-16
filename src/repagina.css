@@ -916,6 +916,8 @@ h3, h4 { line-height: 1.3; }
 @keyframes pino-cai { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: none; } }
 html[data-tema="escuro"] .ponto-grupo__nome { background: rgba(15,33,66,.94); color: #e9f1fc; }
 
+.footer__credito { margin: 14px 0 0; text-align: center; font-size: .78rem; letter-spacing: .02em; color: rgba(255,255,255,.72); }
+
 /* Barra de rolagem sempre visível (no celular o navegador esconde a dele) + dica de rolar */
 .rolagem { position: fixed; z-index: 900; right: 3px; top: 84px; bottom: 14px; width: 7px; border-radius: 7px; background: rgba(120,140,170,.28); box-shadow: 0 0 0 1px rgba(255,255,255,.35); opacity: 0; pointer-events: none; transition: opacity .3s; }
 .rolagem--on { opacity: 1; }

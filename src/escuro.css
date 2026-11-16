@@ -88,6 +88,9 @@ html[data-tema="escuro"], html.ac-contraste {
   --sombra: 0 10px 30px -12px rgba(0,0,0,.6); --sombra-forte: 0 24px 60px -20px rgba(0,0,0,.7);
 }
 html[data-tema="escuro"] body, html.ac-contraste body { background: #081428; color: var(--tinta); }
+/* Itinerários: cada mês tem as suas próprias cores (fundo e destaque), no claro e no escuro */
+html[data-tema="escuro"] body.pagina-itin { background: var(--t-escuro); color: #fff; }
+html[data-tema="escuro"] body.pagina-itin.tema-claro { color: #1a1a1a; }
 
 /* Seções claras viram escuras: os tokens de texto escuro ficam claros só dentro delas */
 html[data-tema="escuro"] :is(.bloco--papel, .secao:not(.secao--profunda), .voc-passos, .voc-mosaico, .bloco:not(.bloco--azul):not(.bloco--noite)),
