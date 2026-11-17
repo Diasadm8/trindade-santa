@@ -17,7 +17,6 @@ const LINHA_SETA = [
   { ano: 2014, ed: '',         det: '28 de setembro · “Quem como Deus?”',               img: '2014.jpg', k: .82, inferido: true },
   { ano: 2015, ed: '',         det: '13 e 14 de junho · Is 54,2',                       img: '2015.jpg' },
   { ano: 2016, ed: '',         det: '25 e 26 de junho · “Siga-me!”',                    img: '2016.jpg' },
-  { ano: 2018, ed: '',         det: '8 e 9 de setembro · “Sigam-me os bons!”',          img: '2018.jpg' },
   { ano: 2020, ed: '',         det: '“Salva o meu povo, eis o meu desejo”',             img: '2020.jpg' },
   { ano: 2022, ed: '20 anos',  det: '25 e 26 de junho · C.F. São João Paulo II',        img: '2022.webp' },
   { ano: 2023, ed: '',         det: '10 e 11 de junho · Uma história de louvor e adoração', img: '2023.jpg' },
