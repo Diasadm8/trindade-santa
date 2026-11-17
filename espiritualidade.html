@@ -52,33 +52,16 @@
     </nav>
 
     <!-- ===== O SINAL DA TRINDADE ===== -->
-    <section class="sin" id="sinal" data-ativo="pai" aria-label="O Sinal da Trindade">
-      <div class="sin__trilho" data-sin-trilho>
+    <section class="sin sin--unico" id="sinal" data-ativo="sinal" aria-label="O Sinal da Trindade">
+      <div class="sin__trilho">
         <div class="sin__cena">
           <div class="sin__bgs" aria-hidden="true">
-            <i class="sin__bg sin__bg--pai"></i><i class="sin__bg sin__bg--filho"></i><i class="sin__bg sin__bg--espirito"></i><i class="sin__bg sin__bg--sinal"></i>
+            <i class="sin__bg sin__bg--sinal"></i>
             <i class="sin__grao"></i>
           </div>
           <p class="sin__titulo">O Sinal da Trindade</p>
 
           <div class="sin__arte" aria-hidden="true">
-            <div class="cena cena--pai">
-              <span class="raios"></span>
-              <span class="anel" style="--i:0"></span><span class="anel" style="--i:1"></span><span class="anel" style="--i:2"></span><span class="anel" style="--i:3"></span>
-              <span class="sin-orbita"><i style="--a:0deg"></i><i style="--a:120deg"></i><i style="--a:240deg"></i></span>
-              <span class="cena__sim"><svg viewBox="0 0 100 100"><use href="#s-pai"/></svg></span>
-            </div>
-            <div class="cena cena--filho">
-              <span class="luz-filho"></span>
-              <span class="feixe feixe--v"></span><span class="feixe feixe--h"></span>
-              <span class="alianca alianca--a"></span><span class="alianca alianca--b"></span>
-              <span class="cena__sim"><svg viewBox="0 0 100 100"><use href="#s-filho"/></svg></span>
-            </div>
-            <div class="cena cena--espirito">
-              <span class="chama-luz"></span>
-              <span class="brasas" data-brasas></span>
-              <span class="cena__sim"><svg viewBox="0 0 100 100"><use href="#s-espirito"/></svg></span>
-            </div>
             <div class="cena cena--sinal">
               <span class="aureola"></span>
               <span class="anel-sinal"></span>
@@ -88,38 +71,17 @@
           </div>
 
           <div class="sin__textos">
-            <article class="sin__txt" data-pessoa="pai">
-              <span class="sin__rotulo">Primeira Pessoa</span>
-              <h2>Deus Pai</h2>
-              <p class="sin__frase">A iniciativa é sempre de Deus.</p>
-              <p>Foi assim na criação do mundo, na salvação e no nascimento da nossa Comunidade. Ele dá o primeiro passo e faz aliança com o seu povo. A nós cabe responder.</p>
-            </article>
-            <article class="sin__txt" data-pessoa="filho">
-              <span class="sin__rotulo">Segunda Pessoa</span>
-              <h2>Deus Filho</h2>
-              <p class="sin__frase">A aliança tem uma cruz no centro.</p>
-              <p>Em Jesus, Deus se faz próximo e firma conosco um laço que não se desfaz. Por isso a cruz está no coração do nosso ícone: ela nos lembra a quem pertencemos.</p>
-            </article>
-            <article class="sin__txt" data-pessoa="espirito">
-              <span class="sin__rotulo">Terceira Pessoa</span>
-              <h2>Deus Espírito Santo</h2>
-              <p class="sin__frase">A chama que mantém tudo vivo.</p>
-              <p>É o Espírito quem acende e sustenta essa aliança em nós, dia após dia, e nos dá força para viver o que prometemos.</p>
-            </article>
-            <article class="sin__txt" data-pessoa="sinal">
+            <article class="sin__txt is-ativo" data-pessoa="sinal">
               <span class="sin__rotulo">Para levar no peito</span>
               <h2>O nosso sinal</h2>
               <p class="sin__frase">Três Pessoas, uma só aliança.</p>
-              <p>O consagrado da Comunidade leva no peito a cruz da Trindade, o ícone que nos identifica. Ela lembra a todos o compromisso assumido e a quem pertencemos. O compromisso mora no coração; o sinal o torna visível a cada dia. Também veneramos o ícone da Santíssima Trindade e o levamos para dentro de casa.</p>
+              <p>A iniciativa é sempre de Deus. Foi assim com a criação do mundo, com a salvação, com a fundação da Comunidade Trindade Santa, e é assim com a aliança que ele estabelece conosco. A nós cabe corresponder.</p>
+              <blockquote class="sin__citacao">“Concluirei com eles uma aliança de paz, um tratado eterno. Eu os plantarei e multiplicá-los-ei. Estabelecerei para sempre o meu santuário entre eles. Minha residência será no meio deles. Eu serei o seu Deus, e eles serão o meu povo.” <cite>Ez 37,26-27</cite></blockquote>
+              <p>Faz parte da nossa espiritualidade o ícone da Santíssima Trindade, que veneramos, entronizamos em nossas casas e cuja devoção divulgamos. Ele nos lembra a aliança que o Senhor mesmo estabeleceu conosco.</p>
+              <p>O consagrado da Comunidade toma para si a cruz da Trindade, ícone da Comunidade: um sacramental que se usa no peito, como sinal externo e memória da consagração que fez de si mesmo ao Carisma Trindade Santa, à Santa Igreja Católica e a Deus. Ele a recebe na Santa Missa de sua consagração, e o sinal é como um hábito, para ser usado em todos os lugares.</p>
+              <p>O compromisso, porém, não está apenas no sinal: ele mora no coração, e o sinal o recorda a cada dia.</p>
             </article>
           </div>
-
-          <ol class="sin__marcas" aria-label="Etapas do sinal">
-            <li><button type="button" data-ir="0" aria-label="Deus Pai"></button></li>
-            <li><button type="button" data-ir="1" aria-label="Deus Filho"></button></li>
-            <li><button type="button" data-ir="2" aria-label="Deus Espírito Santo"></button></li>
-            <li><button type="button" data-ir="3" aria-label="O nosso sinal"></button></li>
-          </ol>
         </div>
       </div>
     </section>
@@ -176,43 +138,6 @@
         </article>`).join('');
       document.querySelector('[data-baluartes-intro]').textContent = COMUNIDADE.baluartesIntro || '';
 
-      /* Sinal da Trindade: palco fixo; a cena e a cor mudam conforme a rolagem */
-      document.querySelectorAll('.sin').forEach(sec => {
-      const trilho = sec.querySelector('[data-sin-trilho]');
-      const passos = ['pai', 'filho', 'espirito', 'sinal'];
-      const txts = [...sec.querySelectorAll('.sin__txt')];
-      const botoes = [...sec.querySelectorAll('.sin__marcas button')];
-      const brasas = sec.querySelector('[data-brasas]');
-      if (brasas)
-      brasas.innerHTML = Array.from({ length: 30 }, (_, i) => {
-        const r = n => ((Math.sin(i * n) * 9999) % 1 + 1) % 1;
-        return `<i style="--x:${(8 + r(12.9) * 84).toFixed(1)}%;--s:${(3 + r(7.7) * 7).toFixed(1)}px;--d:${(4 + r(3.1) * 5).toFixed(1)}s;--w:${(-r(5.3) * 9).toFixed(1)}s;--dx:${((r(9.7) - .5) * 90).toFixed(0)}px"></i>`;
-      }).join('');
-      let atual = -1, pend = false;
-      function atualizarSinal() {
-        pend = false;
-        const r = trilho.getBoundingClientRect();
-        const total = r.height - innerHeight;
-        const p = Math.max(0, Math.min(1, -r.top / total));
-        const idx = Math.min(passos.length - 1, Math.floor(p * passos.length));
-        sec.style.setProperty('--q', Math.max(0, Math.min(1, p * passos.length - idx)).toFixed(3));
-        if (idx !== atual) {
-          atual = idx;
-          sec.dataset.ativo = passos[idx];
-          txts.forEach((t, i) => t.classList.toggle('is-ativo', i === idx));
-          botoes.forEach((b, i) => { b.classList.toggle('is-ativo', i === idx); b.toggleAttribute('aria-current', i === idx); });
-        }
-      }
-      const pedir = () => { if (!pend) { pend = true; requestAnimationFrame(atualizarSinal); } };
-      addEventListener('scroll', pedir, { passive: true });
-      addEventListener('resize', pedir);
-      botoes.forEach((b, i) => b.addEventListener('click', () => {
-        const topo = trilho.getBoundingClientRect().top + scrollY;
-        const total = trilho.offsetHeight - innerHeight;
-        scrollTo({ top: topo + total * ((i + .5) / passos.length), behavior: 'smooth' });
-      }));
-      atualizarSinal();
-      });
       preencherMarcadores();
       ativarRevelar();
     })();
