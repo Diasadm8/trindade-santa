@@ -20,6 +20,9 @@ const LINHA_SETA = [
   { ano: 2018, ed: '',         det: '8 e 9 de setembro · “Sigam-me os bons!”',          img: '2018.jpg' },
   { ano: 2020, ed: '',         det: '“Salva o meu povo, eis o meu desejo”',             img: '2020.jpg' },
   { ano: 2022, ed: '20 anos',  det: '25 e 26 de junho · C.F. São João Paulo II',        img: '2022.webp' },
+  { ano: 2023, ed: '',         det: '10 e 11 de junho · Uma história de louvor e adoração', img: '2023.jpg' },
+  { ano: 2024, ed: '',         det: '8 e 9 de junho · C.F. São João Paulo II',          img: '2024.jpg', k: .88, inferido: true },
+  { ano: 2025, ed: '',         det: '13 a 15 de junho · Guardiões da Esperança',        img: '2025.jpg' },
   { ano: 2026, ed: 'Agora',    det: '19, 20 e 21 de junho · C.F. São João Paulo II',    img: '../cartaz-seta-2026.jpg', atual: true }
 ];
 
