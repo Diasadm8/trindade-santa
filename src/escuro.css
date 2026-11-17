@@ -194,6 +194,3 @@ html[data-tema="escuro"] .legal__corpo { --ts-azul: #8dbcff; --ts-noite: #e9f1fc
 html[data-tema="escuro"] .contato-direto { background: #0f2142; }
 html.ac-contraste .legal, html.ac-contraste .contato-direto { background: #000; }
 html[data-tema="escuro"] :is(.voc-passo--pai, .voc-passo--espirito), html.ac-contraste :is(.voc-passo--pai, .voc-passo--espirito) { --ts-azul: #2a6fc9; --ts-noite: #071937; --azul-profundo: #0b4ea2; }
-
-/* Início: o ícone de rolagem (pílula do mouse) sai no modo escuro */
-html[data-tema="escuro"] .hero .rolar { display: none; }
