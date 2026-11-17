@@ -46,8 +46,6 @@ const LINHA_SETA = [
       <div class="lt__via"><span class="lt__no"></span></div>
       <div class="lt__info">
         <span class="lt__a">${e.ano}</span>
-        ${e.ed ? `<span class="lt__ed">${e.ed}</span>` : ''}
-        <p class="lt__det">${e.det}</p>
       </div>
     </li>`).join('') + `
     <li class="lt__fim" aria-hidden="true">
