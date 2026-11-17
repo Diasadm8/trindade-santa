@@ -36,7 +36,7 @@ assets/eventos/        Logos, banners e cartazes dos eventos
 
 DESIGN.md              Guia visual: cores, fontes, componentes, regras
 sitemap.xml, robots.txt   Para o Google
-google8971b883790d4f62.html   Verificação do Google Search Console (não apague)
+google8971b883790d4f62.html   Verificação do Google Search Console (não apagar)
 .editorconfig          Padrão de formatação dos arquivos (UTF-8, LF, 2 espaços)
 ```
 
@@ -55,11 +55,19 @@ Os links internos usam `comunidade`, `eventos` etc., sem `.html` — o GitHub Pa
 
 ## Rodar localmente
 
-```bash
-npx http-server -p 5500 -c-1
-```
+É possivel servir o aite das seguintes formas:
 
-Abra http://localhost:5500. A `404.html` só aparece completa no GitHub Pages (por causa da `<base href="/trindade-santa/">`).
+- Com `Python`
+  ```bash
+  python -m http.server 5500
+  ```
+- Com `npx`
+  ```bash
+  npx http-server -p 5500 -c-1
+  ```
+- Com a extensão +live server* do vs code.
+
+Abra http://localhost:5500. A `404.html` só aparece completa no GitHub Pages (por causa da `<base href="/trindade-santa/">`). Para servir ela localmente, tire essa linha.
 
 ## CSS
 
