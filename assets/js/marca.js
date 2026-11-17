@@ -212,7 +212,7 @@ function montarRodape() {
         <nav class="footer__legal" aria-label="Informações legais"><a href="privacidade">Privacidade e cookies</a><a href="termos">Termos de uso</a><a href="acessibilidade">Acessibilidade</a></nav>
         <span>Ad maiorem Dei gloriam</span>
       </div>
-      <p class="footer__credito">Site desenvolvido por Gabriel de Almeida Dias e publicado por Davi Reis Furtado</p>
+      <p class="footer__credito">Site desenvolvido por Gabriel de Almeida Dias e Davi Reis Furtado</p>
     </div>
   </footer>`;
 }
