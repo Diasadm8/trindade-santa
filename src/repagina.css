@@ -1082,3 +1082,8 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   .lt__item { will-change: auto; }
   .lt__pista { -webkit-transform: translateZ(0); transform: translateZ(0); }
 }
+
+/* alvo de toque maior nos pontinhos do carrossel (celular) */
+.orbita__pontos { gap: 14px; }
+.orbita__pontos button { position: relative; }
+.orbita__pontos button::before { content: ""; position: absolute; top: -9px; right: -9px; bottom: -9px; left: -9px; }
