@@ -12,6 +12,9 @@
 @source "../assets/js/*.js";
 @source not "../itinerarios.html";
 @source not "../assets/js/itinerarios.js";
+/* Skills de agentes (.agents/) têm documentação com nomes de classe: não podem gerar CSS */
+@source not "../.agents";
+@source not "../node_modules";
 
 /* Paleta da identidade → classes como bg-azul-profundo, text-tinta, border-linha */
 @theme {

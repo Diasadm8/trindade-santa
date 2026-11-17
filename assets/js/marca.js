@@ -121,8 +121,8 @@ function montarCabecalho() {
   <header class="header ${transparente ? 'header--transparente' : 'header--solido'}" id="header">
     <div class="container">
       <a href="./" class="logo" aria-label="Comunidade de Aliança Trindade Santa — início">
-        <img class="logo__img logo__img--branco" src="assets/img/marca/logo-reduzido-branco.svg" alt="Comunidade de Aliança Trindade Santa" height="46">
-        <img class="logo__img logo__img--cor" src="assets/img/marca/logo-reduzido-cores.svg" alt="" aria-hidden="true" height="46">
+        <img class="logo__img logo__img--branco" src="assets/img/marca/logo-reduzido-branco.svg" alt="Comunidade de Aliança Trindade Santa" width="99" height="46">
+        <img class="logo__img logo__img--cor" src="assets/img/marca/logo-reduzido-cores.svg" alt="" aria-hidden="true" width="99" height="46">
       </a>
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav"><span></span></button>
       <div class="nav-fundo" aria-hidden="true"></div>

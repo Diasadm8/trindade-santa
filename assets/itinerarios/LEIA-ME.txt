@@ -1,1 +1,1 @@
-﻿Coloque aqui as capas (2026-01.jpg) e os PDFs (2026-01.pdf) de cada itinerario e informe os nomes em assets/js/dados.js.
+Coloque aqui as capas (2026-01.jpg) e os PDFs (2026-01.pdf) de cada itinerario e informe os nomes em assets/js/dados.js.

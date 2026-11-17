@@ -1,0 +1,33 @@
+# EditorConfig: mantém o mesmo estilo de arquivo em qualquer editor
+# https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+# Sem end_of_line: no Windows o git (core.autocrlf) já converte; no repositório tudo fica LF
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Markdown usa dois espaços no fim da linha como quebra
+[*.md]
+trim_trailing_whitespace = false
+
+# CSS gerado pelo Tailwind (npm run css): não editar à mão
+[assets/css/site.css]
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+
+# Dados gerados (malhas do IBGE) e verificação do Google
+[{assets/data/*.json,google*.html}]
+indent_size = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+
+# PDFs, imagens e vídeos são binários
+[*.{pdf,jpg,jpeg,png,webp,gif,mp4}]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset

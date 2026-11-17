@@ -60,6 +60,8 @@ body {
   overflow-x: clip;   /* "hidden" no body quebra o position: sticky e o scroll no iPhone */
 }
 img, svg { display: block; max-width: 100%; }
+/* width/height no HTML reservam o espaço (sem salto de layout); height:auto mantém a proporção */
+img { height: auto; }
 a { color: var(--azul-profundo); text-decoration: none; }
 button { font: inherit; cursor: pointer; }
 h1, h2, h3, h4 {

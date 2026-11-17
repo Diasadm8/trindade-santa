@@ -29,7 +29,7 @@
 
   <main id="conteudo">
     <section class="topo-foto topo-foto--meio">
-      <div class="topo-foto__img"><img src="assets/img/fotos/novas/cantores-maria.jpg" alt="Casal de cantores ao microfone no palco" fetchpriority="high"></div>
+      <div class="topo-foto__img"><img src="assets/img/fotos/novas/cantores-maria.jpg" alt="Casal de cantores ao microfone no palco" fetchpriority="high" width="2000" height="1333"></div>
       <div class="container">
         <nav class="migalhas" aria-label="Você está em"><a href="./">Início</a><span aria-hidden="true">/</span><span>Ação social e doações</span></nav>
         <div class="topo-foto__linha">
@@ -43,7 +43,7 @@
     <section class="bloco bloco--papel" id="associacao">
       <div class="container par">
         <div>
-          <img src="assets/img/marca/associacao-cores.png" alt="Logo da Associação Trindade Santa" style="height:clamp(64px,7vw,96px);width:auto;margin-bottom:22px" loading="lazy">
+          <img src="assets/img/marca/associacao-cores.png" alt="Logo da Associação Trindade Santa" style="height:clamp(64px,7vw,96px);width:auto;margin-bottom:22px" loading="lazy" width="800" height="237">
           <h2 data-palavras>Associação Trindade Santa</h2>
           <div class="texto-corrido revelar">
             <p>A Associação é a própria comunidade, organizada para servir. Cada doação sustenta os serviços sociais e a evangelização dos jovens.</p>
@@ -51,8 +51,8 @@
           <dl class="ficha revelar" data-ficha></dl>
         </div>
         <div class="dupla">
-          <div class="abre-foto"><img src="assets/img/arquivo/missa-2008-altar.jpg" alt="Altar montado no prédio em construção, em 2008" loading="lazy"></div>
-          <div class="abre-foto" style="transition-delay:.2s"><img src="assets/img/arquivo/missa-2008-povo.jpg" alt="Comunidade reunida no prédio em construção, em 2008" loading="lazy"></div>
+          <div class="abre-foto"><img src="assets/img/arquivo/missa-2008-altar.jpg" alt="Altar montado no prédio em construção, em 2008" loading="lazy" width="1600" height="1200"></div>
+          <div class="abre-foto" style="transition-delay:.2s"><img src="assets/img/arquivo/missa-2008-povo.jpg" alt="Comunidade reunida no prédio em construção, em 2008" loading="lazy" width="1600" height="1200"></div>
         </div>
       </div>
     </section>
@@ -79,7 +79,7 @@
 
     <!-- VERSÍCULO -->
     <section class="chamada-foto">
-      <img data-paralaxe="7" src="assets/img/fotos/assembleia/17.jpg" alt="Mulheres sentadas na assembleia, atentas à pregação" loading="lazy">
+      <img data-paralaxe="7" src="assets/img/fotos/assembleia/17.jpg" alt="Mulheres sentadas na assembleia, atentas à pregação" loading="lazy" width="1920" height="1280">
       <div class="container">
         <p class="versiculo-grande" data-palavras>Deus ama quem dá com alegria.</p>
         <p class="revelar">“Cada um dê conforme decidiu em seu coração, não com tristeza nem por obrigação.” 2 Coríntios 9, 7</p>
@@ -105,7 +105,7 @@
       document.querySelector('[data-pix-form]').href = LINKS.formularioPix;
       /* QR do PicPay: ajusta títulos e oferece o link direto */
       if (DOACAO.qrRotulo && DOACAO.qrRotulo !== 'PIX') {
-        
+
         const txt = document.querySelector('#pix p');
         txt.innerHTML = `Aponte a câmera do app <strong>${DOACAO.qrRotulo}</strong> para o QR Code${DOACAO.qrLink ? ' ou use o botão abaixo' : ''}. Qualquer valor é bem-vindo.`;
         if (DOACAO.qrLink) {
