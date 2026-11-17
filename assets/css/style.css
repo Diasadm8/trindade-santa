@@ -614,14 +614,6 @@ p { margin: 0 0 1em; }
 }
 .orbita__pontos button.is-ativo { background: #fff; transform: scale(1.25); }
 
-.rolar {
-  position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
-  width: 26px; height: 42px; border: 2px solid rgba(255,255,255,.7); border-radius: 14px;
-}
-.rolar::after {
-  content: ""; position: absolute; left: 50%; top: 8px; width: 4px; height: 8px; margin-left: -2px;
-  background: #fff; border-radius: 2px; animation: rolar 2s var(--ease) infinite;
-}
 .hero::after {
   content: ""; position: absolute; inset: auto 0 -1px 0; height: 70px;
   background: var(--branco);
@@ -888,7 +880,6 @@ p { margin: 0 0 1em; }
 
 /* ---------- 7. ANIMAÇÕES ---------- */
 @keyframes girar { to { transform: rotate(360deg); } }
-@keyframes rolar { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(14px); opacity: 0; } 100% { opacity: 0; } }
 @keyframes respirar { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
 @keyframes flutuar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
