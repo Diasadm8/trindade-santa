@@ -1,0 +1,6 @@
+/* Barra de rolagem sempre visível (no celular o navegador esconde a dela) */
+.rolagem { position: fixed; z-index: 900; right: 3px; top: 84px; bottom: 14px; width: 7px; border-radius: 7px; background: rgba(120,140,170,.28); box-shadow: 0 0 0 1px rgba(255,255,255,.35); opacity: 0; pointer-events: none; transition: opacity .3s; }
+.rolagem--on { opacity: 1; }
+.rolagem__fio { display: block; width: 100%; border-radius: 7px; background: #1b95d8; box-shadow: 0 0 0 1.5px #fff, 0 1px 6px rgba(0,0,0,.35); will-change: transform; }
+html[data-tema="escuro"] .rolagem__fio { background: #5cc0ff; box-shadow: 0 0 0 1.5px #0b1730, 0 1px 6px rgba(0,0,0,.5); }
+@media print, (hover: hover) and (pointer: fine) { .rolagem { display: none !important; } } /* computador com mouse já tem a barra do navegador */

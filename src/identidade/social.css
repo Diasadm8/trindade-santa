@@ -1,0 +1,8 @@
+/* ---------- Social ---------- */
+.pix--escuro { background: transparent; box-shadow: none; padding: 0; color: #fff; }
+.pix--escuro h2 { color: #fff; }
+.pix--escuro p, .pix--escuro .pix__favorecido, .pix--escuro .pix__ok { color: rgba(255,255,255,.88); }
+.pix--escuro .pix__chave code { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.3); }
+.pix--escuro .link-mais { color: var(--ts-amarelo); margin-top: 18px; }
+.versiculo-grande { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; text-transform: uppercase; font-size: clamp(3rem, 9vw, 8.4rem); line-height: 1.14; margin: 0 auto .4em; max-width: 14ch; color: #fff; }
+

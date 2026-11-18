@@ -1,0 +1,17 @@
+/* ---------- A Comunidade: carisma ---------- */
+.carisma__linhas { border-top: 1px solid rgba(255,255,255,.3); margin-top: 20px; }
+.carisma__linha { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(18px, 3vw, 40px); padding: clamp(18px, 2.4vw, 30px) 0; border-bottom: 1px solid rgba(255,255,255,.3); }
+.carisma__linha .selo { --tam: clamp(56px, 6vw, 84px); --cor: #fff; --anel: #fff; }
+.carisma__linha h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(2.6rem, 7vw, 6.4rem); line-height: 1.14; margin: 0; color: #fff; transition: color .5s, transform .6s var(--ease-saida); }
+.carisma__linha p { margin: 0; font-size: clamp(1rem, 1.4vw, 1.2rem); color: var(--ts-amarelo); font-weight: 700; text-align: right; }
+.carisma__linha:hover h3 { color: var(--ts-amarelo); transform: translateX(10px); }
+.carisma__aclamacao { margin: clamp(36px, 5vw, 60px) 0 0; font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85; font-size: clamp(1.3rem, 2.4vw, 2rem); text-transform: uppercase; color: #fff; }
+@media (max-width: 640px) { .carisma__linha { grid-template-columns: auto 1fr; } .carisma__linha p { grid-column: 2; text-align: left; } }
+
+/* Chamada com foto alinhada à esquerda (Associação) */
+.chamada-foto--esq { text-align: left; place-items: center start; }
+.chamada-foto--esq::after { background: linear-gradient(90deg, rgba(7,25,55,.92) 0%, rgba(7,25,55,.6) 50%, rgba(7,25,55,.15)); }
+.chamada-foto--esq h2 { font-size: clamp(3.2rem, 9vw, 8.5rem); }
+.chamada-foto--esq p { margin-left: 0; }
+.chamada-foto__logo { height: clamp(60px, 7vw, 90px); width: auto; margin-bottom: 22px; }
+

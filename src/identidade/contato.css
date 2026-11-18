@@ -1,0 +1,7 @@
+/* ---------- Contato: canais em lista ---------- */
+.canais { list-style: none; padding: 0; margin: 10px 0 0; border-top: 2px solid var(--ts-noite); }
+.canais a { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 18px 0; border-bottom: 1px solid rgba(7,25,55,.18); color: var(--ts-noite); text-decoration: none; transition: padding .5s var(--ease-saida), color .3s; }
+.canais a:hover { padding-left: 10px; color: var(--ts-azul); }
+.canais strong { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 72; text-transform: uppercase; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1; }
+.canais span { font-size: .95rem; color: #4a6580; text-align: right; }
+

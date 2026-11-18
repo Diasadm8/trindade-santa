@@ -1,0 +1,21 @@
+/* Páginas internas: leitura do itinerário, marcos da linha do tempo e pessoas */
+/* Leitura do itinerário */
+.leitura { display: grid; grid-template-columns: 240px minmax(0, 720px); gap: clamp(30px, 6vw, 80px); justify-content: center; }
+@media (max-width: 900px) { .leitura { grid-template-columns: 1fr; } }
+
+/* Marcos da linha do tempo */
+.marco { position: relative; width: 50%; padding: 0 50px 60px 0; }
+.marco:nth-child(even) { margin-left: 50%; padding: 0 0 60px 50px; }
+.marco::before { content: ""; position: absolute; top: 6px; right: -9px; width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 4px solid var(--azul-celeste); box-shadow: 0 0 0 6px rgba(27,149,216,.15); }
+.marco:nth-child(even)::before { right: auto; left: -9px; }
+.marco .ph-img { --proporcao: 16 / 9; margin-top: 16px; }
+.marco p { margin: 0; color: var(--tinta-suave); }
+@media (max-width: 760px) {
+  .marco, .marco:nth-child(even) { width: 100%; margin: 0; padding: 0 0 50px 44px; }
+  .marco::before, .marco:nth-child(even)::before { left: 0; right: auto; }
+}
+
+/* Pessoas (fundadores / conselho) */
+.pessoa { text-align: center; }
+.pessoa .ph-img { --proporcao: 1; border-radius: 50%; width: 76%; margin: 0 auto 18px; }
+.pessoa .ph-lines i { margin-inline: auto; }

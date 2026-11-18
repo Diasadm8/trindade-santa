@@ -1,0 +1,12 @@
+/* ---------- Espiritualidade: baluartes em linhas ---------- */
+.baluartes-linhas { display: grid; gap: clamp(50px, 8vw, 110px); margin-top: clamp(40px, 6vw, 70px); text-align: left; }
+.baluarte-linha { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 6vw, 90px); align-items: center; }
+.baluarte-linha--inv .baluarte-linha__foto { order: 2; }
+.baluarte-linha__foto { aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: var(--ts-azul); display: grid; place-items: center; box-shadow: 0 40px 70px -35px rgba(7,25,55,.6); }
+.baluarte-linha__foto img { width: 100%; height: 100%; object-fit: cover; }
+.baluarte-linha__selo .selo { --tam: 40%; }
+.baluarte-linha h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(2.8rem, 6.5vw, 6rem); line-height: 1.14; margin: 0 0 .25em; color: var(--ts-noite); }
+.baluarte-linha__frase { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85; font-size: clamp(1.2rem, 2vw, 1.6rem); color: var(--ts-azul); margin: 0 0 1em; }
+.baluarte-linha__texto p:last-child { line-height: 1.7; max-width: 58ch; }
+@media (max-width: 760px) { .baluarte-linha { grid-template-columns: 1fr; } .baluarte-linha--inv .baluarte-linha__foto { order: 0; } .baluarte-linha__foto { max-width: 420px; } }
+

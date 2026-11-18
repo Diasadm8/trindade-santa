@@ -1,0 +1,73 @@
+/* ---------- 3. MARCA ---------- */
+
+/* Símbolo dentro de anel — o "selo" de cada Pessoa */
+.selo {
+  --cor: var(--azul-profundo);
+  --anel: var(--azul-celeste);
+  position: relative;
+  width: var(--tam, 64px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: calc(var(--tam, 64px) * .068) solid var(--anel); /* proporção do anel no logo */
+  display: grid;
+  place-items: center;
+  color: var(--cor);
+  background: var(--fundo-selo, transparent);
+  flex: none;
+}
+.selo svg { width: 100%; height: 100%; } /* o viewBox do símbolo = círculo interno do anel */
+.selo--branco, .selo--branco .selo { --cor: #fff; --anel: #fff; }
+
+/* Os três selos entrelaçados, como no logotipo */
+.trio { display: inline-flex; align-items: center; }
+.trio .selo + .selo { margin-left: calc(var(--tam, 64px) * -.06); }
+
+/* Logotipo tipográfico */
+.logo { display: inline-flex; align-items: center; gap: 12px; color: var(--azul-profundo); }
+
+/* Assinatura grande (hero / rodapé) */
+.assinatura { text-align: center; color: #fff; }
+.assinatura__sup {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(.95rem, 2.2vw, 1.5rem);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.assinatura__nome {
+  font-family: var(--fonte-versal);
+  font-size: clamp(2.6rem, 8vw, 5.6rem);
+  line-height: .95;
+  letter-spacing: .02em;
+  margin: 0;
+  color: inherit;
+}
+
+/* Marcador "três pontos" usado acima dos títulos de seção */
+.sobretitulo {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--fonte-titulo);
+  font-size: .8rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--azul-celeste);
+  margin-bottom: 14px;
+}
+.sobretitulo::before {
+  content: "";
+  width: 34px; height: 10px;
+  background:
+    radial-gradient(circle at 5px 5px, var(--pai) 4px, transparent 4.5px),
+    radial-gradient(circle at 17px 5px, var(--filho) 4px, transparent 4.5px),
+    radial-gradient(circle at 29px 5px, var(--espirito) 4px, transparent 4.5px);
+}
+.sobretitulo--claro { color: rgba(255,255,255,.85); }
+.sobretitulo--claro::before {
+  background:
+    radial-gradient(circle at 5px 5px, #fff 4px, transparent 4.5px),
+    radial-gradient(circle at 17px 5px, rgba(255,255,255,.75) 4px, transparent 4.5px),
+    radial-gradient(circle at 29px 5px, rgba(255,255,255,.5) 4px, transparent 4.5px);
+}
+
+/* Divisor: três anéis entrelaçados com linhas */
+.divisor { display: flex; align-items: center; gap: 18px; color: var(--azul-celeste); margin: 0 auto; max-width: 420px; }
+.divisor::before, .divisor::after { content: ""; flex: 1; height: 1px; background: currentColor; opacity: .35; }
+.divisor svg { width: 64px; height: 22px; }
+

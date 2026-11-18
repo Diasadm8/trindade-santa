@@ -1,0 +1,12 @@
+/* ---------- Eventos: lista no estilo das referências (foto + título + texto) ---------- */
+.ev-lista .container { display: grid; gap: clamp(40px, 6vw, 80px); }
+.ev-linha { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(24px, 5vw, 70px); align-items: center; color: #fff; text-decoration: none; }
+.ev-linha:nth-child(even) .ev-linha__foto { order: 2; }
+.ev-linha__foto { aspect-ratio: 16 / 10; overflow: hidden; border-radius: 4px; }
+.ev-linha__foto img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease-saida); }
+.ev-linha:hover .ev-linha__foto img { transform: scale(1.05); }
+.ev-linha h2 { color: #fff; font-size: clamp(2.6rem, 5.6vw, 5rem); margin-bottom: .3em; }
+.ev-linha p { color: rgba(255,255,255,.82); max-width: 44ch; margin: 0 0 22px; line-height: 1.6; }
+.ev-linha .link-mais { color: var(--ts-amarelo); }
+@media (max-width: 760px) { .ev-linha { grid-template-columns: 1fr; } .ev-linha:nth-child(even) .ev-linha__foto { order: 0; } }
+

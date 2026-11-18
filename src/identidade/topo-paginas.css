@@ -1,0 +1,26 @@
+/* ---------- Topo com foto (todas as páginas) ---------- */
+.topo-foto {
+  position: relative; isolation: isolate; overflow: hidden;
+  min-height: min(88svh, 900px);
+  display: flex; align-items: flex-end;
+  color: #fff; background: var(--ts-noite);
+  padding: calc(var(--header-h) + 40px) 0 clamp(36px, 6vw, 72px);
+}
+.topo-foto--meio { min-height: min(72svh, 720px); }
+.topo-foto__img { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.topo-foto__img img { width: 100%; height: 100%; object-fit: cover; object-position: var(--foco, 50% 40%); animation: topo-zoom 2.6s var(--ease-saida) both; }
+.topo-foto::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(0deg, rgba(4,14,34,.94) 0%, rgba(4,14,34,.7) 30%, rgba(4,14,34,.15) 65%, rgba(4,14,34,0) 80%),
+    linear-gradient(180deg, rgba(4,14,34,.55) 0%, rgba(4,14,34,0) 24%);
+}
+@keyframes topo-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
+.topo-foto h1 {
+  font-size: clamp(3.6rem, 13vw, 12.5rem);
+  line-height: 1.14; color: #fff; margin: 0; max-width: none;
+}
+.topo-foto .migalhas { margin-bottom: 14px; }
+.topo-foto__linha { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px 40px; flex-wrap: wrap; }
+.topo-foto__sub { max-width: 34ch; font-size: clamp(1rem, 1.4vw, 1.15rem); line-height: 1.5; color: rgba(255,255,255,.88); margin: 0; }
+

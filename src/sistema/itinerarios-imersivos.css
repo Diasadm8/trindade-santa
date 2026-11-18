@@ -1,0 +1,22 @@
+/* =========================================================
+   ITINERÁRIOS — linha do tempo imersiva
+   As cores vêm de variáveis registradas (@property) para que
+   o fundo faça a transição suave de um mês para outro.
+   ========================================================= */
+@property --t-escuro    { syntax: '<color>'; inherits: true; initial-value: #0b3a75; }
+@property --t-principal { syntax: '<color>'; inherits: true; initial-value: #1b95d8; }
+@property --t-claro     { syntax: '<color>'; inherits: true; initial-value: #e3f4fb; }
+@property --t-texto     { syntax: '<color>'; inherits: true; initial-value: #ffffff; }
+
+/* elementos decorativos flutuantes */
+.motivos { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.motivo {
+  position: absolute;
+  translate: -50% calc(-50% + var(--rolagem, 0px) * var(--prof));
+  animation: motivo-entra 1.2s var(--ease) var(--atraso) both, motivo-flutua var(--flutua) ease-in-out var(--atraso) infinite alternate;
+}
+.motivo svg { width: 100%; height: 100%; fill: currentColor; overflow: visible; }
+@keyframes motivo-entra { from { opacity: 0; transform: scale(.2) rotate(calc(var(--giro) - 90deg)); } to { transform: scale(1) rotate(var(--giro)); } }
+@keyframes motivo-flutua { from { transform: rotate(var(--giro)) translateY(0); } to { transform: rotate(calc(var(--giro) + 18deg)) translateY(-26px); } }
+.tema-claro .btn--contorno-claro { color: var(--t-texto); border-color: currentColor; }
+

@@ -1,0 +1,19 @@
+/* ---------- Entrada ao rolar: mais curta e discreta ---------- */
+.revelar { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease-saida), transform .8s var(--ease-saida); }
+.revelar.is-visivel { opacity: 1; transform: none; }
+
+/* Palavras que sobem de dentro de uma máscara */
+[data-palavras] .pw { display: inline-block; overflow: hidden; vertical-align: top; padding: .2em .06em .3em; margin: -.2em -.06em -.3em; }
+[data-palavras] .pw > span { display: inline-block; transform: translateY(125%); transition: transform 1s var(--ease-saida); transition-delay: calc(var(--i, 0) * 60ms); }
+[data-palavras].is-dentro .pw > span { transform: none; }
+
+/* Foto que se abre de baixo para cima */
+.abre-foto { clip-path: inset(100% 0 0 0); transition: clip-path 1.3s var(--ease-saida); }
+.abre-foto.is-dentro { clip-path: inset(0 0 0 0); }
+.abre-foto img { transform: scale(1.15); transition: transform 1.8s var(--ease-saida); }
+.abre-foto.is-dentro img { transform: scale(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .revelar, [data-palavras] .pw > span, .abre-foto, .abre-foto img { transition: none !important; transform: none !important; clip-path: none !important; opacity: 1 !important; }
+}
+

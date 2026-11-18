@@ -1,0 +1,87 @@
+/* =========================================================
+   MODO ESCURO (e base do alto contraste)
+   ========================================================= */
+html[data-tema="escuro"], html.ac-contraste {
+  color-scheme: dark;
+  --branco: #0e2040; --nevoa: #132a52; --linha: #2a4570; --bruma: #3d6194;
+  --tinta: #e9f1fc; --tinta-suave: #adc0da;
+  --ts-papel: #0c1c38;
+  --sombra: 0 10px 30px -12px rgba(0,0,0,.6); --sombra-forte: 0 24px 60px -20px rgba(0,0,0,.7);
+}
+html[data-tema="escuro"] body, html.ac-contraste body { background: #081428; color: var(--tinta); }
+/* Itinerários: cada mês tem as suas próprias cores (fundo e destaque), no claro e no escuro */
+html[data-tema="escuro"] body.pagina-itin { background: var(--t-escuro); color: #fff; }
+html[data-tema="escuro"] body.pagina-itin.tema-claro { color: #1a1a1a; }
+
+/* Seções claras viram escuras: os tokens de texto escuro ficam claros só dentro delas */
+html[data-tema="escuro"] :is(.bloco--papel, .secao:not(.secao--profunda), .voc-passos, .voc-mosaico, .bloco:not(.bloco--azul):not(.bloco--noite)),
+html.ac-contraste :is(.bloco--papel, .secao:not(.secao--profunda), .voc-passos, .voc-mosaico, .bloco:not(.bloco--azul):not(.bloco--noite)) {
+  --azul-profundo: #9cc9ff; --azul-celeste: #5cc0ff; --ts-azul: #8dbcff; --ts-noite: #e9f1fc;
+  --tinta-papel: #e6eefb; --tinta-azul: #9cc9ff;
+}
+html[data-tema="escuro"] :is(.secao, .secao--nevoa, .voc-passos, .voc-mosaico, .bloco:not(.bloco--azul):not(.bloco--noite):not(.bloco--papel)) { background-color: #081428; }
+html[data-tema="escuro"] .secao--nevoa { background-color: #0b1b36; }
+/* elementos amarelos mantêm texto escuro */
+html[data-tema="escuro"] :is(.btn--amarelo, .onde__texto, .voc-passo--filho),
+html.ac-contraste :is(.btn--amarelo, .onde__texto, .voc-passo--filho) { --ts-noite: #071937; --ts-azul: #2a6fc9; --azul-profundo: #0b4ea2; }
+html[data-tema="escuro"] .btn--primario, html.ac-contraste .btn--primario { background: #2a6fc9; color: #fff; border-color: #2a6fc9; }
+html[data-tema="escuro"] .btn--primario:hover { background: #4287e6; border-color: #4287e6; }
+
+html.ac-calmo .revelar { opacity: 1 !important; transform: none !important; }
+html.ac-calmo [data-palavras] .pw > span { transform: none !important; }
+html.ac-calmo .abre-foto, html.ac-calmo .abre-foto img { clip-path: none !important; transform: none !important; }
+
+/* Superfícies (cartões, formulários, menus, mapa) */
+html[data-tema="escuro"] :is(.card, .pilar, .evento, .chip, .destaque-itinerario, .mes-card, .forma, .disco, .relatorio, .baluarte, .nav__sub, .mapa-controles button, .bolha-uf, .passo__num, .botao-icone),
+html.ac-contraste :is(.card, .pilar, .evento, .chip, .destaque-itinerario, .mes-card, .forma, .disco, .relatorio, .baluarte, .nav__sub, .mapa-controles button, .bolha-uf, .passo__num, .botao-icone) {
+  background: var(--branco); color: var(--tinta); border-color: var(--linha);
+}
+html[data-tema="escuro"] :is(.card, .pilar, .evento, .mes-card, .forma, .disco, .relatorio, .baluarte) :is(h2, h3, h4, strong, .mes-card__num, dd) { color: var(--tinta); }
+html[data-tema="escuro"] .nav__sub a, html.ac-contraste .nav__sub a { color: var(--tinta); }
+html[data-tema="escuro"] .header.is-scrolled, html[data-tema="escuro"] .header--solido { background: rgba(8,20,40,.92); color: var(--tinta); box-shadow: 0 1px 0 rgba(255,255,255,.08); }
+html[data-tema="escuro"] .header.is-scrolled .logo__img--branco, html[data-tema="escuro"] .header--solido .logo__img--branco { display: block; }
+html[data-tema="escuro"] .header.is-scrolled .logo__img--cor, html[data-tema="escuro"] .header--solido .logo__img--cor { display: none; }
+html[data-tema="escuro"] .header.is-scrolled .nav > a, html[data-tema="escuro"] .header.is-scrolled .nav__pai, html[data-tema="escuro"] .header--solido .nav > a, html[data-tema="escuro"] .header--solido .nav__pai { color: var(--tinta); }
+html[data-tema="escuro"] .aviso { background: #11264a; color: var(--tinta-suave); }
+
+/* Mapa */
+html[data-tema="escuro"] .mapa-palco { background: #0a1a36; }
+html[data-tema="escuro"] .estado:not(.estado--ativo) { fill: #16305a; stroke: #2a4a80; }
+html[data-tema="escuro"] .municipio:not(.municipio--grupo) { fill: #16305a; stroke: #0a1a36; }
+html[data-tema="escuro"] .leaflet-tooltip.dica, html[data-tema="escuro"] .leaflet-popup-content-wrapper, html[data-tema="escuro"] .leaflet-popup-tip { background: #0f2142; color: var(--tinta); }
+html[data-tema="escuro"] .mapa-resumo div, html[data-tema="escuro"] .mapa-cidades button:hover { background: #132a52; }
+html[data-tema="escuro"] :is(.mapa-cidades, .mapa-resumo, .dica-cidade, .ficha-grupo, .ficha-cidade) { --azul-profundo: #9cc9ff; --azul-celeste: #5cc0ff; --tinta: #e9f1fc; --tinta-suave: #adc0da; --nevoa: #132a52; --linha: #2a4570; }
+html[data-tema="escuro"] :is(.dica-cidade, .ficha-grupo, .ficha-cidade) strong { color: #e9f1fc; }
+
+/* Imagens e vídeos: um pouco mais suaves no escuro (sem alterar cores) */
+html[data-tema="escuro"] img:not([src$=".svg"]):not(.logo__img), html[data-tema="escuro"] video { filter: brightness(.9); }
+html[data-tema="escuro"] .mapa-palco { background: linear-gradient(160deg, #10264a, #0a1a36 60%, #081428) !important; }
+html[data-tema="escuro"] .mapa-painel { background: rgba(8,20,40,.86); }
+html[data-tema="escuro"] .mapa-controles button:hover { background: #2a6fc9; color: #fff; }
+html[data-tema="escuro"] .topo-foto--mosaico .topo-foto__img img { filter: saturate(.92) contrast(1.02); }
+html[data-tema="escuro"] .bolha-uf span { color: #5cc0ff; }
+html[data-tema="escuro"] .bolha-uf strong { color: #e9f1fc; }
+
+/* Página do SETA (identidade papel/coral): papel vira grafite */
+html[data-tema="escuro"] .pagina-seta { --seta-papel: #151515; --seta-preto: #f4f1ec; }
+html[data-tema="escuro"] .pagina-seta .seta-sobre { background: #1d1d1d; }
+html[data-tema="escuro"] .pagina-seta .seta-final, html[data-tema="escuro"] .pagina-seta .footer { background: #0a0a0a; color: #fff; }
+html[data-tema="escuro"] .pagina-seta .seta-final h2 { color: var(--seta-coral); }
+html[data-tema="escuro"] .pagina-seta .header--transparente:not(.is-scrolled) { background: rgba(21,21,21,.94); }
+html[data-tema="escuro"] .pagina-seta .header--transparente:not(.is-scrolled) .logo__img--branco { display: block; }
+html[data-tema="escuro"] .pagina-seta .header--transparente:not(.is-scrolled) .logo__img--cor { display: none; }
+html[data-tema="escuro"] .pagina-seta .seta-topo__foto img { filter: grayscale(1) contrast(1.1) brightness(.85); }
+
+html[data-tema="escuro"] .subnav { background: rgba(8,20,40,.94); border-color: var(--linha); }
+html[data-tema="escuro"] .subnav a { color: var(--tinta-suave); }
+html[data-tema="escuro"] .subnav a:hover, html[data-tema="escuro"] .subnav a.is-ativo { background: #132a52; color: #fff; }
+
+/* Painel de acessibilidade no escuro */
+html[data-tema="escuro"] .ac-painel { background: #0f2142; color: #e9f1fc; box-shadow: 0 30px 70px -20px rgba(0,0,0,.8), 0 0 0 1px #2a4570; }
+html[data-tema="escuro"] .ac-fechar { background: #1a3562; color: #e9f1fc; }
+html[data-tema="escuro"] .ac-rot, html[data-tema="escuro"] .ac-int__txt small { color: #adc0da; }
+html[data-tema="escuro"] .ac-op, html[data-tema="escuro"] .ac-int, html[data-tema="escuro"] .ac-zerar { background: #132a52; color: #e9f1fc; border-color: #2f4d80; }
+html[data-tema="escuro"] .ac-op[aria-pressed="true"] { background: #2a6fc9; border-color: #2a6fc9; color: #fff; }
+html[data-tema="escuro"] .ac-int__chave { background: #4a628a; }
+html[data-tema="escuro"] .ac-int[aria-checked="true"] .ac-int__chave { background: #2a6fc9; }
+

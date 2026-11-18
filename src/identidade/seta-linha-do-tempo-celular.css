@@ -1,0 +1,36 @@
+/* ---- SETA · linha do tempo no celular: sem inclinação, com encaixe e cabeçalho compacto ---- */
+@media (hover: none) { .lt__dica .so-mouse { display: none; } .lt__dica .so-toque { display: inline; } }
+@media (max-width: 760px) {
+  .lt { --H: clamp(250px, 50vh, 420px); --H: clamp(250px, 50svh, 420px); --gap: 34px; padding: 52px 0 44px; }
+  .lt__pontos { height: 300px; opacity: .3; }
+  .lt__topo { display: block; }
+  .lt__sup { margin-bottom: 10px; letter-spacing: .32em; }
+  .lt h2 { font-size: clamp(2.4rem, 12vw, 3.4rem); }
+  .lt__lede { margin-top: 12px; font-size: .95rem; line-height: 1.5; }
+  .lt__ano { display: flex; align-items: baseline; gap: 14px; margin-top: 22px; padding: 0; text-align: left; overflow: hidden; }
+  .lt__ano-num { font-size: 4.6rem; line-height: .95; }
+  .lt__ano-ed { margin: 0; font-size: .8rem; }
+  .lt__ctrl { margin-top: 14px; }
+  .lt__pista { padding-top: 16px; padding-left: var(--gutter); padding-right: var(--gutter); scroll-snap-type: x proximity; scroll-padding-left: var(--gutter); }
+  .lt__item { scroll-snap-align: start; transform: none; transition: opacity .6s ease; transition-delay: 0s; }
+  .lt__arte, .lt__item.is-vista .lt__arte { transform: none; transition: box-shadow .4s; }
+  .lt__item.is-ativo .lt__arte { transform: none; }
+  .lt__arte img { opacity: 1; box-shadow: 0 18px 34px -18px rgba(0,0,0,.9); }
+  .lt__item.is-ativo .lt__arte img { box-shadow: 0 22px 40px -16px rgba(232,70,61,.5); }
+  .lt__info { width: 220px; }
+  .lt__a { font-size: 2.3rem; }
+  .lt__fim { width: 110px; }
+  .lt-caixa__nav { top: auto; bottom: 22px; margin-top: 0; }
+  .lt-caixa img { max-height: 70vh; max-height: 70svh; }
+  .lt-caixa__x { top: 14px; right: 14px; }
+}
+@media (max-width: 760px) {
+  .lt { --H: clamp(240px, 44vh, 400px); --H: clamp(240px, 44svh, 400px); padding-top: 44px; }
+  .lt__lede { display: none; }
+  .lt__botoes { display: none; }
+  .lt__ano { margin-top: 14px; }
+  .lt__ctrl { margin-top: 6px; }
+}
+@media (max-width: 760px) {
+  .lt__arte img { height: calc(var(--H) * max(var(--k, 1), .74)); }
+}

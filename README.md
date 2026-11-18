@@ -26,9 +26,12 @@ assets/js/dados.js     CONTEÚDO EDITÁVEL: itinerários, eventos, grupos, PIX, 
 assets/js/marca.js     Símbolos do logo, ícones, MENU, cabeçalho e rodapé
 assets/js/tema.js      Painel de acessibilidade e modo escuro
 assets/js/*.js         Scripts de cada página (inicio, grupos, itinerarios, historia…)
-assets/css/style.css   Base e componentes do sistema visual
 assets/css/site.css    CSS FINAL usado pelas páginas (gerado: não edite à mão)
-src/                   Fontes do CSS: site.css (Tailwind), repagina.css, escuro.css, ajustes.css
+src/site.css           Entrada do CSS (Tailwind): define a ordem das camadas
+src/sistema/           Sistema base: tokens, marca, layout, componentes (camada components)
+src/correcoes.css      Correções de contraste e foco (sem camada)
+src/identidade/        Visual atual: tipografia, botões, uma parte por página (sem camada)
+src/acessibilidade/    Painel de acessibilidade, modo escuro e alto contraste (sem camada)
 assets/data/           Contornos dos estados e dos municípios de RJ e MG (IBGE)
 assets/itinerarios/    Capas e PDFs dos itinerários
 assets/img/            Marca (logos SVG), fotos, baluartes, grupos, músicos…
@@ -71,7 +74,14 @@ Abra http://localhost:5500. A `404.html` só aparece completa no GitHub Pages (p
 
 ## CSS
 
-As páginas carregam `assets/css/site.css`, gerado pelo Tailwind a partir de `src/site.css` (que importa `assets/css/style.css` e os arquivos de `src/`). Depois de editar qualquer um deles:
+As páginas carregam `assets/css/site.css`, gerado pelo Tailwind a partir de `src/site.css`. Os estilos ficam em módulos pequenos, um por assunto, em quatro grupos que são juntados nesta ordem (cada pasta tem um `index.css` com a lista):
+
+1. `src/sistema/` — base do sistema visual (camada `components`, perde para as utilitárias do Tailwind)
+2. `src/correcoes.css`
+3. `src/identidade/` — o visual atual
+4. `src/acessibilidade/` — por último, para vencer o resto
+
+**A ordem importa**: no CSS, a regra que vem depois vence. Para estilizar algo novo, ponha o código no módulo do assunto e, se criar um arquivo, acrescente o `@import` no `index.css` da pasta, no lugar certo. Depois de editar qualquer arquivo em `src/`:
 
 ```bash
 npm install

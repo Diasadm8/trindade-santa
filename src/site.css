@@ -1,11 +1,15 @@
 /* Entrada do Tailwind v4 (npm run css → assets/css/site.css).
-   Sem "preflight": o reset do Tailwind mudaria o visual; o style.css já faz a base.
-   Ordem das camadas: o style.css entra em "components" para que as utilitárias do
-   Tailwind sempre vençam, e src/ajustes.css (sem camada) corrige o que a auditoria apontou. */
+   Sem "preflight": o reset do Tailwind mudaria o visual; src/sistema/base.css já faz a base.
+
+   ORDEM (a cascata depende dela):
+     1. @layer components  ← src/sistema/        sistema base
+     2. @layer utilities   ← Tailwind
+     3. sem camada         ← src/correcoes.css, src/identidade/, src/acessibilidade/
+   Regras sem camada vencem as camadas; dentro de cada grupo, regra depois vence regra antes. */
 @layer theme, base, components, utilities;
 
 @import "tailwindcss/theme.css" layer(theme);
-@import "../assets/css/style.css" layer(components);
+@import "./sistema/index.css" layer(components);
 @import "tailwindcss/utilities.css" layer(utilities);
 
 @source "../*.html";
@@ -37,6 +41,6 @@
   --shadow-card: 0 10px 30px -12px rgba(11, 78, 162, 0.25);
 }
 
-@import "./ajustes.css";
-@import "./repagina.css";
-@import "./escuro.css";
+@import "./correcoes.css";
+@import "./identidade/index.css";
+@import "./acessibilidade/index.css";

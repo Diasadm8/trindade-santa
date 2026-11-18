@@ -1,0 +1,5 @@
+/* ACESSIBILIDADE: painel, modo escuro e alto contraste. Sem camada e por último,
+   para vencer tudo o que vem antes. A ORDEM IMPORTA. */
+@import "./painel.css";
+@import "./modo-escuro.css";
+@import "./alto-contraste.css";

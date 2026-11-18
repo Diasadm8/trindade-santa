@@ -1,0 +1,20 @@
+/* =========================================================
+   DOAÇÃO
+   ========================================================= */
+.pix { display: grid; grid-template-columns: auto 1fr; gap: clamp(28px, 5vw, 60px); align-items: center; padding: clamp(28px, 5vw, 56px); border-radius: calc(var(--raio) * 1.6); background: #fff; box-shadow: var(--sombra-forte); position: relative; overflow: hidden; }
+.pix::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 6px; background: linear-gradient(var(--pai), var(--filho), var(--espirito)); }
+.pix__qr { width: 220px; aspect-ratio: 1; border-radius: var(--raio); background: var(--nevoa); border: 2px dashed var(--bruma); display: grid; place-items: center; text-align: center; color: var(--tinta-suave); font-size: .78rem; padding: 18px; }
+.pix__qr img { width: 100%; height: 100%; object-fit: contain; }
+.pix__qr svg { width: 60px; height: 60px; color: var(--azul-celeste); margin: 0 auto 8px; }
+.pix__chave { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 18px 0 8px; }
+.pix__chave code { flex: 1; min-width: 200px; font-family: inherit; font-weight: 700; font-size: 1.05rem; color: var(--azul-profundo); padding: 14px 18px; border-radius: var(--raio-sm); background: var(--nevoa); border: 1.5px solid var(--linha); word-break: break-all; }
+.pix__favorecido { font-size: .88rem; color: var(--tinta-suave); }
+.pix__ok { font-size: .85rem; color: var(--azul-celeste); font-weight: 700; min-height: 1.4em; }
+@media (max-width: 760px) { .pix { grid-template-columns: 1fr; } .pix__qr { margin: 0 auto; } }
+.meta { height: 8px; border-radius: 4px; background: var(--nevoa); overflow: hidden; }
+.meta i { display: block; height: 100%; width: var(--v, 0%); background: linear-gradient(90deg, var(--azul-celeste), var(--azul-profundo)); border-radius: 4px; }
+.formas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.forma { padding: 30px; border-radius: var(--raio); border: 1px solid var(--linha); background: #fff; text-align: center; }
+.forma .ph-lines i { margin-inline: auto; }
+@media (max-width: 760px) { .formas { grid-template-columns: 1fr; } }
+

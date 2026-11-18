@@ -1,0 +1,32 @@
+/* ---------- Início: abertura original (órbita da Trindade), preservada como era ---------- */
+.hero .assinatura__nome { font-family: var(--fonte-versal); font-weight: 400; font-stretch: normal; font-variation-settings: normal; text-transform: none; letter-spacing: .02em; line-height: .95; font-size: clamp(2.6rem, 8vw, 5.6rem); margin: 0; color: inherit; }
+.hero .btn { font-family: var(--fonte-texto); font-variation-settings: normal; text-transform: none; letter-spacing: .03em; border-radius: 999px; padding: 13px 26px; font-size: .92rem; }
+
+/* ---------- Seções ---------- */
+.bloco { padding-block: clamp(80px, 11vw, 150px); position: relative; }
+.bloco--azul { background: var(--ts-azul-fundo); color: #fff; }
+.bloco--noite { background: var(--ts-noite); color: #fff; }
+.bloco--papel { background: var(--ts-papel); }
+.bloco--azul h2, .bloco--noite h2, .bloco--azul h3, .bloco--noite h3 { color: #fff; }
+.texto-corrido { font-size: clamp(1.05rem, 1.3vw, 1.2rem); line-height: 1.65; max-width: 60ch; }
+.texto-corrido p + p { margin-top: 1em; }
+
+/* Duas colunas: texto + composição de fotos */
+.par { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+@media (max-width: 860px) { .par { grid-template-columns: 1fr; } }
+
+/* Composição de duas fotos sobrepostas */
+.dupla { position: relative; aspect-ratio: 4 / 4.4; }
+.dupla > * { position: absolute; overflow: hidden; border-radius: 4px; box-shadow: 0 30px 60px -30px rgba(4,14,34,.55); }
+.dupla > :first-child { inset: 0 22% 18% 0; }
+.dupla > :last-child { inset: 46% 0 0 38%; }
+.dupla img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Faixa de palavras correndo ---------- */
+.corre { overflow: hidden; white-space: nowrap; user-select: none; }
+.corre__trilho { display: inline-flex; align-items: center; gap: clamp(28px, 4vw, 64px); padding-right: clamp(28px, 4vw, 64px); animation: corre var(--tempo, 60s) linear infinite; }
+.corre--volta .corre__trilho { animation-direction: reverse; }
+.corre:hover .corre__trilho { animation-play-state: paused; }
+@keyframes corre { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .corre__trilho { animation: none; } }
+

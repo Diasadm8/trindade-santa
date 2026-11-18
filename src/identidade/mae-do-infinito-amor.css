@@ -1,0 +1,22 @@
+/* =========================================================
+   MÃE DO INFINITO AMOR — mesmo palco do Sinal: a pintura fica fixa e a luz muda de cor
+   (azul = Pai, vermelho = Filho, laranja = Espírito Santo, as três juntas = Trindade)
+   ========================================================= */
+
+/* ---------- Mãe do Infinito Amor: a pintura é o fundo da seção ---------- */
+.mae { position: relative; overflow: hidden; color: #fff; isolation: isolate; scroll-margin-top: 60px; background: #0b2a63;
+  padding: clamp(80px, 10vw, 150px) 0 clamp(70px, 9vw, 130px); }
+.mae::before { content: ""; position: absolute; inset: 0; z-index: -2; background: url("../img/maria/fundo-maria.jpg") right center / cover no-repeat; }
+.mae::after { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(90deg, rgba(7,29,69,.82) 0%, rgba(7,29,69,.62) 38%, rgba(7,29,69,0) 66%); }
+.mae__texto { max-width: min(640px, 100%); }
+.mae__texto h2 { font-size: clamp(2.6rem, 5.4vw, 5rem); color: #fff; margin: 10px 0 clamp(20px, 2.6vw, 34px); }
+.mae__texto > p { margin: 0 0 1.1em; font-size: clamp(1.02rem, 1.35vw, 1.15rem); line-height: 1.72; color: rgba(255,255,255,.95); }
+.mae__foto { margin: clamp(28px, 3.6vw, 44px) 0 0; border-radius: 18px; overflow: hidden; aspect-ratio: 3 / 2; box-shadow: 0 24px 60px rgba(0,0,0,.4); }
+.mae__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 38% 22%; display: block; }
+@media (max-width: 1100px) {
+  .mae { padding-top: min(92vw, 560px); background: linear-gradient(180deg, #0b2a63 0%, #0b2a63 100%); }
+  .mae::before { bottom: auto; height: min(125vw, 760px); background-position: 80% 0; }
+  .mae::after { bottom: auto; height: min(125vw, 760px); background: linear-gradient(180deg, rgba(7,29,69,0) 0%, rgba(7,29,69,0) 55%, #0b2a63 100%); }
+  .mae__foto { border-radius: 14px; }
+}

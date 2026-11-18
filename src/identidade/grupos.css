@@ -1,0 +1,10 @@
+/* ---------- Grupos: lista por cidade ---------- */
+.lista-grupos { columns: 2 380px; column-gap: clamp(30px, 5vw, 70px); margin-top: 20px; }
+.lista-grupos__cidade { break-inside: avoid; margin-bottom: clamp(30px, 4vw, 50px); }
+.lista-grupos h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.14; color: var(--ts-amarelo); margin: 0 0 10px; }
+.lista-grupos ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.35); }
+.lista-grupos li > * { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.2); color: #fff; text-decoration: none; transition: padding .4s var(--ease-saida); }
+.lista-grupos a:hover { padding-left: 8px; }
+.lista-grupos strong { font-weight: 700; font-size: 1.05rem; }
+.lista-grupos small { font-size: .85rem; color: rgba(255,255,255,.75); text-align: right; }
+

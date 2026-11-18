@@ -1,0 +1,8 @@
+/* ---------- Fonte: Anton (condensada) + Fraunces itálica nos destaques ---------- */
+h1, h2, .display { letter-spacing: .005em; line-height: 1.14; }
+h1 em, h2 em, .lema em, .footer__lema em, .chamada-foto h2 em {
+  font-family: var(--serifa); font-style: italic; font-weight: 600; text-transform: none;
+  font-variation-settings: "opsz" 144; letter-spacing: -.02em;
+}
+.lema em { color: var(--ts-amarelo); }
+

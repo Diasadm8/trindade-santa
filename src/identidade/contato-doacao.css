@@ -1,0 +1,12 @@
+/* Contato: mensagem direta no lugar do formulário */
+.contato-direto { background: var(--branco, #fff); border-radius: 22px; padding: clamp(26px, 4vw, 40px); box-shadow: 0 24px 60px -30px rgba(7,25,55,.35); }
+.contato-direto h3 { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-variation-settings: "wdth" 80; font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--ts-azul); margin: 0 0 10px; }
+.contato-direto p { line-height: 1.65; margin: 0 0 20px; }
+.contato-direto__nota { font-size: .9rem; color: var(--tinta-suave); margin: 22px 0 0 !important; }
+.contato-direto__nota a { color: var(--azul-profundo); text-decoration: underline; }
+
+/* Doação sem chave PIX cadastrada: só o formulário */
+.pix--sem-chave { grid-template-columns: 1fr; }
+.pix--sem-chave .btn { margin-top: 10px; }
+
+.bloco--azul li small { color: rgba(255,255,255,.88); }

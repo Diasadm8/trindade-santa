@@ -1,0 +1,8 @@
+/* Caminho vocacional (passos) */
+.passos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; counter-reset: passo; position: relative; }
+.passos::before { content: ""; position: absolute; top: 34px; left: 12%; right: 12%; height: 2px; background: linear-gradient(90deg, var(--bruma), var(--azul-profundo)); }
+.passo { position: relative; text-align: center; counter-increment: passo; }
+.passo .ph-lines i { margin-inline: auto; }
+@media (max-width: 860px) { .passos { grid-template-columns: 1fr 1fr; } .passos::before { display: none; } }
+@media (max-width: 520px) { .passos { grid-template-columns: 1fr; } }
+

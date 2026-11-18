@@ -1,0 +1,43 @@
+/* =========================================================
+   NOITE ORACIONAL QUEM COMO DEUS — vermelho, preto, ouro
+   ========================================================= */
+.pagina-noite { --e-escuro: #120406; --e-principal: #9c1f2e; --e-destaque: #d6a31f; --qcd-vinho: #3a070d; --qcd-vermelho: #b3141f; --qcd-ouro: #e2b347; --qcd-creme: #f3e5c1; background: #120406; color: #fff; }
+.pagina-noite .header .nav .btn--primario { background: var(--qcd-vermelho); color: #fff; }
+.pagina-evento .header.is-scrolled .logo__img--branco { display: block; }
+.pagina-evento .header.is-scrolled .logo__img--cor { display: none; }
+.pagina-evento .header.is-scrolled .nav > a, .pagina-evento .header.is-scrolled .nav__pai { color: #fff; }
+
+.noite-topo { position: relative; isolation: isolate; overflow: hidden; min-height: 100svh; display: grid; place-items: center; text-align: center; padding: calc(var(--header-h) + 30px) 0 60px; }
+.noite-topo__img { position: absolute; inset: 0; z-index: -2; }
+.noite-topo__img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; animation: topo-zoom 3s var(--ease-saida) both; }
+.noite-topo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse 70% 60% at 50% 55%, rgba(18,4,6,.35), rgba(18,4,6,.9) 80%), linear-gradient(0deg, #120406 0%, rgba(18,4,6,0) 35%); }
+.noite-topo__conteudo { display: flex; flex-direction: column; align-items: center; }
+.noite-topo .migalhas { justify-content: center; }
+.noite-topo__logo { width: clamp(240px, 34vw, 460px); height: auto; filter: drop-shadow(0 20px 50px rgba(0,0,0,.6)); opacity: 0; animation: surge 1.4s .3s var(--ease-saida) forwards; }
+.noite-topo__titulo { font-size: clamp(1.4rem, 3vw, 2.4rem); letter-spacing: .3em; font-variation-settings: "wdth" 100, "opsz" 24; font-weight: 700; color: var(--qcd-creme); margin: 18px 0 0; opacity: 0; animation: surge 1.4s .7s var(--ease-saida) forwards; }
+
+.noite-sobre { background: var(--qcd-vinho); }
+.noite-sobre h2 { color: #fff; font-size: clamp(3rem, 8vw, 7rem); }
+.noite-sobre .texto-corrido { color: rgba(255,255,255,.85); }
+.noite-sobre .dupla > * { box-shadow: 0 30px 60px -30px rgba(0,0,0,.8); }
+
+.qcd-arcanjos { background: #120406; }
+.qcd-arcanjo { position: relative; overflow: hidden; isolation: isolate; border-top: 1px solid rgba(243,229,193,.18); }
+.qcd-arcanjo:last-child { border-bottom: 1px solid rgba(243,229,193,.18); }
+.qcd-arcanjo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; z-index: -2; opacity: 0; transform: scale(1.08); transition: opacity .9s var(--ease-saida), transform 1.6s var(--ease-saida); }
+.qcd-arcanjo::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(18,4,6,.9), rgba(120,10,20,.45)); opacity: 0; transition: opacity .9s; }
+.qcd-arcanjo:hover img, .qcd-arcanjo.is-aceso img { opacity: 1; transform: scale(1); }
+.qcd-arcanjo:hover::after, .qcd-arcanjo.is-aceso::after { opacity: 1; }
+.qcd-arcanjo__linha { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap; padding-block: clamp(18px, 3vw, 36px); }
+.qcd-arcanjo__nome { font-family: var(--display); font-weight: 800; text-transform: uppercase; font-variation-settings: "wdth" 75, "opsz" 96; font-size: clamp(4.4rem, 17vw, 15rem); line-height: .82; color: var(--qcd-creme); transition: color .6s; }
+.qcd-arcanjo:hover .qcd-arcanjo__nome, .qcd-arcanjo.is-aceso .qcd-arcanjo__nome { color: #fff; }
+.qcd-arcanjo__sentido { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85; text-transform: uppercase; font-size: clamp(1rem, 2vw, 1.6rem); color: var(--qcd-ouro); letter-spacing: .04em; }
+
+.noite-fotos { background: #120406; padding-bottom: clamp(60px, 8vw, 110px); }
+.noite-fotos h2 { color: #fff; }
+.noite-final::after { background: radial-gradient(ellipse at center, rgba(90,8,16,.55), rgba(18,4,6,.92)); }
+.noite-final h2 { color: var(--qcd-creme); text-transform: uppercase; }
+.btn--noite { background: var(--qcd-vermelho); color: #fff; border-color: var(--qcd-vermelho); }
+.btn--noite:hover { background: #fff; color: var(--qcd-vermelho); border-color: #fff; }
+.pagina-noite .footer { background: #0b0203; }
+

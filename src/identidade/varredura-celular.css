@@ -1,0 +1,11 @@
+/* ---------- Varredura de celular ---------- */
+@media (max-width: 600px) {
+  .topo-foto h1 { font-size: clamp(2.5rem, 12.5vw, 4rem); }
+  .sinal { overflow-x: clip; }
+  .migalhas a, .migalhas span { padding: 6px 0; }
+  .footer a { display: inline-block; padding: 7px 0; }
+  .orbita__pontos button { position: relative; }
+  .orbita__pontos button::after { content: ""; position: absolute; inset: -14px; }
+}
+
+

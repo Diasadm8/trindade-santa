@@ -1,0 +1,46 @@
+/* =========================================================
+   CONGRESSO SETA — identidade do SETA 2026: papel, coral, preto e branco
+   ========================================================= */
+.pagina-seta { --e-escuro: #141414; --e-principal: #e8463d; --e-destaque: #e8463d; --seta-coral: #e8463d; --seta-preto: #141414; --seta-papel: #f4f1ec; background: var(--seta-papel); color: var(--seta-preto); }
+.pagina-seta .header--transparente:not(.is-scrolled) .nav > a, .pagina-seta .header--transparente:not(.is-scrolled) .nav__pai { color: var(--seta-preto); }
+.pagina-seta .header--transparente:not(.is-scrolled) .logo__img--branco { display: none; }
+.pagina-seta .header--transparente:not(.is-scrolled) .logo__img--cor { display: block; }
+.pagina-seta .header--transparente:not(.is-scrolled) .menu-toggle span, .pagina-seta .header--transparente:not(.is-scrolled) .menu-toggle span::before, .pagina-seta .header--transparente:not(.is-scrolled) .menu-toggle span::after { background: var(--seta-preto); }
+.pagina-seta .header .nav .btn--primario { background: var(--seta-coral); color: #fff; }
+.pagina-seta .header--transparente:not(.is-scrolled) { background: rgba(244,241,236,.94); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+
+.seta-topo { position: relative; isolation: isolate; overflow: hidden; min-height: 100svh; display: flex; align-items: flex-end; padding: calc(var(--header-h) + 30px) 0 clamp(30px, 5vw, 60px); background: var(--seta-papel); }
+.seta-topo__foto { position: absolute; top: 0; right: 0; bottom: 0; width: 52%; z-index: -1; overflow: hidden; }
+.seta-topo__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: grayscale(1) contrast(1.1); animation: topo-zoom 3s var(--ease-saida) both; }
+.seta-topo__foto::before { content: ""; position: absolute; left: -1px; top: 0; bottom: 0; width: 30%; z-index: 1; background: linear-gradient(90deg, var(--seta-papel), rgba(244,241,236,0)); }
+.seta-topo .migalhas, .seta-topo .migalhas a { color: var(--seta-preto); }
+.seta-topo__sup { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 100, "opsz" 24; text-transform: uppercase; letter-spacing: .42em; font-size: clamp(1rem, 2vw, 1.6rem); margin: 0; color: var(--seta-preto); }
+.seta-topo__nome { font-size: clamp(9rem, 36vw, 34rem); line-height: .76; color: var(--seta-coral); margin: 0 0 .04em -.03em; letter-spacing: -.03em; opacity: 0; animation: seta-entra 1.4s .2s var(--ease-saida) forwards; }
+@keyframes seta-entra { from { opacity: 0; transform: translateX(-6%); } to { opacity: 1; transform: none; } }
+.seta-topo__trilha { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85; text-transform: uppercase; font-size: clamp(1.2rem, 3vw, 2.4rem); margin: 0; color: var(--seta-preto); }
+@media (max-width: 760px) { .seta-topo__foto { width: 100%; height: 55%; bottom: auto; } .seta-topo__foto::before { width: 100%; left: 0; top: auto; height: 60%; bottom: 0; background: linear-gradient(0deg, var(--seta-papel), rgba(244,241,236,0)); } }
+
+.seta-sobre { background: #fff; }
+.seta-sobre h2 { color: var(--seta-preto); }
+.seta-sobre h2 .pw:nth-child(n+3) > span { color: var(--seta-coral); }
+.seta-edicao { background: var(--seta-coral); color: #fff; }
+.seta-edicao h2 { color: #fff; font-size: clamp(3.4rem, 10vw, 9rem); }
+.seta-edicao__grade { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 90px); align-items: start; }
+.seta-edicao__cartaz { width: 100%; box-shadow: 0 40px 80px -30px rgba(0,0,0,.5); transform: rotate(-2deg); }
+.seta-edicao__quando { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85; text-transform: uppercase; font-size: clamp(1.1rem, 1.8vw, 1.5rem); line-height: 1.3; margin: 0 0 28px; }
+.seta-nomes { list-style: none; padding: 0; margin: 0 0 24px; border-top: 2px solid rgba(255,255,255,.6); }
+.seta-nomes li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.35); }
+.seta-nomes strong { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 72; text-transform: uppercase; font-size: clamp(1.5rem, 2.8vw, 2.4rem); line-height: 1; }
+.seta-nomes span { font-size: .9rem; opacity: .9; text-align: right; }
+.seta-edicao__nota { font-size: .9rem; opacity: .85; margin: 0; }
+@media (max-width: 860px) { .seta-edicao__grade { grid-template-columns: 1fr; } .seta-edicao__cartaz { max-width: 420px; } }
+
+.seta-fotos { background: var(--seta-papel); padding-bottom: clamp(60px, 8vw, 110px); }
+.seta-fotos h2 { color: var(--seta-preto); }
+.seta-final { background: var(--seta-preto); color: #fff; text-align: center; padding-block: clamp(100px, 14vw, 180px); }
+.seta-final h2 { color: var(--seta-coral); font-size: clamp(3.6rem, 13vw, 12rem); margin-bottom: .2em; }
+.seta-final p { max-width: 44ch; margin: 0 auto 28px; color: rgba(255,255,255,.85); }
+.btn--seta-claro { background: var(--seta-coral); color: #fff; border-color: var(--seta-coral); }
+.btn--seta-claro:hover { background: #fff; color: var(--seta-coral); border-color: #fff; }
+.pagina-seta .footer { background: var(--seta-preto); }
+

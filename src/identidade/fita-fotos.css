@@ -1,0 +1,8 @@
+/* ---------- Fita de fotos que se arrasta ---------- */
+.fita { display: flex; gap: 14px; overflow-x: auto; padding: 8px max(var(--gutter), calc((100vw - var(--largura)) / 2)) 24px; scroll-snap-type: x proximity; cursor: grab; scrollbar-width: none; }
+.fita::-webkit-scrollbar { display: none; }
+.fita.is-arrastando { cursor: grabbing; scroll-snap-type: none; }
+.fita img { height: clamp(300px, 58svh, 560px); width: auto; flex: none; object-fit: cover; scroll-snap-align: start; border-radius: 4px; user-select: none; -webkit-user-drag: none; transition: transform .7s var(--ease-saida); }
+.fita img:hover { transform: translateY(-6px); }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+

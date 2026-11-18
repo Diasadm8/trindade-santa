@@ -1,0 +1,75 @@
+/* =========================================================
+   O SINAL DA TRINDADE — palco fixo, uma cor e uma cena por Pessoa
+   Pai: azul e ouro (luz, órbitas) · Filho: vermelho (cruz, aliança) · Espírito: laranja (chama, brasas)
+   ========================================================= */
+.sin { position: relative; color: #fff; background: #071d45; --ac: #ffd35c; scroll-margin-top: 60px; }
+.sin[data-ativo="filho"] { --ac: #ffb8a8; }
+.sin[data-ativo="espirito"] { --ac: #ffe27a; }
+.sin__trilho { position: relative; height: 480vh; height: 480svh; }
+.sin__cena {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: clip; isolation: isolate;
+  display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(20px, 4vw, 80px);
+  padding: 88px clamp(56px, 7vw, 120px) 56px clamp(20px, 6vw, 100px);
+}
+.sin__bgs, .sin__bg, .sin__grao { position: absolute; inset: 0; z-index: -1; }
+.sin__bg { opacity: 0; transition: opacity 1.3s var(--ease); }
+.sin__bg--sinal { background: radial-gradient(70% 65% at 28% 45%, #1d4796 0%, #0b2250 55%, #050f26 100%); }
+.sin[data-ativo="sinal"] .sin__bg--sinal { opacity: 1; }
+.sin__grao {
+  opacity: .22; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.sin__titulo { position: absolute; top: 128px; left: clamp(20px, 6vw, 100px); margin: 0; font-weight: 800; font-size: .78rem; letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.75); }
+
+/* ---- arte ---- */
+.sin__arte { position: relative; justify-self: center; width: min(100%, 62svh, 560px); aspect-ratio: 1; --alt: min(62svh, 560px); }
+.cena { position: absolute; inset: 0; opacity: 0; transform: scale(.88); transition: opacity 1s var(--ease), transform 1.3s var(--ease); }
+.sin[data-ativo="sinal"] .cena--sinal { opacity: 1; transform: none; }
+.cena > span, .cena > img { position: absolute; }
+@keyframes sin-gira { to { transform: rotate(360deg); } }
+@keyframes sin-pulso { 0%, 100% { transform: scale(1); opacity: .95; } 50% { transform: scale(1.045); opacity: .45; } }
+
+/* Pai: luz, círculos e órbita */
+.raios {
+  inset: -22%; border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, rgba(255,225,140,.34) 0 1.6deg, transparent 1.6deg 11.25deg);
+  -webkit-mask: radial-gradient(circle, transparent 30%, #000 36%, transparent 68%); mask: radial-gradient(circle, transparent 30%, #000 36%, transparent 68%);
+  animation: sin-gira 120s linear infinite;
+}
+.anel { inset: calc(var(--i) * 6%); border-radius: 50%; border: 1.5px solid rgba(255,214,110,.6); animation: sin-pulso 6.4s ease-in-out infinite; animation-delay: calc(var(--i) * -1.1s); }
+.sin-orbita { inset: 0; animation: sin-gira 26s linear infinite; }
+.sin-orbita i { position: absolute; inset: 0; transform: rotate(var(--a)); }
+.sin-orbita i::after { content: ""; position: absolute; top: -7px; left: 50%; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: #ffd35c; box-shadow: 0 0 20px 4px rgba(255,211,92,.8); }
+
+/* Sinal: as três cores juntas em volta da cruz */
+.aureola { inset: 2%; border-radius: 50%; background: conic-gradient(from 0deg, #3a93f0, #cf2d45, #ffb52e, #3a93f0); filter: blur(36px); opacity: .8; animation: sin-gira 16s linear infinite; }
+.anel-sinal { inset: 3%; border-radius: 50%; border: 1.5px solid rgba(255,255,255,.4); }
+.sin-orbita--tres { inset: 3%; animation-duration: 22s; }
+.sin-orbita--tres i:nth-child(1)::after { background: #5aa9ff; box-shadow: 0 0 20px 4px rgba(90,169,255,.9); }
+.sin-orbita--tres i:nth-child(2)::after { background: #ff6b7e; box-shadow: 0 0 20px 4px rgba(255,107,126,.9); }
+.sin-orbita--tres i:nth-child(3)::after { background: #ffc44a; box-shadow: 0 0 20px 4px rgba(255,196,74,.9); }
+.cena--sinal img { top: 50%; left: 50%; height: 78%; width: auto; max-width: none; translate: -50% -50%; filter: drop-shadow(0 0 24px rgba(255,255,255,.35)); }
+
+/* ---- textos ---- */
+.sin__textos { position: relative; align-self: stretch; min-height: min(62svh, 560px); }
+.sin__txt { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 14px; opacity: 0; visibility: hidden; transform: translateY(36px); pointer-events: none; transition: opacity .7s var(--ease), transform .9s var(--ease), visibility 0s .7s; }
+.sin__txt.is-ativo { opacity: 1; visibility: visible; transform: none; pointer-events: auto; transition: opacity .9s var(--ease) .3s, transform 1s var(--ease) .3s, visibility 0s 0s; }
+.sin__rotulo { font-weight: 800; letter-spacing: .24em; text-transform: uppercase; font-size: .78rem; color: var(--ac); }
+.sin__txt h2 { font-size: clamp(3rem, 7vw, 6.6rem); color: #fff; margin: 0; }
+.sin__txt .sin__frase { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85; font-size: clamp(1.25rem, 2vw, 1.75rem); line-height: 1.3; color: var(--ac); margin: 0; }
+.sin__txt p:not(.sin__frase) { max-width: 46ch; font-size: clamp(1rem, 1.4vw, 1.18rem); line-height: 1.65; color: rgba(255,255,255,.92); margin: 0; }
+
+/* ---- marcas de progresso ---- */
+
+@media (max-width: 900px) {
+  .sin__cena { grid-template-columns: 1fr; grid-template-rows: auto 1fr; align-items: start; gap: 10px; padding: 168px 20px 60px; }
+  .sin__titulo { top: 140px; }
+  .sin__arte { width: min(66vw, 32svh); --alt: min(66vw, 32svh); }
+  .sin__textos { min-height: 0; }
+  .sin__txt { justify-content: flex-start; gap: 10px; }
+  .sin__txt h2 { font-size: clamp(2.5rem, 11.5vw, 3.6rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sin *, .sin *::before, .sin *::after { animation: none !important; }
+}
+

@@ -1,6 +1,6 @@
 /* =========================================================
    NOSSA HISTÓRIA — linha do tempo imersiva
-   Dados: HISTORIA (dados.js).  Estilos: seção "HISTÓRIA" do style.css.
+   Dados: HISTORIA (dados.js).  Estilos: src/sistema/historia.css.
    - o fio de ouro (a aliança) é desenhado conforme a rolagem
    - cada marco acende ao ser alcançado
    - o ano ao fundo muda; símbolos e luz se movem em paralaxe

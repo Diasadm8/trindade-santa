@@ -1,0 +1,33 @@
+/* =========================================================
+   FAÇA PARTE — banner "Vocacional TS"
+   ========================================================= */
+.voc-topo { background: var(--ts-azul); color: #fff; padding: calc(var(--header-h) + 30px) 0 0; overflow: hidden; }
+.voc-topo__grade { display: grid; grid-template-columns: 1.1fr .9fr; align-items: end; gap: 20px; }
+.voc-topo__texto { padding-bottom: clamp(50px, 8vw, 110px); }
+.voc-topo h1.voc-topo__titulo { font-size: clamp(3rem, 8.4vw, 8.4rem); line-height: 1.14; color: var(--ts-amarelo); margin: 0; }
+.voc-topo .voc-ts, .voc-topo .voc-ts span { color: #fff; }
+.voc-topo__sub { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 72; text-transform: uppercase; color: var(--ts-rosa); font-size: clamp(1.6rem, 3.6vw, 3rem); line-height: 1.14; margin: .4em 0 0; max-width: 12ch; }
+.voc-topo__papa { position: relative; margin: 0; align-self: end; }
+.voc-topo__papa img { width: 100%; height: auto; display: block; filter: drop-shadow(0 30px 40px rgba(4,14,34,.35)); transform-origin: bottom center; animation: papa-sobe 1.6s .2s var(--ease-saida) both; }
+@keyframes papa-sobe { from { transform: translateY(8%); opacity: 0; } to { transform: none; opacity: 1; } }
+.voc-citacao { position: absolute; left: -6%; top: 14%; max-width: 15ch; margin: 0; transform: rotate(-4deg); }
+.voc-citacao p { font-family: var(--display); font-weight: 700; font-variation-settings: "wdth" 85; font-size: clamp(1rem, 1.5vw, 1.3rem); line-height: 1.15; margin: 0 0 6px; color: #fff; }
+.voc-citacao cite { font-size: .8rem; font-style: normal; color: var(--ts-amarelo); font-weight: 700; }
+@media (max-width: 860px) { .voc-topo h1.voc-topo__titulo { font-size: 18vw; } .voc-topo__grade { grid-template-columns: 1fr; } .voc-topo__texto { padding-bottom: 10px; } .voc-topo__papa { max-width: 460px; margin-inline: auto; } .voc-citacao { left: 0; } }
+
+.voc-passos { background: #fff; padding-top: clamp(80px, 10vw, 130px); }
+.voc-passos__titulo { color: var(--ts-azul); font-size: clamp(3rem, 8.5vw, 7.6rem); margin-bottom: clamp(30px, 5vw, 60px); }
+.voc-passos__titulo em { color: var(--ts-laranja); }
+.voc-passo { padding-block: clamp(30px, 5vw, 60px); }
+.voc-passo--pai { background: var(--ts-azul); color: #fff; }
+.voc-passo--filho { background: var(--ts-amarelo); color: var(--ts-noite); }
+.voc-passo--espirito { background: var(--ts-noite); color: #fff; }
+.voc-passo__linha { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(20px, 5vw, 80px); align-items: center; }
+.voc-passo__verbo { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; text-transform: uppercase; font-size: clamp(4rem, 13vw, 12rem); line-height: .82; margin: 0; }
+.voc-passo--pai .voc-passo__verbo { color: var(--ts-laranja); }
+.voc-passo--filho .voc-passo__verbo { color: var(--ts-azul); }
+.voc-passo--espirito .voc-passo__verbo { color: var(--ts-amarelo); }
+.voc-passo__ano { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 80; text-transform: uppercase; font-size: clamp(1.3rem, 2.4vw, 2rem); margin: 0 0 8px; }
+.voc-passo__linha p:last-child { margin: 0; font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.5; max-width: 36ch; }
+@media (max-width: 760px) { .voc-passo__linha { grid-template-columns: 1fr; } }
+

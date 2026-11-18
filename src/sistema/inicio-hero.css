@@ -1,0 +1,80 @@
+/* ---------- 6. PÁGINAS ---------- */
+
+/* ===== HERO DA TRINDADE (Início) ===== */
+.hero {
+  position: relative; min-height: 100svh; overflow: hidden; isolation: isolate;
+  background: var(--degrade);
+  display: grid; place-items: center;
+  padding: calc(var(--header-h) + 20px) 0 90px;
+  color: #fff;
+}
+.hero__fundo { position: absolute; inset: 0; z-index: -2; display: flex; justify-content: center; align-items: center; gap: 0; opacity: .08; pointer-events: none; }
+.hero__fundo .selo { --tam: 52vw; --cor: #fff; --anel: #fff; flex: none; margin: 0 -4vw; }
+.hero__particulas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; }
+.hero__conteudo { display: flex; flex-direction: column; align-items: center; width: 100%; }
+
+.orbita {
+  position: relative;
+  --orb: clamp(130px, min(24vw, 27vh), 260px);
+  width: min(100%, 980px);
+  height: calc(var(--orb) * 1.55);
+  perspective: 1400px;
+}
+.orbita__item {
+  position: absolute; left: 50%; top: 50%;
+  width: var(--orb); aspect-ratio: 1;
+  margin: calc(var(--orb) / -2) 0 0 calc(var(--orb) / -2);
+  will-change: transform, opacity, filter;
+  cursor: pointer;
+  background: none; border: 0; padding: 0; color: inherit;
+}
+.orbita__item .selo {
+  --tam: var(--orb);
+  --cor: #fff; --anel: #fff;
+  background: radial-gradient(circle at 50% 40%, rgba(255,255,255,.16), rgba(255,255,255,.02) 70%);
+  box-shadow: 0 0 0 0 rgba(255,255,255,.0);
+  transition: box-shadow .8s var(--ease);
+}
+.orbita__item.is-centro .selo { box-shadow: 0 0 80px 10px rgba(255,255,255,.25), inset 0 0 40px rgba(255,255,255,.15); }
+.orbita__halo {
+  position: absolute; left: 50%; top: 50%;
+  width: calc(var(--orb) * 1.55); aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.orbita__halo circle { fill: none; stroke: #fff; }
+.orbita__halo .h1 { stroke-opacity: .35; stroke-dasharray: 2 10; animation: girar 60s linear infinite; transform-origin: center; }
+.orbita__halo .h2 { stroke-opacity: .18; animation: girar 90s linear infinite reverse; transform-origin: center; stroke-dasharray: 60 20 4 20; }
+
+.hero__pessoa { height: 3.4em; margin-top: 8px; text-align: center; position: relative; width: 100%; }
+.hero__pessoa span {
+  position: absolute; inset: 0;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  letter-spacing: .3em; text-transform: uppercase;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.hero__pessoa span.is-ativo { opacity: 1; transform: none; transition: opacity .8s var(--ease) .45s, transform .8s var(--ease) .45s; }
+.hero__pessoa small { display: block; font-family: var(--fonte-texto); font-size: .62em; letter-spacing: .12em; text-transform: none; opacity: .8; margin-top: 6px; }
+
+.hero .assinatura { margin-top: 10px; opacity: 0; transform: translateY(20px); transition: opacity 1.4s var(--ease) .9s, transform 1.4s var(--ease) .9s; }
+.hero.is-pronto .assinatura { opacity: 1; transform: none; }
+.hero__acoes { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; justify-content: center; opacity: 0; transition: opacity 1.2s var(--ease) 1.5s; }
+.hero.is-pronto .hero__acoes { opacity: 1; }
+
+.orbita__pontos { display: flex; gap: 10px; justify-content: center; margin-top: 18px; }
+.orbita__pontos button {
+  width: 10px; height: 10px; padding: 0; border-radius: 50%;
+  border: 1.5px solid #fff; background: transparent;
+  transition: background .3s, transform .3s;
+}
+.orbita__pontos button.is-ativo { background: #fff; transform: scale(1.25); }
+
+.hero::after {
+  content: ""; position: absolute; inset: auto 0 -1px 0; height: 70px;
+  background: var(--branco);
+  clip-path: ellipse(75% 100% at 50% 100%);
+  z-index: -1;
+}
+

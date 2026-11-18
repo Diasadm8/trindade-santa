@@ -1,0 +1,17 @@
+/* Mapa no celular: aviso de dois dedos */
+.mapa-aviso-toque { position: absolute; inset: 0; z-index: 600; display: grid; place-items: center; padding: 24px; text-align: center; background: rgba(7,25,55,.55); color: #fff; font-weight: 800; font-size: 1.05rem; opacity: 0; pointer-events: none; transition: opacity .25s; }
+.mostra-aviso .mapa-aviso-toque { opacity: 1; }
+
+/* Mapa no celular: gaveta com a ficha da cidade, presa à base do mapa */
+.mapa-folha { position: absolute; z-index: 650; left: 0; right: 0; bottom: 0; max-height: 58%; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; background: #fff; color: var(--tinta); border-radius: 18px 18px 0 0; box-shadow: 0 -14px 40px -12px rgba(11,42,74,.5); }
+.mapa-folha[hidden] { display: none; }
+.mapa-folha .ficha-cidade { max-height: none; overflow: visible; padding: 20px 20px 10px; }
+.mapa-folha__x { position: sticky; top: 8px; float: right; margin: 8px 10px 0 0; z-index: 2; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(11,42,74,.08); color: var(--azul-profundo); font-size: 1.6rem; line-height: 1; display: grid; place-items: center; cursor: pointer; }
+html[data-tema="escuro"] .mapa-folha { background: #0f2142; }
+html[data-tema="escuro"] .mapa-folha__x { background: rgba(255,255,255,.12); color: #e9f1fc; }
+@media (max-width: 860px) {
+  #mapa { height: 62vh; height: 62svh; scroll-margin-top: 84px; }
+  .mapa-controles { top: 14px; right: 14px; }
+}
+
+@media (max-width: 760px) { .voc-mosaico__grade--v .voc-mosaico__b { order: -1; } .voc-mosaico__grade--v { grid-auto-flow: row dense; } }

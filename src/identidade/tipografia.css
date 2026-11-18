@@ -1,0 +1,24 @@
+/* ---------- Tipografia ---------- */
+h1, h2, .display {
+  font-family: var(--display);
+  font-weight: 800;
+  font-stretch: 75%;
+  font-variation-settings: "wdth" 75, "opsz" 96;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+  line-height: .9;
+  text-wrap: balance;
+}
+h2 { font-size: clamp(2.6rem, 6.4vw, 5.4rem); margin-bottom: .35em; }
+h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-variation-settings: "wdth" 85, "opsz" 48;
+  letter-spacing: -.01em;
+  line-height: 1.2;
+}
+p { text-wrap: pretty; }
+
+/* Sem rótulos acima dos títulos e sem barras de texto provisório */
+.sobretitulo, .ph-lines { display: none !important; }
+

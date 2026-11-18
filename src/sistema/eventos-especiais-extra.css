@@ -1,0 +1,28 @@
+/* =========================================================
+   EVENTOS ESPECIAIS — complementos
+   ========================================================= */
+.ev-subtitulo { font-family: var(--fonte-titulo); font-size: clamp(1.1rem, 2.6vw, 1.7rem); letter-spacing: .05em; color: var(--e-destaque); margin: -10px 0 22px; }
+.ev-destaques { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 26px; }
+.ev-destaque { padding: 12px 22px; border-radius: 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); text-align: center; line-height: 1.2; }
+.ev-destaque strong { display: block; font-family: var(--fonte-titulo); font-weight: 400; font-size: 1.7rem; color: var(--e-destaque); }
+.ev-destaque span { font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
+.arcanjos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.arcanjo { position: relative; overflow: hidden; padding: 38px 26px 30px; text-align: center; border-radius: var(--raio); background: color-mix(in srgb, var(--e-principal) 14%, #fff); border: 1px solid color-mix(in srgb, var(--e-principal) 30%, transparent); transition: transform .4s var(--ease), box-shadow .4s; }
+.ev-secao--escura .arcanjo { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); }
+.arcanjo:hover { transform: translateY(-6px); box-shadow: 0 26px 50px -26px var(--e-principal); }
+.arcanjo__icone { width: 84px; height: 84px; margin: 0 auto 18px; color: var(--e-principal); animation: flutuar 6s ease-in-out infinite; }
+.ev-secao--escura .arcanjo__icone { color: var(--e-destaque); }
+.arcanjo small { display: block; font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--e-principal); font-weight: 800; }
+.ev-secao--escura .arcanjo small { color: var(--e-destaque); }
+.arcanjo h3 { margin: 6px 0 4px; }
+.arcanjo__sig { font-family: var(--fonte-titulo); font-style: italic; opacity: .85; margin-bottom: 14px; }
+.arcanjo .ph-lines i { margin-inline: auto; }
+.arcanjo:nth-child(2) .arcanjo__icone { animation-delay: -2s; }
+.arcanjo:nth-child(3) .arcanjo__icone { animation-delay: -4s; }
+@media (max-width: 860px) { .arcanjos { grid-template-columns: 1fr; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+  .revelar { opacity: 1; transform: none; }
+}
+

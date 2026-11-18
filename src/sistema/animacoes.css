@@ -1,0 +1,5 @@
+/* ---------- 7. ANIMAÇÕES ---------- */
+@keyframes girar { to { transform: rotate(360deg); } }
+@keyframes respirar { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+@keyframes flutuar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+

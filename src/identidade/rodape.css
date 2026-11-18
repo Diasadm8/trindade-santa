@@ -1,0 +1,10 @@
+/* ---------- Rodapé ---------- */
+.footer { background: var(--ts-noite); }
+.footer__lema { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96; text-transform: uppercase; font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.14; color: #fff; margin: 18px 0 8px; }
+.footer__lema em { font-style: normal; color: var(--ts-amarelo); }
+.footer__dados { color: rgba(255,255,255,.7); font-size: .95rem; line-height: 1.6; margin: 0 0 18px; }
+
+
+.pix--escuro::before { display: none; }
+
+

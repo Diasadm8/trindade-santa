@@ -1,0 +1,35 @@
+/* =========================================================
+   MENU COM SUBMENUS
+   ========================================================= */
+.nav__grupo { position: relative; display: flex; align-items: center; }
+.nav__pai { display: inline-flex; align-items: center; gap: 5px; }
+.nav__pai svg { width: 13px; height: 13px; transition: transform .3s var(--ease); }
+.nav__grupo:hover .nav__pai svg, .nav__grupo:focus-within .nav__pai svg { transform: rotate(180deg); }
+.nav__sub {
+  position: absolute; left: 50%; top: 100%; min-width: 250px; padding: 8px; display: grid;
+  background: #fff; border-radius: 16px; box-shadow: var(--sombra-forte);
+  opacity: 0; visibility: hidden; transform: translate(-50%, 10px);
+  transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s;
+}
+.nav__sub::before { content: ""; position: absolute; left: 0; right: 0; top: -14px; height: 14px; }
+.nav__grupo:hover .nav__sub, .nav__grupo:focus-within .nav__sub { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.nav .nav__sub a { color: var(--tinta); border-radius: 10px; padding: 11px 14px; font-weight: 600; white-space: nowrap; }
+.nav .nav__sub a:hover { background: var(--nevoa); color: var(--azul-profundo); }
+.nav .nav__sub a::after { display: none; }
+.nav .nav__sub a[aria-current="page"] { color: var(--azul-celeste); }
+
+@media (max-width: 1180px) {
+  .nav { overflow-y: auto; justify-content: flex-start; padding: 96px 20px 40px; gap: 2px; }
+  .nav a { font-size: 1.35rem; }
+  .nav__grupo { flex-direction: column; }
+  .nav__pai svg { display: none; }
+  .nav__sub, .nav__grupo:hover .nav__sub, .nav__grupo:focus-within .nav__sub {
+    position: static; transform: none; opacity: 1; visibility: visible; min-width: 0;
+    background: none; box-shadow: none; padding: 0 0 8px; display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 6px;
+  }
+  .nav__sub::before { display: none; }
+  .nav .nav__sub a { color: rgba(255,255,255,.8); font-family: var(--fonte-texto); font-size: .95rem; padding: 6px 12px; }
+  .nav .nav__sub a:hover { background: rgba(255,255,255,.14); color: #fff; }
+  .nav .nav__sub a[aria-current="page"] { color: #fff; text-decoration: underline; }
+}
+

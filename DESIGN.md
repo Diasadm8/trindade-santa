@@ -4,10 +4,11 @@ Guia do sistema visual do site. Serve para quem for criar uma página nova, mexe
 uma seção ou pedir ajuda a uma IA: siga o que está aqui para o site continuar com a
 mesma cara.
 
-> Fonte da verdade no código: `src/site.css` (tokens do Tailwind), `assets/css/style.css`
-> (base e componentes), `src/repagina.css` (repaginação jovem 2026-11) e
-> `src/escuro.css` (acessibilidade e modo escuro). Depois de editar `src/`, rode
-> `npm run css` para gerar `assets/css/site.css`.
+> Fonte da verdade no código: `src/site.css` (entrada e ordem das camadas),
+> `src/sistema/tokens.css` (cores e medidas do sistema base), `src/identidade/` (o visual
+> atual, a começar por `tokens.css`, `tipografia.css` e `botoes.css`) e `src/acessibilidade/`
+> (painel, modo escuro e alto contraste). Depois de editar `src/`, rode `npm run css`
+> para gerar `assets/css/site.css`. A ordem dos módulos importa: veja o README.
 
 ---
 
@@ -43,7 +44,7 @@ mesma cara.
 Degradês: `--degrade` (bruma → turquesa → mar, 35°) e `--degrade-profundo`
 (profundo → mar, 135°).
 
-### Repaginação jovem (banner “Vocacional TS”)
+### Identidade atual (banner “Vocacional TS”)
 
 | Token | Hex | Uso |
 |---|---|---|

@@ -1,0 +1,15 @@
+/* ---------- Botões ---------- */
+.btn {
+  font-family: var(--display);
+  font-variation-settings: "wdth" 85, "opsz" 24;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  border-radius: 6px;
+  padding: 15px 26px;
+}
+.btn--amarelo { background: var(--ts-amarelo); color: var(--ts-noite); border-color: var(--ts-amarelo); }
+.btn--amarelo:hover { background: #fff; border-color: #fff; color: var(--ts-noite); }
+.btn--vazado { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.75); }
+.btn--vazado:hover { background: #fff; color: var(--ts-noite); }
+

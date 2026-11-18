@@ -1,0 +1,48 @@
+/* =========================================================
+   COMUNIDADE DE ALIANÇA TRINDADE SANTA — Sistema visual
+   ---------------------------------------------------------
+   1. Tokens (cores, fontes, espaçamentos)
+   2. Base
+   3. Componentes de marca (símbolos, anéis, logotipo)
+   4. Layout (cabeçalho, rodapé, seções)
+   5. Componentes (botões, cards, placeholders…)
+   6. Páginas específicas
+   7. Animações e acessibilidade
+   ========================================================= */
+
+/* ---------- 1. TOKENS ---------- */
+:root {
+  /* Paleta extraída da identidade */
+  --azul-profundo: #0b4ea2;   /* "TRINDADE SANTA"             */
+  --azul-celeste:  #1b95d8;   /* anéis e "COMUNIDADE DE ALIANÇA" */
+  --azul-mar:      #2489ae;   /* fim do degradê               */
+  --turquesa:      #4fa6c0;   /* meio do degradê              */
+  --bruma:         #bcdde3;   /* início do degradê            */
+  --nevoa:         #eef6f8;   /* fundos claros                */
+  --branco:        #ffffff;
+  --tinta:         #0a2a4a;   /* texto principal              */
+  --tinta-suave:   #4a6580;   /* texto secundário             */
+  --linha:         #d6e6ee;   /* bordas                       */
+
+  /* As três Pessoas — cada uma com uma nuance da paleta */
+  --pai:      var(--azul-profundo);
+  --filho:    var(--azul-celeste);
+  --espirito: var(--azul-mar);
+
+  --degrade: linear-gradient(35deg, var(--bruma) 0%, var(--turquesa) 55%, var(--azul-mar) 100%);
+  --degrade-profundo: linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul-mar) 100%);
+
+  --fonte-titulo: "Marcellus", "Optima", "Candara", serif;
+  --fonte-versal: "Marcellus SC", "Marcellus", serif;
+  --fonte-texto:  "Mulish", "Segoe UI", system-ui, sans-serif;
+
+  --raio: 18px;
+  --raio-sm: 10px;
+  --sombra: 0 10px 30px -12px rgba(11, 78, 162, .25);
+  --sombra-forte: 0 24px 60px -20px rgba(11, 78, 162, .45);
+  --largura: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --header-h: 84px;
+  --ease: cubic-bezier(.22, .8, .24, 1);
+}
+

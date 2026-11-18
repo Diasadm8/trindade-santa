@@ -1,0 +1,25 @@
+/* =========================================================
+   ALTO CONTRASTE: preto, branco e amarelo
+   ========================================================= */
+html.ac-contraste body { background: #000; color: #fff; }
+html.ac-contraste :is(p, li, span, small, dd, dt, label, h1, h2, h3, h4, h5, strong, em, cite, blockquote) { color: #fff !important; text-shadow: none !important; }
+html.ac-contraste main a:not(.btn), html.ac-contraste footer a, html.ac-contraste .nav a:not(.btn) { color: #ffe600 !important; text-decoration: underline !important; text-underline-offset: 3px; }
+html.ac-contraste :is(.btn, button.ac-op) { background: #ffe600 !important; color: #000 !important; border: 2px solid #fff !important; }
+html.ac-contraste .btn * { color: #000 !important; }
+html.ac-contraste :is(.bloco, .secao, .voc-passos, .voc-mosaico, .bloco--papel, .bloco--azul, .secao--nevoa, .card, .evento, .forma, .mapa-painel) { background: #000 !important; border-color: #fff; }
+html.ac-contraste .header, html.ac-contraste .header.is-scrolled, html.ac-contraste .footer { background: #000 !important; color: #fff; border-bottom: 2px solid #ffe600; }
+html.ac-contraste :focus-visible { outline: 4px solid #ffe600 !important; outline-offset: 3px; }
+html.ac-contraste .ac-painel { background: #000; color: #fff; box-shadow: 0 0 0 3px #ffe600; }
+html.ac-contraste .ac-painel :is(.ac-rot, .ac-int__txt b, .ac-int__txt small, .painel strong) { color: #fff !important; }
+html.ac-contraste .ac-op, html.ac-contraste .ac-int, html.ac-contraste .ac-zerar { background: #000 !important; color: #fff !important; border: 2px solid #fff !important; }
+html.ac-contraste .ac-op[aria-pressed="true"] { background: #ffe600 !important; color: #000 !important; }
+html.ac-contraste .ac-int[aria-checked="true"] .ac-int__chave { background: #ffe600; }
+html.ac-contraste img, html.ac-contraste video { filter: none; }
+
+@media (max-width: 1180px) { .header .menu-toggle { order: 10; } .ac-botoes { margin-right: 4px; } }
+
+html[data-tema="escuro"] .legal { background: #081428; }
+html[data-tema="escuro"] .legal__corpo { --ts-azul: #8dbcff; --ts-noite: #e9f1fc; --azul-profundo: #9cc9ff; }
+html[data-tema="escuro"] .contato-direto { background: #0f2142; }
+html.ac-contraste .legal, html.ac-contraste .contato-direto { background: #000; }
+html[data-tema="escuro"] :is(.voc-passo--pai, .voc-passo--espirito), html.ac-contraste :is(.voc-passo--pai, .voc-passo--espirito) { --ts-azul: #2a6fc9; --ts-noite: #071937; --azul-profundo: #0b4ea2; }

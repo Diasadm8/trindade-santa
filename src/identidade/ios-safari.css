@@ -1,0 +1,15 @@
+/* ---- iOS / Safari: ajustes da linha do tempo e gerais ---- */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+.lt__arte, .lt__arte img { -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
+.lt__btn, .lt-caixa button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.lt__arte { -webkit-appearance: none; appearance: none; }
+.lt-caixa[open] { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 9999; margin: 0; background: rgba(10,10,10,.92); }
+@supports (-webkit-touch-callout: none) {
+  .lt__item { will-change: auto; }
+  .lt__pista { -webkit-transform: translateZ(0); transform: translateZ(0); }
+}
+
+/* alvo de toque maior nos pontinhos do carrossel (celular) */
+.orbita__pontos { gap: 14px; }
+.orbita__pontos button { position: relative; }
+.orbita__pontos button::before { content: ""; position: absolute; top: -9px; right: -9px; bottom: -9px; left: -9px; }

@@ -1,0 +1,22 @@
+/* SISTEMA BASE: tokens, marca, layout, componentes e as páginas do sistema original.
+   Entra em @layer components (veja src/site.css). A ORDEM IMPORTA: dentro da camada, regra
+   depois vence regra antes. Não reordene as linhas abaixo sem conferir o visual. */
+@import "./tokens.css";
+@import "./base.css";
+@import "./marca.css";
+@import "./layout.css";
+@import "./componentes.css";
+@import "./inicio-hero.css";
+@import "./paginas-internas.css";
+@import "./mapa-grupos.css";
+@import "./vocacional.css";
+@import "./animacoes.css";
+@import "./eventos-especiais.css";
+@import "./doacao.css";
+@import "./itinerarios-imersivos.css";
+@import "./menu.css";
+@import "./social.css";
+@import "./espiritualidade.css";
+@import "./eventos-especiais-extra.css";
+@import "./historia.css";
+@import "./fundador-momentos.css";
