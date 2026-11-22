@@ -41,3 +41,17 @@
 .itn-fim h2 { color: inherit; font-size: clamp(3rem, 9vw, 8rem); }
 .tema-claro .btn--vazado { color: #1a1a1a; border-color: rgba(0,0,0,.6); }
 
+
+/* Seletor de ano: os anos vêm de ITINERARIOS (dados.js), um botão por ano */
+.itn-anos { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: clamp(22px, 3vw, 34px); }
+.itn-ano {
+  min-width: 4.6rem; min-height: 44px; padding: 0 20px; border-radius: 6px; cursor: pointer;
+  border: 2px solid color-mix(in srgb, currentColor 55%, transparent); background: transparent; color: inherit;
+  font-family: var(--display); font-variation-settings: "wdth" 85, "opsz" 24; font-weight: 700; font-size: 1.25rem;
+  letter-spacing: .03em; line-height: 1; font-variant-numeric: tabular-nums;
+  transition: background-color .25s, color .25s, border-color .25s;
+}
+.itn-ano:hover { background: #fff; border-color: #fff; color: var(--ts-noite); }
+.itn-ano[aria-pressed="true"] { background: var(--ts-amarelo); border-color: var(--ts-amarelo); color: var(--ts-noite); cursor: default; }
+.itn-anos__breve { margin-left: 6px; font-size: .95rem; color: rgba(255,255,255,.78); }
+.itn-fim .itn-anos { justify-content: center; margin: 0 0 30px; }

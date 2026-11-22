@@ -48,7 +48,8 @@ google8971b883790d4f62.html   Verificação do Google Search Console (não apaga
 Quase tudo que muda com frequência fica em `assets/js/dados.js`: itinerários, eventos da agenda, grupos, músicos, dados do PIX. Para adicionar um item, copie um bloco e altere os valores. Itens marcados com `⚠ confirmar` precisam de confirmação antes de ir ao ar.
 
 - **Evento novo:** acrescente em `EVENTOS` com `data: 'AAAA-MM-DD'`. Ele some sozinho da agenda depois da data e também vai para o Google como evento (dados estruturados).
-- **Itinerário do mês:** coloque `AAAA-MM.jpg` e `AAAA-MM.pdf` em `assets/itinerarios/` e acrescente a linha em `ITINERARIOS`.
+- **Itinerário do mês:** coloque `AAAA-MM.jpg` e `AAAA-MM.pdf` em `assets/itinerarios/` e acrescente a linha em `ITINERARIOS`. A página mostra do mais novo para o mais antigo.
+- **Itinerários de anos anteriores:** é a mesma coisa, só com outro `ano` na linha (por exemplo `ano: 2025`). O seletor de ano da página aparece sozinho com os anos que existirem em `ITINERARIOS`, e `itinerarios?ano=2025` abre direto naquele ano.
 - **Menu:** edite a lista `PAGINAS` em `assets/js/marca.js` (vale para todas as páginas).
 - **Fotos:** coloque `width` e `height` reais e `loading="lazy"` nas que ficam abaixo da primeira tela (evita a página “pular” enquanto carrega).
 

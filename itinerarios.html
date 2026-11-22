@@ -38,7 +38,8 @@
       <div class="container itn-topo__texto">
         <nav class="migalhas" aria-label="Você está em"><a href="./">Início</a><span aria-hidden="true">/</span><span>Itinerários</span></nav>
         <h1 data-palavras>Itinerários</h1>
-        <p class="itn-topo__sub revelar">Um caminho espiritual por mês para rezar com a comunidade. <span data-ano-atual></span></p>
+        <p class="itn-topo__sub revelar">Um caminho espiritual por mês para rezar com a comunidade. <span data-ano-atual aria-live="polite"></span></p>
+        <div class="itn-anos" data-anos="topo" role="group" aria-label="Escolher o ano dos itinerários"></div>
       </div>
     </section>
 
@@ -48,7 +49,8 @@
     <!-- Fechamento -->
     <section class="itn-fim">
       <div class="container">
-        <h2 data-palavras>O próximo chega em breve</h2>
+        <h2 data-palavras data-fim-titulo>Os anos anteriores chegam em breve</h2>
+        <div class="itn-anos itn-anos--fim" data-anos="fim" role="group" aria-label="Escolher o ano dos itinerários"></div>
         <a href="#conteudo" class="btn btn--vazado revelar">Voltar ao início</a>
       </div>
     </section>
