@@ -12,8 +12,7 @@ const COMUNIDADE = {
   inicioGrupo: 2002,
   /* Fatos do site antigo (lojatrindadesanta.com.br/nossa-historia) */
   reconhecimento: { diocese: 2013, decreto: 2018 },   // reconhecida pela Diocese de Campos em 2013; decreto definitivo em 2018
-  estados: ['Rio de Janeiro', 'Minas Gerais', 'Espírito Santo'],
-  missaoExterior: 'missionários servindo até nos Estados Unidos',
+  estados: ['Rio de Janeiro', 'Minas Gerais'],
   identidade: ['trinitários', 'católicos', 'carismáticos', 'adoradores', 'marianos'],
   sinais: ['Louvor', 'Adoração', 'Comunhão'],
   lema: 'Ou Santos ou Nada',
